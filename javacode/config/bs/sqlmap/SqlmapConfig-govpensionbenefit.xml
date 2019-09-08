@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMapConfig PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+	<settings useStatementNamespaces="true" />
+	<!--待遇批量停发:MassTreatmentTerminate sqlmap-->  
+	<sqlMap resource="com/yinhai/govpensionbenefit/approve/treamentqualifyplan/sqlmap/masstreatmentterminate.xml" />
+	<sqlMap resource="com/yinhai/govpensionbenefit/approve/treamentqualifyplan/sqlmap/treamentqualifyplan.xml" />
+	<sqlMap resource="com/yinhai/govpensionbenefit/approve/treamentqualifyplan/sqlmap/treamentqualify.xml" />
+	<sqlMap resource="com/yinhai/govpensionbenefit/adjust/batchAdjust/sqlmap/batchAdjust.xml"/>
+</sqlMapConfig>
+

@@ -1,0 +1,30 @@
+@CHARSET "UTF-8";
+#pageloading{
+	 position:absolute;
+	 left:0;
+	 top:0;
+    width:100%;
+    height:100%;
+    z-index:20000;
+    background-color:white;
+}
+#pageloading .loading{
+    position:absolute;
+    left:45%;
+    top:40%;
+    padding:2px;
+    z-index:20001;
+    height:auto;
+}
+#pageloading .loading img {
+    margin-bottom:5px;
+}
+#pageloading .loading .loading-indicator{
+    background:white;
+    color:#555;
+    font:bold 13px tahoma,arial,helvetica;
+    padding:10px;
+    margin:0;
+    text-align:center;
+    height:auto;
+} 

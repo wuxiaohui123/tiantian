@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<bean id="taSecurityStrategy" class="com.yinhai.sysframework.security.ta3.TaSecurityStrategy">
+		<property name="loginUrl" value="/login.jsp"/>
+		<property name="noPermitRedrectUrl" value="/ta/accessdenied.jsp"/>
+		<property name="allowRepeatedlyLogin" value="true"/>
+		<!--超级管理员登录id  -->
+		<property name="developers">
+			<set>
+				<value>developer</value>
+			</set>
+		</property>
+		<!--  针对css、图片、js等静态资源不进行安全控制 -->
+		<property name="expEnds">
+			<set>
+				<value>.css</value>
+				<value>.js</value>
+				<value>.gif</value>
+				<value>.jpg</value>
+				<value>.tag</value>
+				<value>.jpeg</value>
+				<value>.png</value>
+				<value>.bmp</value>
+				<value>.ico</value>
+				<value>.gzip</value>
+				<value>.swf</value>
+			</set>
+		</property>
+		
+		<!-- 为了迎合Ta+3.9之前的版本是采用排除机制的做法，引入了filterNone参数，配置了这个dynamicurls参数将不起作用 -->
+		<!-- filterNone属性表示不需要进行安全控制的url，支持通配 -->
+		<property name="filterNone">
+			<set>
+				<value>/ta/tojson.jsp</value>
+				<value>/ta/inc.jsp</value>
+				<value>/login.jsp</value>
+				<value>/CaptchaImg</value>
+				<value>/CaptchaImgPass</value>
+				<value>/formLoginCheckAction.do</value>
+				<value>/formLogoutAction.do</value>
+				<value>/ta/incfooter.jsp</value>
+				<value>/ta/accessdenied.jsp</value>
+				<value>/ta/tofile.jsp</value>
+				<value>/ta/401.jsp</value>
+				<value>/ta/417.jsp</value>
+				<value>/ta/418.jsp</value>
+				<value>/ta/appexception.jsp</value>
+				<value>/ta/exception.jsp</value>
+				<value>/ta/getIPPort.jsp</value>
+				<value>/welcome.jsp</value>
+				<value>/workspace/portal/**/*.*</value>
+				<value>/system/userPassAction!changePasswordWidthCurrent.do</value>
+				<value>/log/RequestSessionLogAction!request.do</value>
+				<value>/commonAction.do</value>
+				<value>/codetable/synCodeaction.do</value>
+				<value>/services/**</value>
+			</set>
+		</property>
+		<!--请将项目中的业务的url加入到以下内容中  -->
+		<!--需要进行安全管理的url地址列表，支持通配  -->
+		<!-- 
+		<property name="dynamicurls">
+			<set>
+				<value>/indexAction*.do</value>
+				<value>/org/**</value>
+				<value>/ta/system/**</value>
+				<value>/sysapp/**</value>
+			</set>
+		</property>
+		 -->
+		<!-- 固定角色可以访问的url列表 -->
+		<property name="anyRolePermitUrl">
+			<map>
+				<entry key="role1">
+          			<set>
+						<value>/indexAction.do</value>
+						<value>/test.do</value>
+					</set>
+     			</entry>
+				<entry key="role2">
+          			<set>
+						<value>/indexAction.do</value>
+					</set>
+     			</entry>     			
+			</map>
+		</property>	
+		<!--登录后所有人都可以访问的url，支持通配   -->
+		<property name="loginPermitUrl">
+			<set>
+				<value>/indexAction*.do</value>
+				<value>/sysapp/portalAction*.do</value>
+				<value>/sysapp/commonMenuAction*.do</value>
+				<value>/sysapp/appCodeCacheAction*.do</value>
+				<value>/exportGridDefaultExcel.do</value>
+				<value>/exportGridDataAllExcel.do</value>
+				<value>/com.runqian.*</value>
+				<value>/reportServlet*</value>
+				<value>/runqian/runqianReport4Applet.jar</value>
+				<value>/runqian/dmGraphApplet.jar</value>
+				<value>/com/runqian/*</value>
+				<value>/newRPCWindows/newRPCWindowsAction*</value>
+				<value>/medicalbenefit/common/*.do</value>
+				<value>/process/synthesis/suggestFrameworkAction*</value>
+				<value>/process/pensionbenefit/others/stjfnxrd/stjfnxrdAction*.do</value>
+				<value>/newRPCWindows/newRPCWindowsAction!showRPCWindow13.do</value>
+				<value>/process/medicalbenefit/inventory/*.do</value>
+				<value>/process/synthesis/suggestFrameworkAction**</value>				
+				<value>/process/benefit/**</value>
+			</set>
+		</property>							
+	</bean>
+	
+	<!-- 访问来源控制策略 -->
+	<bean id="taRefererStrategy" class="com.yinhai.sysframework.security.ta3.TaRefererStrategy">
+	    <!-- 登陆入口 -->
+	   <property name="loginUrl">
+			<set>
+				<value>/formLoginCheckAction.do</value>
+			</set>
+		</property>
+			<!-- exceptUrl属性表示不需要进行访问来源控制.do结尾的url，支持通配 -->
+		<property name="exceptUrl">
+			<set>
+		       <value>/formLogoutAction.do</value>
+		  </set>
+		</property>
+	</bean>
+</beans>

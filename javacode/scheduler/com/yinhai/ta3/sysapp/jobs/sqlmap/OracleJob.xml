@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="oracleJob">      
+	<!-- prc_oracleBroken 定时服务 参数-->
+	<parameterMap id="prc_oracleBrokenParameter"  class="java.util.Map"> 
+	    <parameter property="jobid" jdbcType="NUMBER" javaType="java.lang.Long" mode="IN"/>
+	    <parameter property="broken" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+	    <parameter property="next_date" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+		<parameter property="AppCode" jdbcType="VARCHAR" javaType="java.lang.String" mode="OUT" nullValue="NOERROR"/> 
+		<parameter property="ErrorMsg" jdbcType="VARCHAR" javaType="java.lang.String" mode="OUT" nullValue=""/> 	    
+	</parameterMap>
+	
+	<!-- oracle定时服务 -->
+	<procedure id="prc_oracleBroken" parameterMap="prc_oracleBrokenParameter"> 
+		{call pkg_YHCIP.prc_oraclejobbroken(?,?,?,?,?)}
+    </procedure>
+ 	<!-- oracle定时服务 参数-->
+	<parameterMap id="prc_oracleJobParameter"  class="java.util.Map"> 
+	    <parameter property="prm_jobid" jdbcType="VARCHAR" javaType="java.lang.String" mode="INOUT"/>
+	    <parameter property="prm_jobname" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+	    <parameter property="prm_what" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+		<parameter property="prm_next_date" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+		<parameter property="prm_interval" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+		<parameter property="prm_userid" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+		<parameter property="AppCode" jdbcType="VARCHAR" javaType="java.lang.String" mode="OUT" nullValue="NOERROR"/> 
+		<parameter property="ErrorMsg" jdbcType="VARCHAR" javaType="java.lang.String" mode="OUT" nullValue=""/> 
+	</parameterMap>	
+	<!-- oracle定时服务 -->
+	<procedure id="prc_oracleJob" parameterMap="prc_oracleJobParameter"> 
+		{call pkg_YHCIP.prc_oracleJob(?,?,?,?,?,?,?,?)}
+    </procedure>
+	<!-- oracleChange定时服务 -->
+	<procedure id="prc_oracleChange" parameterMap="prc_oracleJobParameter"> 
+		{call pkg_YHCIP.prc_oraclejobchange(?,?,?,?,?,?,?,?)}
+    </procedure>  
+    
+      	<!-- prc_oracleInterval 定时服务 参数-->
+	<parameterMap id="prc_oracleIntervalParameter"  class="java.util.Map"> 
+	    <parameter property="jobid" jdbcType="NUMBER" javaType="java.lang.Long" mode="IN"/>
+		<parameter property="interval" jdbcType="VARCHAR" javaType="java.lang.String" mode="IN"/>
+	</parameterMap>
+	
+	<!-- oracleInterval定时服务 -->
+	<procedure id="prc_oracleInterval" parameterMap="prc_oracleIntervalParameter"> 
+		{call dbms_job.interval(?,?)}
+    </procedure>  
+    
+     <!-- oracleNext_date 定时服务 参数-->
+	<parameterMap id="prc_oracleNext_dateParameter"  class="java.util.Map"> 
+	    <parameter property="jobid" jdbcType="NUMBER" javaType="java.lang.Long" mode="IN"/>
+		<parameter property="nextDate" jdbcType="DATE" javaType="java.sql.Timestamp" mode="IN"/>
+	</parameterMap>
+	
+	<!-- oracleNext_date定时服务 -->
+	<procedure id="prc_oracleNext_date" parameterMap="prc_oracleNext_dateParameter"> 
+		{call dbms_job.next_Date(?,?)}
+    </procedure>  
+     
+    <!-- prc_oracleJobidParameter 定时服务 参数-->
+	<parameterMap id="prc_oracleJobidParameter"  class="java.util.Map"> 
+	    <parameter property="jobid" jdbcType="NUMBER" javaType="java.lang.Integer" mode="IN"/>
+	</parameterMap>
+	
+	<!-- oracleNext_date定时服务 -->
+	<procedure id="prc_oracleRemove" parameterMap="prc_oracleJobidParameter"> 
+		{call dbms_job.remove(?)  }
+    </procedure>     
+	<!-- oracleNext_date定时服务 -->
+	<procedure id="prc_oracleRun" parameterMap="prc_oracleJobidParameter"> 
+		{call dbms_job.run(?)}
+    </procedure> 
+    <select  id="queryOracleJobList" parameterClass="map" resultClass="java.util.HashMap">
+		select 
+			  a.jobid as myjobid,
+			  to_char(a.submittime,'yyyy-MM-dd HH24:mi:ss') as submittime,
+			  a.jobname as jobname,
+			  a.oraclejobid as jobid,
+			  a.userid as userid,
+			  to_char(b.last_date,'yyyy-MM-dd HH24:mi:ss') as last_date,
+			  to_char(b.next_date,'yyyy-MM-dd HH24:mi:ss') as next_date,
+			  a.starttime as starttime,<!--oracle_jobs中的a.starttime作为开始时间串 -->
+			  b.total_time as total_time,
+			  decode(b.broken,'Y','暂停','N','运行中','已删除')  as broken,
+			  decode(b.broken,'Y',b.interval,'N',b.interval,a.interval) as interval,
+			  b.failures as failures,
+			  decode(b.broken,'Y',b.what,'N',b.what,a.what) as what 
+		  from yhcip_oracle_jobs a,user_jobs b
+		  where a.oraclejobid = b.job(+)
+		  order by b.broken,a.oraclejobid ,b.next_date	    	
+    </select>
+    <select id="queryOracleJobListCount" parameterClass="map" resultClass="java.lang.Integer">
+       select count(1) as value
+        from yhcip_oracle_jobs a,user_jobs b
+		  where a.oraclejobid = b.job(+)
+		  order by b.broken,a.oraclejobid ,b.next_date	
+    </select>
+    <select id="createJobId" resultClass="java.lang.String">
+       select SEQ_A_JOBID.nextval as jobid from dual
+    </select>
+    
+    <!-- 查询成功信息 -->
+	<select id="getJobDomainsSuccess" parameterClass="map" resultClass="java.util.HashMap">
+		SELECT 
+		       a.id as id,
+		       a.job_name as name,
+		       a.job_group as jobgroup,
+		       a.userid as userid,
+		       a.execStartTime as execstarttime,
+		       a.execEndTime as execendtime,
+		       a.issuccess as issuccess,
+		       a.successmsg as successmsg,
+		       a.errormsg as errormsg
+		  FROM qrtz_job_msgs a
+		  WHERE 1=1 
+		    AND   a.successmsg IS NOT NULL
+ <![CDATA[	AND   a.job_name = #name#   ]]>  
+	</select>
+	
+	 <!-- 查询成功信息2 -->
+	<select id="getSuccessMsgs"  parameterClass="map" resultClass="java.util.HashMap">
+		SELECT 
+		       a.id as id,
+		       a.job_name as name,
+		       a.issuccess as issuccess,
+		       a.userid as userid,
+		       a.execStartTime as execstarttime,
+		       a.execEndTime as execendtime,
+		       a.successmsg as successmsg,
+		       a.errormsg as errormsg
+		  FROM qrtz_job_msgs a
+		    WHERE 1=1 
+		    AND   a.successmsg IS NOT NULL
+ 	<dynamic>
+		<isNotEmpty prepend="AND" property="name"> 
+		        a.job_name = #name#                 
+		</isNotEmpty>
+	</dynamic>
+	</select>
+	
+	<!-- 查询错误信息 -->
+	<select id="getJobDomainsError"  parameterClass="map" resultClass="java.util.HashMap">
+		SELECT 
+		       a.id as id,
+		       a.job_name as name,
+		       a.issuccess as issuccess,
+		       a.userid as userid,
+		       a.execStartTime as execstarttime,
+		       a.execEndTime as execendtime,
+		       a.successmsg as successmsg,
+		       a.errormsg as errormsg
+		  FROM qrtz_job_msgs a
+		    WHERE 1=1 
+		    AND   a.errormsg IS NOT NULL
+<![CDATA[	AND   a.job_name = #name#   ]]>  
+	</select>
+	
+	<!-- 查询错误信息2 -->
+	<select id="getErrorMsgs"  parameterClass="map" resultClass="java.util.HashMap">
+		SELECT 
+		       a.id as id,
+		       a.job_name as name,
+		       a.issuccess as issuccess,
+		       a.userid as userid,
+		       a.execStartTime as execstarttime,
+		       a.execEndTime as execendtime,
+		       a.successmsg as successmsg,
+		       a.errormsg as errormsg
+		  FROM qrtz_job_msgs a
+		    WHERE 1=1 
+		     AND  a.errormsg IS NOT NULL
+	<dynamic>
+		<isNotEmpty prepend="AND" property="name"> 
+		        a.job_name = #name#                 
+		</isNotEmpty>
+	</dynamic> 
+	</select>
+	
+</sqlMap>

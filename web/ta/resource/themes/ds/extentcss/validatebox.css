@@ -1,0 +1,59 @@
+.validatebox-invalid{
+	background-color: white;
+	background-image: url('images/invalid_line.gif') !important;
+	background-repeat: repeat-x ;
+	background-position: bottom !important;
+	border-color: #C30 !important;
+}
+.validatebox-tip{
+	position:absolute;
+	width:150px;
+	height:auto;
+	display:none;
+	z-index:9900000;
+}
+.validatebox-tip-content{
+	padding:3px 5px;
+	border:1px solid #CC9933;
+	background:#FFFFCC;
+	z-index:9900001;
+	font-size:12px;
+}
+.validatebox-tip-pointer{
+	background:url('images/validatebox_pointer1.gif') no-repeat left top;
+	width:19px;
+	height:10px;
+	z-index:9900002;
+	position: relative;
+	left:10px;
+	bottom:1px	
+}
+.validatebox-tip-pointer-right{
+	background:url('images/validatebox_pointer1.gif') no-repeat left top;
+	width:19px;
+	height:10px;
+	z-index:9900002;
+	position: relative;
+	left:120px;
+	bottom:1px	
+}
+.validatebox-tip-pointer-topleft{
+	background:url('images/validatebox_pointer2.gif') no-repeat left top;
+	width:19px;
+	height:10px;
+	z-index:9900002;
+	position: relative;
+	left:10px;
+	top:1px;
+	bottom:1px	
+}
+.validatebox-tip-pointer-topright{
+	background:url('images/validatebox_pointer2.gif') no-repeat left top;
+	width:19px;
+	height:10px;
+	z-index:9900002;
+	position: relative;
+	left:120px;
+	top:1px;
+	bottom:1px	
+}

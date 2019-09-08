@@ -1,0 +1,291 @@
+/* EXAMPLE: 
+ * 	<button id="btn1" class="sexybutton" name="btn1" type="submit" value="Submit">
+ * 		<span><span><span class="ok">Submit</span></span></span>
+ * 	</button>
+ */
+
+.sexybutton {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	text-decoration: none !important;
+	background: none;
+	border: none;
+	white-space: nowrap;
+	cursor: pointer;
+	user-select: none;
+	-moz-user-select: none;
+	
+	/* Fix extra width padding in IE */
+	_width: 0;
+	overflow: visible;
+	margin:2px 0px;
+	margin-left:5px;
+	
+}
+
+.sexybutton span {
+	display: block;						/* Prevents :active from working in IE--oh well! */
+	height: 23px;
+	padding-right:5px;
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+
+.sexybutton span span {
+	padding-right: 0;
+	padding-left: 5px;
+	line-height: 24px;
+	background-position: left top;
+}
+
+.sexybutton span span span {
+	padding-left: 18px;
+	background-image: none;
+	background-repeat: no-repeat;
+	background-position: 0% 50% !important;
+	display: block;
+	/* IE6 still requires a PNG transparency fix */ 
+	/* _background-image: none;		Or just hide icons from the undeserving IE6 */
+	/* _padding-left: 0;					Or just hide icons from the undeserving IE6 */
+}
+.sexybutton span span span.nokey{
+	padding-left: 9px;
+}
+
+.sexybutton span span span.after {
+	padding-left: 0px;
+	padding-right: 21px;
+	background-position: 0% 50% !important;
+	/* IE6 still requires a PNG transparency fix */ 
+	/* _padding-right: 0;					Or just hide icons from the undeserving IE6 */
+}
+
+.sexybutton[disabled],
+.sexybutton[disabled]:hover,
+.sexybutton[disabled]:focus,
+.sexybutton[disabled]:active,
+.sexybutton.disabled,
+.sexybutton.disabled:hover,
+.sexybutton.disabled:focus,
+.sexybutton.disabled:active {
+	color: #333 !important;
+	cursor: inherit;
+	text-shadow: none; 
+	opacity: 0.33;
+}
+
+.sexybutton:hover span,
+.sexybutton:focus span {
+	background-position: 100% -23px;
+}
+
+.sexybutton:hover span span,
+.sexybutton:focus span span {
+	background-position: 0% -23px;
+}
+
+.sexybutton:active span {
+	background-position: 100% -46px;
+}
+
+.sexybutton:active span span {
+	background-position: 0% -46px;
+}
+
+.sexybutton[disabled] span,
+.sexybutton.disabled span {
+	background-position: 100% -46px;
+}
+
+.sexybutton[disabled] span span,
+.sexybutton.disabled span span {
+	background-position: 0% -46px;
+}
+
+.sexybutton:hover span span span,
+.sexybutton:focus span span span,
+.sexybutton:active span span span,
+.sexybutton[disabled] span span span,
+.sexybutton.disabled span span span {
+	background-position: left center;
+}
+
+.sexybutton:hover span span span.after,
+.sexybutton:focus span span span.after,
+.sexybutton:active span span span.after,
+.sexybutton[disabled] span span span.after,
+.sexybutton.disabled span span span.after {
+	background-position: right center;
+}
+
+.sexybutton img {
+	margin-right: 5px;
+	vertical-align: text-top;
+	/* IE6 Hack */
+	_margin-top: 4px;
+	_vertical-align: text-bottom;
+	/* IE6 still requires a PNG transparency fix */ 
+	/* _display: none;		Or just hide icons from the undeserving IE6 */
+}
+
+.sexybutton img.after {
+	margin-right: 0;
+	margin-left: 5px;
+	/* IE6 still requires a PNG transparency fix */ 
+	/* _margin-left: 0;		Or just hide icons from the undeserving IE6 */
+}
+
+.sexybutton.sexymedium	{ font-size: 15px !important; }
+.sexybutton.sexylarge	{ font-size: 18px !important; }
+
+span.tool-separator{
+	height:24px;
+	border-left:1px solid #ccc;
+	border-right:1px solid #fff;
+	margin:2px 1px;
+}
+
+/*
+ * Button Skins
+ * 
+ * .PNG background images with alpha transparency are also supplied if you'd rather use them instead of the 
+ * default .GIF images. (Just beware of IE6's lack of support.) 
+ * 
+ * Additional skins can be added below. The images/skins/ButtonTemplate.psd can be used to create new skins.
+ * Prefix the skin name with "sexy" to avoid any potential conflicts with other class names. 
+ */
+
+/* Silver Button Skin (the default skin) */
+
+.sexybutton,
+.sexybutton.sexysilver {
+	color: #666 !important;
+}
+	
+.sexybutton:hover,
+.sexybutton:focus,
+.sexybutton.sexysilver:hover,
+.sexybutton.sexysilver:focus {
+	color: #42A7E5 !important;
+}
+	
+.sexybutton span,
+.sexybutton.sexysilver span {
+	background-image: url(images/skins/silver/button_right.png);
+	
+}
+
+.sexybutton span span,
+.sexybutton.sexysilver span span {
+	background-image: url(images/skins/silver/button_left.png);
+	color:#666;
+}
+
+/* Orange Button Skin */
+
+.sexybutton.sexyorange,
+.sexybutton.sexyorange:hover,
+.sexybutton.sexyorange:focus {
+	color: white !important;
+}
+	
+.sexybutton.sexyorange[disabled],
+.sexybutton.sexyorange[disabled]:hover,
+.sexybutton.sexyorange[disabled]:active,
+.sexybutton.sexyorange[disabled]:focus,
+.sexybutton.sexyorange.disabled,
+.sexybutton.sexyorange.disabled:hover,
+.sexybutton.sexyorange.disabled:active,
+.sexybutton.sexyorange.disabled:focus {
+	color: #333 !important;
+}
+	
+.sexybutton.sexyorange span {
+	background-image: url(images/skins/orange/button_right.png);
+}
+
+.sexybutton.sexyorange span span {
+	background-image: url(images/skins/orange/button_left.png);
+}
+
+/* Yellow Button Skin */
+
+.sexybutton.sexyyellow,
+.sexybutton.sexyyellow:hover,
+.sexybutton.sexyyellow:focus {
+	color: #994800 !important;
+}
+	
+.sexybutton.sexyyellow span {
+	background-image: url(images/skins/yellow/button_right.png);
+}
+
+.sexybutton.sexyyellow span span {
+	background-image: url(images/skins/yellow/button_left.png);
+}
+
+/* toolbar Button Skin */
+
+.sexybutton.toolbarbt span {
+	background:transparent;
+	padding-right:2px;
+	height:23px;
+}
+.sexybutton.toolbarbt >span {
+	border:1px solid transparent;
+}
+.sexybutton.toolbarbt span span {
+	padding-left:4px;
+}
+.sexybutton.toolbarbt span span span{
+	background-repeat: no-repeat;
+	background-position: 0% 50% !important;
+	padding-left:21px;
+}
+
+.sexybutton.toolbarbt:hover span,
+.sexybutton.toolbarbt:focus span {
+	background-color:#DAE6FC;
+	border:1px solid #99BBE8;
+}
+
+.sexybutton.toolbarbt:hover span span,
+.sexybutton.toolbarbt:focus span span {
+	background-color:#DAE6FC;
+	border:0px;
+}
+
+.sexybutton.toolbarbt:active span {
+	background-color:#EEEEEE;
+	border:1px solid #99BBE8;
+}
+
+.sexybutton.toolbarbt:active span span {
+	background-color:#EEEEEE;
+	border:0px;
+}
+.sexybutton.toolbarbt[disabled],
+.sexybutton.toolbarbt[disabled]:hover,
+.sexybutton.toolbarbt[disabled]:active,
+.sexybutton.toolbarbt[disabled]:focus,
+.sexybutton.toolbarbt.disabled,
+.sexybutton.toolbarbt.disabled:hover,
+.sexybutton.toolbarbt.disabled:active,
+.sexybutton.toolbarbt.disabled:focus {
+	color: #333 !important;
+	border:0px;
+}
+div.button-panel{
+	padding:5px 15px 5px 5px;
+	text-align:right;
+}
+div.button-panel.left{
+	padding:5px;
+	text-align:left;
+}
+div.button-panel.center{
+	padding:5px 5px 5px 15px;
+	text-align:center;
+	vertical-align: middle;
+}

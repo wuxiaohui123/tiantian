@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<!-- 基板公共serviceSQL语句映射配置表 生成时间：2015-11-05 14:37:16 -->
+<sqlMap namespace="synthesis">
+	<!-- 获取序列号 -->
+	<select id="getStringSequence" parameterClass="map" resultClass="java.lang.String">
+		SELECT FUN_GETSEQUENCE(#tbname#)
+	</select>
+
+	<!-- oracle 获取系统时间戳 -->
+	<select id="getSysTimestamp" resultClass="java.sql.Timestamp"> 
+		<![CDATA[SELECT SYSDATE FROM dual]]> 
+	</select>
+
+	<!-- oracle 获取日期 -->
+    <select id="getSysDate" resultClass="java.sql.Date"> 
+      <![CDATA[SELECT TRUNC(SYSDATE,'DD') FROM DUAL]]> 
+    </select> 
+
+	<parameterMap id="PKG_DO-DO" class="java.util.Map">
+		<parameter property="inputxml" jdbcType="VARCHAR" javaType="java.lang.String"
+			mode="IN" />
+		<parameter property="outxml" jdbcType="VARCHAR" javaType="java.lang.String"
+			mode="OUT" />
+		<parameter property="AppCode" jdbcType="VARCHAR" javaType="java.lang.String"
+			mode="OUT" nullValue="1" />
+		<parameter property="ErrorMsg" jdbcType="VARCHAR" javaType="java.lang.String"
+			mode="OUT" nullValue="''" />
+	</parameterMap>
+	<procedure id="prc_do" parameterMap="PKG_DO-DO">
+		{call pkg_do.do(?,?,?,?)}
+	</procedure>
+
+	<!-- 查询代码表（业务） -->
+	<select id="getAa11tree" parameterClass="map" resultClass="java.util.HashMap">
+		SELECT ID,
+		NAME,
+		LEVELVALUE,
+		LEAF
+		FROM v_aa11tree
+		WHERE 1 = 1
+		AND
+		upper(type) = upper(#aaa100#)
+		<dynamic>
+			<isNotEmpty prepend="AND" property="yab003">
+				(orgid = #yab003# or
+				orgid = '9999')
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="aaa102">
+				id like #aaa102#||'%'
+			</isNotEmpty>
+		</dynamic>
+		order by ID
+	</select>
+
+	<!-- 期号增减 -->
+	<!-- <select id="getAdd_Months" parameterClass="map" resultClass="java.lang.Integer"> 
+		SELECT TO_NUMBER(TO_CHAR(ADD_MONTHS(TO_DATE(#aae002#,'yyyymm'),#i#),'yyyymm'),999999) 
+		FROM dual </select> -->
+
+	<!-- 查询ae02a1 -->
+	<select id="getAe02a1Info" parameterClass="map" resultClass="java.util.HashMap">
+		SELECT a.aae416,
+		a.aae419,
+		a.aae016,
+		a.aaa121,
+		a.aae422,
+		b.yaa017
+		FROM
+		ae02a1 a,
+		(select yaa017,aaz002
+		from ae02
+		where yaz002 = (select
+		max(yaz002)
+		from ae02
+		where aaz002 = #aaz002#)) b
+		WHERE a.aaz002 =
+		b.aaz002
+		AND a.aaz002 = #aaz002#
+	</select>
+
+	<insert id="insertTemp_Aa83" parameterClass="map">
+		INSERT INTO temp_aa83(
+		               aae790,
+		               aaa831,
+		               aaa832
+		              )
+		         SELECT pkg_comm.fun_getSequence(NULL,'yaz002'),
+		                DECODE(#aaa831#,'1', '是','否'),
+                        DECODE(#aaa832#,'1', '否', '是')
+		           FROM DUAL
+	</insert>
+	<!-- 过滤AAE160变更原因 -->
+	<select id="getAae160" parameterClass="map" resultClass="java.util.HashMap">
+		SELECT aaa102,aaa103
+		  FROM aa10a1
+		 WHERE aaa100 = #aaa100#
+		   AND aaa102 LIKE #aaa102#
+	</select>
+</sqlMap>

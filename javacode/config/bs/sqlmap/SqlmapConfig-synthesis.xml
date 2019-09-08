@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMapConfig PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+	<settings useStatementNamespaces="true" />
+	<typeAlias alias="dto" type="com.yinhai.sysframework.dto.BaseDTO" />
+
+	<!-- 公共service -->
+	<sqlMap resource="com/yinhai/synthesis/xml/synthesis.xml" />
+	<!-- 公共SuggestFramework -->
+	<!-- <sqlMap resource="com/yinhai/synthesis/xml/SuggestFramework.xml" />
+	共用回退 用户
+	<sqlMap resource="com/yinhai/synthesis/xml/CommonRollback.xml" />
+	共用回退 用户
+	<sqlMap resource="com/yinhai/synthesis/xml/CommonUserRollback.xml" />
+	业务流程查询
+	<sqlMap resource="com/yinhai/synthesis/xml/processQuery.xml" /> -->
+</sqlMapConfig>

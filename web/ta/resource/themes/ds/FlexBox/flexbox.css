@@ -1,0 +1,112 @@
+/* Input textbox - do not specify a width here, it will be overwritten */
+.ffb-input {
+	float:left;
+    padding:0px !important;
+    height:100%;
+    *height:20px;
+    border:1px solid #d0d0d0;
+    line-height:20px;
+	/*background: repeat-x 0 0;*/
+	/*background-color: white;*/
+	/*background-image: url('../img/text-bg.gif');*/   
+	
+}
+/* Color of watermark, if present */
+/* Drop-down arrow, with sprited image */
+.ffb-arrow {
+	float:right;
+	position:absolute;
+	right:0px;
+	width:16px;
+	height:25px;
+	background-image:url('images/select_ipt_bg.png');
+	background-repeat: no-repeat;
+	cursor:pointer; 
+}
+.ffb-arrow.out { /* css sprite technique */
+	background-position:center;
+}
+.ffb-arrow.over { /* css sprite technique */
+	background-position:center;
+}
+.ffb-arrow.active { /* css sprite technique */
+	background-position:center;
+}
+.ffb-no-results 
+{
+	padding:2px;
+	color:#888;
+	font-style:italic;
+	border-bottom:1px solid #828790;
+	z-index: 999;
+}
+/* Container for dropdown contents */
+.ffb {
+	/*position:absolute;  this guy's parent div is hard-coded to position:relative */
+	overflow:hidden;
+	border:1px solid #828790; /* #7B9EBD for Vista */
+	/*border-right:1px solid #828790;*/
+	background-color:#fff; /* Give it a background-color, so it's not transparent */
+}
+/* Inner div for dropdown */
+.ffb .content {
+	overflow:auto;
+	font-size:0.8em;
+	width:100%;
+	height:100%;
+}
+.ffb .content >div{
+	height:20px;
+	line-height:20px;
+	white-space:nowrap;
+	text-overflow:ellipsis; 
+	-o-text-overflow:ellipsis; 
+	overflow: hidden;
+}
+.ffb .content .row {
+	border-bottom:1px solid #828790;
+	color:#000;
+	height:20px;
+	clear:both;
+}
+.ffb-sel {
+	cursor:pointer;
+	cursor:hand;
+	color:#fff !important;
+	background-color:#39f;
+}
+
+/* Paging */
+.ffb .paging {
+	vertical-align:middle;
+	border-bottom:1px solid #828790;
+}
+.ffb .page, .ffb a.page {
+	font-size:85%;
+	padding:2px;
+	border:solid 1px #339;
+	background-color:#eef;
+	margin:2px;
+}
+.ffb .box {
+	width:22px;
+	margin:2px;
+}
+.ffb .summary {
+	font-size:85%;
+}
+.ffb-input .readonly{
+	background:#EBEBE4;
+	color:#00000;
+}
+.ffb-select {
+	background-color:#3770C7;
+	color:#FFFFFF!important;
+}
+.ffb-select-text {
+	margin-left: 5px;	
+	
+}
+.arrow-readonly{
+	background:url("images/select_bg_dis.png") center no-repeat;
+}

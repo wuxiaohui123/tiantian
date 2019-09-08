@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="ta-theme" extends="ta-default">
+        <action name="indexAction" class="com.yinhai.ta3.themes.index2015.IndexAction">
+			<result name="success">/index.jsp</result>
+			<allowed-methods>getCommonMenu</allowed-methods>
+		</action>
+     </package>
+</struts>

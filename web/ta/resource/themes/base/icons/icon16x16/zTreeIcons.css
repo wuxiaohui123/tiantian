@@ -1,0 +1,249 @@
+@CHARSET "UTF-8";
+/*-------------------------------------
+zTree Icons Skin
+
+version:	2.0
+author:		Hunter.z
+email:		hunter.z@263.net
+website:	http://code.google.com/p/jquerytree/
+
+-------------------------------------*/
+
+/*树的图标*/
+.ztree li span.button.tree-bug {
+    background:url(img/icon/zTreeStyle-icon.png) no-repeat!important;
+}	
+.ztree li span.button.tree-group {
+	background: url(img/icon/zTreeStyle-icon.png)-16px 0px no-repeat!important;
+}
+.ztree li span.button.tree-menu {
+	background: url(img/icon/zTreeStyle-icon.png)-32px 0px no-repeat!important;
+}	
+.ztree li span.button.tree-organisation {
+	background: url(img/icon/zTreeStyle-icon.png) -48px 0px no-repeat!important;
+}	
+.ztree li span.button.tree-apply {
+	background: url(img/icon/zTreeStyle-icon.png) -64px 0px no-repeat!important;
+}
+.ztree li span.button.tree-car {
+	background: url(img/icon/zTreeStyle-icon.png) -80px 0px no-repeat!important;
+}
+.ztree li span.button.tree-clock {
+	background: url(img/icon/zTreeStyle-icon.png) -96px 0px no-repeat!important;
+}
+.ztree li span.button.tree-destop {
+	background: url(img/icon/zTreeStyle-icon.png) -112px 0px no-repeat!important;
+}
+.ztree li span.button.tree-doc {
+	background: url(img/icon/zTreeStyle-icon.png) -128px 0px no-repeat!important;
+}
+.ztree li span.button.tree-duty {
+	background: url(img/icon/zTreeStyle-icon.png) -144px 0px no-repeat!important;
+}
+.ztree li span.button.tree-group {
+	background: url(img/icon/zTreeStyle-icon.png) -160px 0px no-repeat!important;
+}
+.ztree li span.button.tree-ie {
+	background: url(img/icon/zTreeStyle-icon.png) -176px 0px  no-repeat!important;
+}
+.ztree li span.button.tree-letter {
+	background: url(img/icon/zTreeStyle-icon.png) 0px -16px no-repeat!important;
+}
+.ztree li span.button.tree-pdf {
+	background: url(img/icon/zTreeStyle-icon.png) -16px -16px no-repeat!important;
+}
+.ztree li span.button.tree-phone {
+	background: url(img/icon/zTreeStyle-icon.png) -32px -16px no-repeat!important;
+}
+.ztree li span.button.tree-provider {
+	background: url(img/icon/zTreeStyle-icon.png) -48px -16px no-repeat!important;
+}
+.ztree li span.button.tree-search {
+	background: url(img/icon/zTreeStyle-icon.png) -64px -16px no-repeat!important;
+}
+.ztree li span.button.tree-setting {
+	background: url(img/icon/zTreeStyle-icon.png) -80px -16px no-repeat!important;
+}
+.ztree li span.button.tree-star {
+	background: url(img/icon/zTreeStyle-icon.png) -96px -16px no-repeat!important;
+}
+.ztree li span.button.tree-tel {
+	background: url(img/icon/zTreeStyle-icon.png) -112px -16px no-repeat!important;
+}
+.ztree li span.button.tree-userm {
+	background: url(img/icon/zTreeStyle-icon.png) -128px -16px no-repeat!important;
+}
+.ztree li span.button.tree-users {
+	background: url(img/icon/zTreeStyle-icon.png) -144px -16px no-repeat!important;
+}
+.ztree li span.button.tree-comments {
+	background: url(img/icon/zTreeStyle-icon.png) -160px -16px no-repeat!important;
+}
+.ztree li span.button.tree-database {
+	background: url(img/icon/zTreeStyle-icon.png) -176px -16px no-repeat!important;
+}
+.ztree li span.button.tree-image {
+	background: url(img/icon/zTreeStyle-icon.png) 0px -32px no-repeat!important;
+}
+.ztree li span.button.tree-plugin {
+	background: url(img/icon/zTreeStyle-icon.png) -16px -32px no-repeat!important;
+}
+.ztree li span.button.tree-user {
+	background: url(img/icon/zTreeStyle-icon.png) -32px -32px no-repeat!important;
+}
+.ztree li span.button.tree-bookmark-new {
+	background: url(img/icon/zTreeStyle-icon.png) -48px -32px no-repeat!important;
+}
+.ztree li span.button.tree-book-new {
+	background: url(img/icon/zTreeStyle-icon.png) -64px -32px no-repeat!important;
+}
+.ztree li span.button.tree-contact-new {
+	background: url(img/icon/zTreeStyle-icon.png) -80px -32px no-repeat!important;
+}
+.ztree li span.button.tree-document-new {
+	background: url(img/icon/zTreeStyle-icon.png) -96px -32px no-repeat!important;
+}
+.ztree li span.button.tree-document-open {
+	background: url(img/icon/zTreeStyle-icon.png) -112px -32px no-repeat!important;
+}
+.ztree li span.button.tree-document-print-preview {
+	background: url(img/icon/zTreeStyle-icon.png) -128px -32px no-repeat!important;
+}
+.ztree li span.button.tree-document-properties {
+	background: url(img/icon/zTreeStyle-icon.png) -144px -32px  no-repeat!important;
+}
+.ztree li span.button.tree-document-save {
+	background: url(img/icon/zTreeStyle-icon.png) -160px -32px no-repeat!important;
+}
+.ztree li span.button.tree-edit-cut {
+	background: url(img/icon/zTreeStyle-icon.png) -176px -32px no-repeat!important;
+}
+.ztree li span.button.tree-edit-delete {
+	background: url(img/icon/zTreeStyle-icon.png) 0px -48px no-repeat!important;
+}
+.ztree li span.button.tree-edit-find {
+	background: url(img/icon/zTreeStyle-icon.png) -16px -48px no-repeat!important;
+}
+.ztree li span.button.tree-edit-find-replace {
+	background: url(img/icon/zTreeStyle-icon.png) -32px -48px no-repeat!important;
+}
+.ztree li span.button.tree-edit-paste {
+	background: url(img/icon/zTreeStyle-icon.png) -48px -48px no-repeat!important;
+}
+.ztree li span.button.tree-edit-redo {
+	background: url(img/icon/zTreeStyle-icon.png) -64px -48px no-repeat!important;
+}
+.ztree li span.button.tree-edit-select-all {
+	background: url(img/icon/zTreeStyle-icon.png) -80px -48px no-repeat!important;
+}
+.ztree li span.button.tree-edit-undo {
+	background: url(img/icon/zTreeStyle-icon.png) -96px -48px no-repeat!important;
+}
+.ztree li span.button.tree-emblem-system {
+	background: url(img/icon/zTreeStyle-icon.png) -112px -48px no-repeat!important;
+}
+.ztree li span.button.tree-folder {
+	background: url(img/icon/zTreeStyle-icon.png) -128px -48px no-repeat!important;
+}
+.ztree li span.button.tree-folder-new {
+	background: url(img/icon/zTreeStyle-icon.png) -144px -48px no-repeat!important;
+}
+.ztree li span.button.tree-folder-remote {
+	background: url(img/icon/zTreeStyle-icon.png) -160px -48px no-repeat!important;
+}
+.ztree li span.button.tree-folder-saved-search {
+	background: url(img/icon/zTreeStyle-icon.png) -176px -48px no-repeat!important;
+}
+.ztree li span.button.tree-input-gaming {
+	background: url(img/icon/zTreeStyle-icon.png) 0px -64px no-repeat!important;
+}
+.ztree li span.button.tree-input-mouse {
+	background: url(img/icon/zTreeStyle-icon.png) -16px -64px no-repeat!important;
+}
+.ztree li span.button.tree-mail-attachment {
+	background: url(img/icon/zTreeStyle-icon.png) -32px -64px no-repeat!important;
+}
+.ztree li span.button.tree-mail-forward {
+	background: url(img/icon/zTreeStyle-icon.png) -48px -64px no-repeat!important;
+}
+.ztree li span.button.tree-mail-message-new {
+	background: url(img/icon/zTreeStyle-icon.png) -64px -64px no-repeat!important;
+}
+.ztree li span.button.tree-mail-reply-all {
+	background: url(img/icon/zTreeStyle-icon.png) -80px -64px no-repeat!important;
+}
+.ztree li span.button.tree-mail-send-receive {
+	background: url(img/icon/zTreeStyle-icon.png) -96px -64px no-repeat!important;
+}
+.ztree li span.button.tree-media-floppy {
+	background: url(img/icon/zTreeStyle-icon.png) -112px -64px no-repeat!important;
+}
+.ztree li span.button.tree-new {
+	background: url(img/icon/zTreeStyle-icon.png) -128px -64px no-repeat!important;
+}
+.ztree li span.button.tree-office-address-book {
+	background: url(img/icon/zTreeStyle-icon.png) -144px -64px no-repeat!important;
+}
+.ztree li span.button.tree-office-spreadsheet {
+	background: url(img/icon/zTreeStyle-icon.png) -160px -64px no-repeat!important;
+}
+.ztree li span.button.tree-package-x-generic {
+	background: url(img/icon/zTreeStyle-icon.png) -176px -64px no-repeat!important;
+}
+.ztree li span.button.tree-preferences-system {
+	background: url(img/icon/zTreeStyle-icon.png) 0px -80px no-repeat!important;
+}
+.ztree li span.button.tree-printer {
+	background: url(img/icon/zTreeStyle-icon.png) -16px -80px no-repeat!important;
+}
+.ztree li span.button.tree-system-lock-screen {
+	background: url(img/icon/zTreeStyle-icon.png) -32px -80px no-repeat!important;
+}
+.ztree li span.button.tree-system-search {
+	background: url(img/icon/zTreeStyle-icon.png) -48px -80px no-repeat!important;
+}
+.ztree li span.button.tree-text-editor {
+	background: url(img/icon/zTreeStyle-icon.png) -64px -80px no-repeat!important;
+}
+.ztree li span.button.tree-text-html {
+	background: url(img/icon/zTreeStyle-icon.png) -80px -80px no-repeat!important;
+}
+.ztree li span.button.tree-user-home {
+	background: url(img/icon/zTreeStyle-icon.png) -96px -80px no-repeat!important;
+}
+.ztree li span.button.tree-user-trash {
+	background: url(img/icon/zTreeStyle-icon.png) -112px -80px no-repeat!important;
+}
+.ztree li span.button.tree-view-refresh {
+	background: url(img/icon/zTreeStyle-icon.png) -128px -80px no-repeat!important;
+}
+.ztree li span.button.btn-setting {
+	background: url(img/icon/zTreeStyle-icon.png) -144px -80px no-repeat!important;
+	}
+.ztree li span.button.btn-myplan {
+	background: url(img/icon/zTreeStyle-icon.png) -160px -80px no-repeat!important;
+}
+.ztree li span.button.tree-depart-area {
+	background: url(img/icon/zTreeStyle-icon.png) -176px -80px no-repeat!important;
+}
+.ztree li span.button.tree-depart-labor {
+	background: url(img/icon/zTreeStyle-icon.png) 0px -96px no-repeat!important;
+}
+.ztree li span.button.tree-depart-normal {
+	background: url(img/icon/zTreeStyle-icon.png) -16px -96px no-repeat!important;
+}
+.btn-expand {
+	background: url(img/icon/zTreeStyle-icon.png) -32px -96px no-repeat!important;
+}
+.btn-collapse {
+	background: url(img/icon/zTreeStyle-icon.png) -48px -96px no-repeat!important;
+}
+.btn-save {
+	background: url(img/icon/zTreeStyle-icon.png) -64px -96px no-repeat!important;
+}
+.btn-delete {
+	background: url(img/icon/zTreeStyle-icon.png) -80px -96px no-repeat!important;
+}
+.btn-app {
+	background: url(img/icon/zTreeStyle-icon.png) -96px -96px no-repeat!important;
+}

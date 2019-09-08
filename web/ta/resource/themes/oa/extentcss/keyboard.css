@@ -1,0 +1,23 @@
+* { margin:0; padding:0;}
+
+#softkeyboard_container { width:590px;position: absolute;background: white;z-index: 999;top:24px;}
+	
+#keyboard_ul { list-style:none; border: 1px solid black; height: 180px; padding: 5px;}
+#keyboard_ul li { float:left; width:30px; height:30px; line-height:30px; text-align:center; background:#c8ccf8; margin:0 5px 5px 0; -moz-border-radius:5px; -webkit-border-radius:5px; border:1px solid #f9f9f9;}
+			
+.softkeyboard_tab, .softkeyboard_capslock, .softkeyboard_left-shift, .softkeyboard_space { clear:left;}
+			
+#keyboard_ul li.softkeyboard_lastitem { margin-right:0;}
+#keyboard_ul li.softkeyboard_delete { width:90px;}
+#keyboard_ul li.softkeyboard_tab { width:90px;}
+#keyboard_ul li.softkeyboard_capslock { width:95px;}
+#keyboard_ul li.softkeyboard_enter { width:60px;}
+#keyboard_ul li.softkeyboard_close { width:55px;}
+#keyboard_ul li.softkeyboard_left-shift { width:100px;}
+#keyboard_ul li.softkeyboard_right-shift { width:95px;}
+#keyboard_ul li.softkeyboard_space { width:510px;}
+			
+#keyboard_ul li:hover, .softkeyboard_hover { position:relative; top:1px; left:1px; cursor:pointer; border-color:#e5e5e5;}
+			
+.softkeyboard_on { display:none;}
+.softkeyboard_uppercase { text-transform:uppercase;}

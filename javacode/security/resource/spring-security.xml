@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+	<bean id="taSessionManager" class="com.yinhai.sysframework.security.ta3.TaSessionManager">
+	</bean>
+
+	<!-- 密码md5加密方法,提供两种实现可选,这里以初始密码developer举例,密码111111 :
+	1.实现类Md5PasswordEncrypterWithUserId使用“用户名+密码”的加密方式，developer账户的密码加密后在数据库的值应该是"UKsyhLAzBwGwLLCq8TNDxQ=="
+	1.1实现类：RSAMd5PasswordEncrypterWithUserId，如果使用RSA算法对登录密码的传输加密，同时数据库中的密码是md5+用户名方式加密的
+	2.实现类Md5PasswordEncrypter只加密密码,developer账户的密码加密后在数据库的值应该是"oi89/VUCsAnxdEQN90B/qA=="
+	2.1实现类：RSAMd5PasswordEncrypter，如果使用RSA算法对登录密码的传输加密，同时数据库中的密码是md5加密的
+	-->	
+	<bean id="md5PasswordEncoder" class="com.yinhai.sysframework.util.Md5PasswordEncrypter"></bean>
+</beans>

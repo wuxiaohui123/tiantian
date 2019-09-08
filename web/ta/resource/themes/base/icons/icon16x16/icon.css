@@ -1,0 +1,363 @@
+@CHARSET "UTF-8";
+.icon-blank{
+	background:url('icons/icon-blank.gif') no-repeat !important;
+}
+.icon-add{
+	background: url(icons/icons.png)  no-repeat !important;
+}
+.icon-edit{
+	background:url(icons/icons.png) -16px 0px no-repeat !important;
+}
+.icon-remove{
+	background:url(icons/icons.png) -32px 0px no-repeat !important;
+}
+.icon-loadding{
+	background:url('icons/icon-loadding.gif') no-repeat !important;
+}
+.icon-save{
+	background:url(icons/icons.png) -48px 0px no-repeat !important;
+}
+.icon-cut{
+	background:url(icons/icons.png) -64px 0px no-repeat !important;
+}
+.icon-ok{
+	background:url(icons/icons.png) -80px 0px no-repeat !important;
+}
+.icon-no{
+	background:url(icons/icons.png) -96px 0px no-repeat !important;
+}
+.icon-cancel{
+	background:url(icons/icons.png) -112px 0px no-repeat !important;
+}
+.icon-reload{
+	background:url(icons/icons.png) -128px 0px no-repeat !important;
+}
+.icon-search{
+	background:url(icons/icons.png) -144px 0px no-repeat !important;
+}
+.icon-print{
+	background:url(icons/icons.png) -96px -80px no-repeat !important;
+}
+.icon-help{
+	background:url(icons/icons.png) 0px -16px no-repeat !important;
+}
+.icon-undo{
+	background:url(icons/icons.png) -16px -16px no-repeat !important;
+}
+.icon-redo{
+	background:url(icons/icons.png) -32px -16px no-repeat !important;
+}
+.icon-back{
+	background:url(icons/icons.png) -48px -16px no-repeat !important;
+}
+.icon-sum{
+	background:url(icons/icons.png) -64px -16px no-repeat !important;
+}
+.icon-home{
+	background:url(icons/icons.png) -80px -16px no-repeat !important;
+}
+.icon-adduser{
+	background:url(icons/icons.png) -96px -16px no-repeat !important;
+}
+.icon-organization{
+	background:url(icons/icons.png) -112px -16px no-repeat !important;
+}
+.icon-yhrole{
+	background:url(icons/icons.png) -128px -16px no-repeat !important;
+}
+.icon-setting{
+	background:url(icons/icons.png) -144px -16px no-repeat !important;
+}
+.icon-yhpurview{
+	background:url(icons/icons.png) 0px -32px no-repeat !important;
+}
+.icon-apply{
+	background:url(icons/icons.png) -16px -32px no-repeat !important;
+}
+.icon-download {
+	background: url('icons/icon-download.gif') no-repeat !important;
+}
+.icon-upload {
+	background: url(icons/icons.png) -32px -32px no-repeat !important;
+}
+.icon-lock {
+	background: url(icons/icons.png) -48px -32px no-repeat !important;
+}
+.icon-date {
+	background: url(icons/icons.png) -64px -32px no-repeat !important;
+}
+.icon-add1 {
+	background: url(icons/icons.png) -80px -32px no-repeat !important;
+}
+.icon-application_form_add {
+	background: url(icons/icons.png) -96px -32px no-repeat !important;
+}
+.icon-application_form_delete {
+	background: url(icons/icons.png) -112px -32px no-repeat !important;
+}
+.icon-application_form_edit {
+	background: url(icons/icons.png) -128px -32px no-repeat !important;
+}
+.icon-arrow_down {
+	background: url(icons/icons.png) 0px -105px no-repeat !important;
+}
+.icon-arrow_up {
+	background: url(icons/icons.png) -17px -105px no-repeat !important;
+}
+.icon-close {
+	background: url(icons/icons.png) 0px -132px no-repeat !important;
+}
+.icon-cog {
+	background: url(icons/icons.png) -144px -32px no-repeat !important;
+}
+.icon-dialog-icons {
+	background:url('icons/icon-dialog-icons.png') no-repeat !important;
+}
+.icon-extanim32 {
+	background: url('icons/icon-extanim32.gif') no-repeat !important;
+}
+.icon-find {
+	background: url(icons/icons.png) 0px -48px no-repeat !important;
+}
+.icon-grid {
+	background: url(icons/icons.png) -16px -48px no-repeat !important;
+}
+.icon-input {
+	background: url(icons/icons.png) -32px -48px no-repeat !important;
+}
+.icon-output {
+	background: url(icons/icons.png) -48px -48px no-repeat !important;
+}
+.icon-row-editor-bg {
+	background: url('icons/icon-row-editor-bg.gif') no-repeat !important;
+}
+.icon-row-editor-btns {
+	background: url('icons/icon-row-editor-btns.gif') no-repeat !important;
+}
+.icon-table_add {
+	background: url(icons/icons.png) -64px -48px no-repeat !important;
+}
+.icon-table_delete {
+	background: url(icons/icons.png) -80px -48px no-repeat !important;
+}
+.icon-table_edit {
+	background: url(icons/icons.png) -96px -48px no-repeat !important;
+}
+.icon-table_save {
+	background: url(icons/icons.png) -112px -48px no-repeat !important;
+}
+.icon-textfield_delete {
+	background: url(icons/icons.png) -128px -48px no-repeat !important;
+}
+.addBtn{
+	background:url(icons/icons.png) -144px -48px no-repeat !important;
+}
+.addAllBtn{
+	background:url(icons/icons.png) -32px -64px no-repeat !important;
+}
+.delBtn{
+	background:url(icons/icons.png) -16px -64px no-repeat !important;
+}
+.delAllBtn{
+	background:url(icons/icons.png) 0px -64px no-repeat !important;
+}
+/***xui**/
+.xui-icon-accept{
+	background:url(icons/icons.png) -48px -64px no-repeat !important;
+}
+.xui-icon-add{
+	background:url(icons/icons.png) -64px -64px no-repeat !important
+}
+.xui-icon-closeOther{
+	background: url(icons/icons.png) -80px -64px no-repeat !important;
+}
+.xui-icon-close{
+	background: url(icons/icons.png) -96px -64px no-repeat !important;
+}
+.xui-icon-delete{
+	background: url(icons/icons.png) -112px -64px no-repeat !important;
+}
+.xui-icon-deleted{
+	background: url(icons/icons.png) -128px -64px no-repeat !important;
+}
+.xui-icon-disk{
+	background: url(icons/icons.png) -144px -64px no-repeat !important;
+}
+.xui-icon-diskEmpty{
+	background-image: url(icons/icons.png) 0px -80px no-repeat !important;
+}
+.xui-icon-groupGear{
+	background: url(icons/icons.png) -16px -80px no-repeat !important;
+}
+.xui-icon-groupKey{
+	background: url(icons/icons.png) -32px -80px no-repeat !important;
+}
+.xui-icon-help{
+	background: url(icons/icons.png) -48px -80px no-repeat !important;
+}
+.xui-icon-find{
+	background: url(icons/icons.png) -64px -80px no-repeat !important;
+}
+.xui-icon-zoom{
+	background: url(icons/icons.png) -80px -80px no-repeat !important;
+}
+.xui-icon-add2{
+	background: url(icons/table/table.png) no-repeat !important;
+}
+.xui-icon-delete2{
+	background:url(icons/table/table.png) -16px 0px no-repeat !important;
+}
+.xui-icon-edit2{
+	background:url(icons/table/table.png) -32px 0px no-repeat !important;
+}
+.xui-icon-print{
+	background:url(icons/table/table.png) -48px 0px no-repeat !important;
+}
+.xui-icon-show{
+	background:url(icons/table/table.png) -64px 0px no-repeat !important;
+}
+.xui-icon-tableAdd{
+	background:url(icons/table/table.png) -80px 0px no-repeat !important;
+}
+.xui-icon-tableDelete{
+	background: url(icons/table/table.png) -96px 0px no-repeat !important;
+}
+.xui-icon-tableEdit{
+	background: url(icons/table/table.png) -112px 0px no-repeat !important;
+}
+.xui-icon-tableError{
+	background: url(icons/table/table.png) -128px 0px no-repeat !important;
+}
+.xui-icon-tableGear{
+	background: url(icons/table/table.png) -144px 0px no-repeat !important;
+}
+.xui-icon-tableGo{
+	background: url(icons/table/table.png) 0px -16px no-repeat !important;
+}
+.xui-icon-tableKey{
+	background: url(icons/table/table.png) -16px -16px no-repeat !important;
+}
+.xui-icon-tableLightning{
+	background: url(icons/table/table.png) -32px -16px no-repeat !important;
+}
+.xui-icon-tableLink{
+	background: url(icons/table/table.png) -48px -16px no-repeat !important;
+}
+.xui-icon-tableMultiple{
+	background: url(icons/table/table.png) -64px -16px no-repeat !important;
+}
+.xui-icon-tableRefresh{
+	background: url(icons/table/table.png) -80px -16px no-repeat !important;
+}
+.xui-icon-tableRelationship{
+	background: url(icons/table/table.png) -96px -16px no-repeat !important;
+}
+.xui-icon-tableRowDelete{
+	background: url(icons/table/table.png) -112px -16px no-repeat !important;
+}
+.xui-icon-tableRowInsert{
+	background: url(icons/table/table.png) -128px -16px no-repeat !important;
+}
+.xui-icon-tableSave{
+	background: url(icons/table/table.png) -144px -16px no-repeat !important;
+}
+.xui-icon-tableSort{
+	background: url(icons/table/table.png) 0px -32px no-repeat !important;
+}
+.xui-icon-table{
+	background:url(icons/table/table.png) -16px -32px no-repeat !important;
+}
+
+.xui-icon-spotAdd{
+	background: url(icons/spot/spot.png) no-repeat !important;
+}
+.xui-icon-spotCheck{
+	background: url(icons/spot/spot.png) -16px 0px no-repeat !important;
+}
+.xui-icon-spotClear{
+	background: url(icons/spot/spot.png) -32px 0px no-repeat !important;
+}
+.xui-icon-spotClose{
+	background: url(icons/spot/spot.png) -48px 0px no-repeat !important;
+}
+.xui-icon-spotCourt{
+	background: url(icons/spot/spot.png) -64px 0px no-repeat !important;
+}
+.xui-icon-spotDelete{
+	background: url(icons/spot/spot.png) -80px 0px no-repeat !important;
+}
+.xui-icon-spotEdit{
+	background: url(icons/spot/spot.png) -96px 0px no-repeat !important;
+}
+.xui-icon-spotHelp{
+	background: url(icons/spot/spot.png) -112px 0px no-repeat !important;
+}
+.xui-icon-spotLetter{
+	background: url(icons/spot/spot.png) -128px 0px no-repeat !important;
+}
+.xui-icon-spotOther{
+	background: url(icons/spot/spot.png) -144px 0px no-repeat!important;
+}
+.xui-icon-spotPeople{
+	background: url(icons/spot/spot.png) 0px -16px no-repeat !important;
+}
+.xui-icon-spotPersion{
+	background: url(icons/spot/spot.png) -16px -16px no-repeat !important;
+}
+.xui-icon-spotPrint{
+	background: url(icons/spot/spot.png) -32px -16px no-repeat!important;
+}
+.xui-icon-spotProcess{
+	background: url(icons/spot/spot.png) -48px -16px no-repeat !important;
+}
+.xui-icon-spotRedo{
+	background: url(icons/spot/spot.png) -64px -16px no-repeat !important;
+}
+.xui-icon-spotRegist{
+	background: url(icons/spot/spot.png) -80px -16px no-repeat !important;
+}
+.xui-icon-spotReset{
+	background: url(icons/spot/spot.png) -96px -16px no-repeat !important;
+}
+.xui-icon-spotSave{
+	background: url(icons/spot/spot.png) -112px -16px no-repeat !important;
+}
+.xui-icon-spotShow{
+	background: url(icons/spot/spot.png) -128px -16px no-repeat !important;
+}
+.xui-icon-spotThird{
+	background: url(icons/spot/spot.png) -144px -16px no-repeat !important;
+}
+.xui-icon-spotVerify{
+	background: url(icons/spot/spot.png) 0px -32px no-repeat !important;
+}
+.xui-icon-query{
+	background: url(icons/spot/spot.png) -16px -32px no-repeat !important;
+}
+.xui-icon-reset{
+	background: url(icons/spot/spot.png) -32px -32px no-repeat !important;
+}
+.xui-icon-slideup{
+	background: url(icons/icons.png) -112px -80px no-repeat !important;
+}
+.xui-icon-slidedown{
+	background: url(icons/icons.png) -128px -80px no-repeat !important;
+}
+.xui-icon-back{
+	background: url(icons/icons.png) -144px -80px  !important;
+}
+.xui-icon-next{
+	background: url(icons/icons.png) -144px -96px !important;
+}
+.xui-icon-film{
+	background: url(icons/film.png) -144px -96px !important;
+}
+.icon-key{
+	background: url(icons/icon16x16/key.png) center no-repeat!important;
+}
+/*messageBox*/
+.l-dialog-image{ width:48px; height:48px;float:left;overflow:hidden; background:url('icons/icon-dialog-icons.png') no-repeat !important;}
+.l-dialog-image-donne{ background-position:0px 0px !important; }
+.l-dialog-image-error{ background-position:0px -48px !important; }
+.l-dialog-image-question{ background-position:0px -144px !important; }
+.l-dialog-image-warn{ background-position:0px -96px !important; }

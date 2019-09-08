@@ -1,0 +1,1046 @@
+@CHARSET "UTF-8";
+.icon-add{
+	background: url(icons/icon16x16/icons.png) 0px 0px no-repeat !important;
+}
+.icon-edit{
+	background:url(icons/icon16x16/icons.png) -16px 0px no-repeat !important;
+}
+.icon-remove{
+	background:url(icons/icon16x16/icons.png) -32px 0px no-repeat !important;
+}
+.icon-loadding{
+	background:url(icons/icon16x16/icon-loadding.gif) no-repeat !important;
+}
+.icon-save{
+	background:url(icons/icon16x16/icons.png) -48px 0px no-repeat !important;
+}
+.icon-cut{
+	background:url(icons/icon16x16/icons.png) -64px 0px no-repeat !important;
+}
+.icon-ok{
+	background:url(icons/icon16x16/icons.png) -80px 0px no-repeat !important;
+}
+.icon-no{
+	background:url(icons/icon16x16/icons.png) -96px 0px no-repeat !important;
+}
+.icon-cancel{
+	background:url(icons/icon16x16/icons.png) -112px 0px no-repeat !important;
+}
+.icon-reload{
+	background:url(icons/icon16x16/icons.png) -128px 0px no-repeat !important;
+}
+.icon-search{
+	background:url(icons/icon16x16/icons.png) -144px 0px no-repeat !important;
+}
+.icon-print{
+	background:url(icons/icon16x16/icons.png) -96px -80px no-repeat !important;
+}
+.icon-help{
+	background:url(icons/icon16x16/icons.png) 0px -16px no-repeat !important;
+}
+.icon-undo{
+	background:url(icons/icon16x16/icons.png) -16px -16px no-repeat !important;
+}
+.icon-redo{
+	background:url(icons/icon16x16/icons.png) -32px -16px no-repeat !important;
+}
+.icon-back{
+	background:url(icons/icon16x16/icons.png) -48px -16px no-repeat !important;
+}
+.icon-sum{
+	background:url(icons/icon16x16/icons.png) -64px -16px no-repeat !important;
+}
+.icon-home{
+	background:url(icons/icon16x16/icons.png) -80px -16px no-repeat !important;
+}
+.icon-adduser{
+	background:url(icons/icon16x16/icons.png) -96px -16px no-repeat !important;
+}
+.icon-organization{
+	background:url(icons/icon16x16/icons.png) -112px -16px no-repeat !important;
+}
+.icon-yhrole{
+	background:url(icons/icon16x16/icons.png) -128px -16px no-repeat !important;
+}
+.icon-setting{
+	background:url(icons/icon16x16/icons.png) -144px -16px no-repeat !important;
+}
+.icon-yhpurview{
+	background:url(icons/icon16x16/icons.png) 0px -33px no-repeat !important;
+}
+.icon-apply{
+	background:url(icons/icon16x16/icons.png) -16px -32px no-repeat !important;
+}
+.icon-download {
+	background: url(icons/icon16x16/icon-download.gif) no-repeat !important;
+}
+.icon-upload {
+	background: url(icons/icon16x16/icons.png) -32px -32px no-repeat !important;
+}
+.icon-lock {
+	background: url(icons/icon16x16/icons.png) -48px -32px no-repeat !important;
+}
+.icon-date {
+	background: url(icons/icon16x16/icons.png) -64px -32px no-repeat !important;
+}
+.icon-add1 {
+	background: url(icons/icon16x16/icons.png) -80px -32px no-repeat !important;
+}
+.icon-application_form_add {
+	background: url(icons/icon16x16/icons.png) -96px -32px no-repeat !important;
+}
+.icon-application_form_delete {
+	background: url(icons/icon16x16/icons.png) -112px -32px no-repeat !important;
+}
+.icon-application_form_edit {
+	background: url(icons/icon16x16/icons.png) -128px -32px no-repeat !important;
+}
+.icon-arrow_down {
+	background: url(icons/icon16x16/icons.png) 0px -105px no-repeat !important;
+}
+.icon-arrow_up {
+	background: url(icons/icon16x16/icons.png) -17px -105px no-repeat !important;
+}
+.icon-close {
+	background: url(icons/icon16x16/icons.png) 0px -132px no-repeat !important;
+}
+.icon-cog {
+	background: url(icons/icon16x16/icons.png) -144px -32px no-repeat !important;
+}
+.icon-dialog-icons {background:url(icons/icon16x16/icon-dialog-icons.png) no-repeat !important;}
+.icon-extanim32 {background: url(icons/icon16x16/icon-extanim32.gif) no-repeat !important;}
+.icon-find {
+	background: url(icons/icon16x16/icons.png) 0px -48px no-repeat !important;
+}
+.icon-grid {
+	background: url(icons/icon16x16/icons.png) -16px -48px no-repeat !important;
+}
+.icon-input {
+	background: url(icons/icon16x16/icons.png) -32px -48px no-repeat !important;
+}
+.icon-output {
+	background: url(icons/icon16x16/icons.png) -48px -48px no-repeat !important;
+}
+.icon-row-editor-bg {
+	background: url(icons/icon16x16/icon-row-editor-bg.gif) no-repeat !important;
+}
+.icon-row-editor-btns {
+	background: url(icons/icon16x16/icon-row-editor-btns.gif) no-repeat !important;
+}
+.icon-table_add {
+	background: url(icons/icon16x16/icons.png) -64px -48px no-repeat !important;
+}
+.icon-table_delete {
+	background: url(icons/icon16x16/icons.png) -80px -48px no-repeat !important;
+}
+.icon-table_edit {
+	background: url(icons/icon16x16/icons.png) -96px -48px no-repeat !important;
+}
+.icon-table_save {
+	background: url(icons/icon16x16/icons.png) -112px -48px no-repeat !important;
+}
+.icon-textfield_delete {
+	background: url(icons/icon16x16/icons.png) -128px -48px no-repeat !important;
+}
+.addBtn{
+	background:url(icons/icon16x16/icons.png) -144px -48px no-repeat !important;
+}
+.addAllBtn{
+	background:url(icons/icon16x16/icons.png) -32px -64px no-repeat !important;
+}
+.delBtn{
+	background:url(icons/icon16x16/icons.png) -16px -64px no-repeat !important;
+}
+.delAllBtn{
+	background:url(icons/icon16x16/icons.png) 0px -64px no-repeat !important;
+}
+/***xui**/
+.xui-icon-accept{
+	background:url(icons/icon16x16/icons.png) -48px -64px no-repeat !important;
+}
+.xui-icon-add{
+	background:url(icons/icon16x16/icons.png) -64px -64px no-repeat !important
+}
+.xui-icon-closeOther{
+	background: url(icons/icon16x16/icons.png) -80px -64px no-repeat !important;
+}
+.xui-icon-close{
+	background: url(icons/icon16x16/icons.png) -96px -64px no-repeat !important;
+}
+.xui-icon-delete{
+	background: url(icons/icon16x16/icons.png) -112px -64px no-repeat !important;
+}
+.xui-icon-deleted{
+	background: url(icons/icon16x16/icons.png) -128px -64px no-repeat !important;
+}
+.xui-icon-disk{
+	background: url(icons/icon16x16/icons.png) -144px -64px no-repeat !important;
+}
+.xui-icon-diskEmpty{
+	background: url(icons/icon16x16/icons.png) 0px -80px no-repeat !important;
+}
+.xui-icon-groupGear{
+	background: url(icons/icon16x16/icons.png) -16px -80px no-repeat !important;
+}
+.xui-icon-groupKey{
+	background: url(icons/icon16x16/icons.png) -32px -80px no-repeat !important;
+}
+.xui-icon-help{
+	background: url(icons/icon16x16/icons.png) -48px -80px no-repeat !important;
+}
+.xui-icon-find{
+	background: url(icons/icon16x16/icons.png) -64px -80px no-repeat !important;
+}
+.xui-icon-zoom{
+	background: url(icons/icon16x16/icons.png) -80px -80px no-repeat !important;
+}
+.xui-icon-add2{
+	background: url(icons/icon16x16/table.png) no-repeat !important;
+}
+.xui-icon-delete2{
+	background:url(icons/icon16x16/table.png) -16px 0px no-repeat !important;
+}
+.xui-icon-edit2{
+	background:url(icons/icon16x16/table.png) -32px 0px no-repeat !important;
+}
+.xui-icon-print{
+	background:url(icons/icon16x16/table.png) -48px 0px no-repeat !important;
+}
+.xui-icon-show{
+	background:url(icons/icon16x16/table.png) -64px 0px no-repeat !important;
+}
+.xui-icon-tableAdd{
+	background:url(icons/icon16x16/table.png) -80px 0px no-repeat !important;
+}
+.xui-icon-tableDelete{
+	background: url(icons/icon16x16/table.png) -96px 0px no-repeat !important;
+}
+.xui-icon-tableEdit{
+	background: url(icons/icon16x16/table.png) -112px 0px no-repeat !important;
+}
+.xui-icon-tableError{
+	background: url(icons/icon16x16/table.png) -128px 0px no-repeat !important;
+}
+.xui-icon-tableGear{
+	background: url(icons/icon16x16/table.png) -144px 0px no-repeat !important;
+}
+.xui-icon-tableGo{
+	background: url(icons/icon16x16/table.png) 0px -16px no-repeat !important;
+}
+.xui-icon-tableKey{
+	background: url(icons/icon16x16/table.png) -16px -16px no-repeat !important;
+}
+.xui-icon-tableLightning{
+	background: url(icons/icon16x16/table.png) -32px -16px no-repeat !important;
+}
+.xui-icon-tableLink{
+	background: url(icons/icon16x16/table.png) -48px -16px no-repeat !important;
+}
+.xui-icon-tableMultiple{
+	background: url(icons/icon16x16/table.png) -64px -16px no-repeat !important;
+}
+.xui-icon-tableRefresh{
+	background: url(icons/icon16x16/table.png) -80px -16px no-repeat !important;
+}
+.xui-icon-tableRelationship{
+	background: url(icons/icon16x16/table.png) -96px -16px no-repeat !important;
+}
+.xui-icon-tableRowDelete{
+	background: url(icons/icon16x16/table.png) -112px -16px no-repeat !important;
+}
+.xui-icon-tableRowInsert{
+	background: url(icons/icon16x16/table.png) -128px -16px no-repeat !important;
+}
+.xui-icon-tableSave{
+	background: url(icons/icon16x16/table.png) -144px -16px no-repeat !important;
+}
+.xui-icon-tableSort{
+	background: url(icons/icon16x16/table.png) 0px -32px no-repeat !important;
+}
+.xui-icon-table{
+	background:url(icons/icon16x16/table.png) -16px -32px no-repeat !important;
+}
+.xui-icon-spotAdd{
+	background: url(icons/icon16x16/spot.png) no-repeat !important;
+}
+.xui-icon-spotCheck{
+	background: url(icons/icon16x16/spot.png) -16px 0px no-repeat !important;
+}
+.xui-icon-spotClear{
+	background: url(icons/icon16x16/spot.png) -32px 0px no-repeat !important;
+}
+.xui-icon-spotClose{
+	background: url(icons/icon16x16/spot.png) -48px 0px no-repeat !important;
+}
+.xui-icon-spotCourt{
+	background: url(icons/icon16x16/spot.png) -64px 0px no-repeat !important;
+}
+.xui-icon-spotDelete{
+	background: url(icons/icon16x16/spot.png) -80px 0px no-repeat !important;
+}
+.xui-icon-spotEdit{
+	background: url(icons/icon16x16/spot.png) -96px 0px no-repeat !important;
+}
+.xui-icon-spotHelp{
+	background: url(icons/icon16x16/spot.png) -112px 0px no-repeat !important;
+}
+.xui-icon-spotLetter{
+	background: url(icons/icon16x16/spot.png) -128px 0px no-repeat !important;
+}
+.xui-icon-spotOther{
+	background: url(icons/icon16x16/spot.png) -144px 0px no-repeat!important;
+}
+.xui-icon-spotPeople{
+	background: url(icons/icon16x16/spot.png) 0px -16px no-repeat !important;
+}
+.xui-icon-spotPersion{
+	background: url(icons/icon16x16/spot.png) -16px -16px no-repeat !important;
+}
+.xui-icon-spotPrint{
+	background: url(icons/icon16x16/spot.png) -32px -16px no-repeat!important;
+}
+.xui-icon-spotProcess{
+	background: url(icons/icon16x16/spot.png) -48px -16px no-repeat !important;
+}
+.xui-icon-spotRedo{
+	background: url(icons/icon16x16/spot.png) -64px -16px no-repeat !important;
+}
+.xui-icon-spotRegist{
+	background: url(icons/icon16x16/spot.png) -80px -16px no-repeat !important;
+}
+.xui-icon-spotReset{
+	background: url(icons/icon16x16/spot.png) -96px -16px no-repeat !important;
+}
+.xui-icon-spotSave{
+	background: url(icons/icon16x16/spot.png) -112px -16px no-repeat !important;
+}
+.xui-icon-spotShow{
+	background: url(icons/icon16x16/spot.png) -128px -16px no-repeat !important;
+}
+.xui-icon-spotThird{
+	background: url(icons/icon16x16/spot.png) -144px -16px no-repeat !important;
+}
+.xui-icon-spotVerify{
+	background: url(icons/icon16x16/spot.png) 0px -32px no-repeat !important;
+}
+.xui-icon-query{
+	background: url(icons/icon16x16/spot.png) -16px -32px no-repeat !important;
+}
+.xui-icon-reset{
+	background: url(icons/icon16x16/spot.png) -32px -32px no-repeat !important;
+}
+.xui-icon-slideup{
+	background: url(icons/icon16x16/icons.png) -112px -80px no-repeat !important;
+}
+.xui-icon-slidedown{
+	background: url(icons/icon16x16/icons.png) -128px -80px no-repeat !important;
+}
+.xui-icon-back{
+	background: url(icons/icon16x16/icons.png) -144px -80px  no-repeat !important;
+}
+.xui-icon-next{
+	background: url(icons/icon16x16/icons.png) -144px -96px no-repeat !important;
+}
+
+/*tree*/
+.ztree li span.button.tree-bug {
+    background:url(icons/icon16x16/zTreeStyle-icon.png) no-repeat!important;
+}	
+.ztree li span.button.tree-group {
+	background: url(icons/icon16x16/zTreeStyle-icon.png)-16px 0px no-repeat!important;
+}
+.ztree li span.button.tree-menu {
+	background: url(icons/icon16x16/zTreeStyle-icon.png)-32px 0px no-repeat!important;
+}	
+.ztree li span.button.tree-organisation {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -48px 0px no-repeat!important;
+}	
+.ztree li span.button.tree-apply {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -64px 0px no-repeat!important;
+}
+.ztree li span.button.tree-car {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -80px 0px no-repeat!important;
+}
+.ztree li span.button.tree-clock {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -96px 0px no-repeat!important;
+}
+.ztree li span.button.tree-destop {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -112px 0px no-repeat!important;
+}
+.ztree li span.button.tree-doc {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -128px 0px no-repeat!important;
+}
+.ztree li span.button.tree-duty {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -144px 0px no-repeat!important;
+}
+.ztree li span.button.tree-group {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -160px 0px no-repeat!important;
+}
+.ztree li span.button.tree-ie {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -176px 0px  no-repeat!important;
+}
+.ztree li span.button.tree-letter {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) 0px -16px no-repeat!important;
+}
+.ztree li span.button.tree-pdf {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -16px -16px no-repeat!important;
+}
+.ztree li span.button.tree-phone {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -32px -16px no-repeat!important;
+}
+.ztree li span.button.tree-provider {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -48px -16px no-repeat!important;
+}
+.ztree li span.button.tree-search {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -64px -16px no-repeat!important;
+}
+.ztree li span.button.tree-setting {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -80px -16px no-repeat!important;
+}
+.ztree li span.button.tree-star {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -96px -16px no-repeat!important;
+}
+.ztree li span.button.tree-tel {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -112px -16px no-repeat!important;
+}
+.ztree li span.button.tree-userm {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -128px -16px no-repeat!important;
+}
+.ztree li span.button.tree-users {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -144px -16px no-repeat!important;
+}
+.ztree li span.button.tree-comments {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -160px -16px no-repeat!important;
+}
+.ztree li span.button.tree-database {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -176px -16px no-repeat!important;
+}
+.ztree li span.button.tree-image {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) 0px -32px no-repeat!important;
+}
+.ztree li span.button.tree-plugin {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -16px -32px no-repeat!important;
+}
+.ztree li span.button.tree-user {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -32px -32px no-repeat!important;
+}
+.ztree li span.button.tree-bookmark-new {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -48px -32px no-repeat!important;
+}
+.ztree li span.button.tree-book-new {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -64px -32px no-repeat!important;
+}
+.ztree li span.button.tree-contact-new {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -80px -32px no-repeat!important;
+}
+.ztree li span.button.tree-document-new {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -96px -32px no-repeat!important;
+}
+.ztree li span.button.tree-document-open {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -112px -32px no-repeat!important;
+}
+.ztree li span.button.tree-document-print-preview {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -128px -32px no-repeat!important;
+}
+.ztree li span.button.tree-document-properties {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -144px -32px  no-repeat!important;
+}
+.ztree li span.button.tree-document-save {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -160px -32px no-repeat!important;
+}
+.ztree li span.button.tree-edit-cut {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -176px -32px no-repeat!important;
+}
+.ztree li span.button.tree-edit-delete {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) 0px -48px no-repeat!important;
+}
+.ztree li span.button.tree-edit-find {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -16px -48px no-repeat!important;
+}
+.ztree li span.button.tree-edit-find-replace {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -32px -48px no-repeat!important;
+}
+.ztree li span.button.tree-edit-paste {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -48px -48px no-repeat!important;
+}
+.ztree li span.button.tree-edit-redo {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -64px -48px no-repeat!important;
+}
+.ztree li span.button.tree-edit-select-all {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -80px -48px no-repeat!important;
+}
+.ztree li span.button.tree-edit-undo {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -96px -48px no-repeat!important;
+}
+.ztree li span.button.tree-emblem-system {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -112px -48px no-repeat!important;
+}
+.ztree li span.button.tree-folder {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -128px -48px no-repeat!important;
+}
+.ztree li span.button.tree-folder-new {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -144px -48px no-repeat!important;
+}
+.ztree li span.button.tree-folder-remote {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -160px -48px no-repeat!important;
+}
+.ztree li span.button.tree-folder-saved-search {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -176px -48px no-repeat!important;
+}
+.ztree li span.button.tree-input-gaming {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) 0px -64px no-repeat!important;
+}
+.ztree li span.button.tree-input-mouse {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -16px -64px no-repeat!important;
+}
+.ztree li span.button.tree-mail-attachment {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -32px -64px no-repeat!important;
+}
+.ztree li span.button.tree-mail-forward {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -48px -64px no-repeat!important;
+}
+.ztree li span.button.tree-mail-message-new {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -64px -64px no-repeat!important;
+}
+.ztree li span.button.tree-mail-reply-all {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -80px -64px no-repeat!important;
+}
+.ztree li span.button.tree-mail-send-receive {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -96px -64px no-repeat!important;
+}
+.ztree li span.button.tree-media-floppy {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -112px -64px no-repeat!important;
+}
+.ztree li span.button.tree-new {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -128px -64px no-repeat!important;
+}
+.ztree li span.button.tree-office-address-book {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -144px -64px no-repeat!important;
+}
+.ztree li span.button.tree-office-spreadsheet {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -160px -64px no-repeat!important;
+}
+.ztree li span.button.tree-package-x-generic {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -176px -64px no-repeat!important;
+}
+.ztree li span.button.tree-preferences-system {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) 0px -80px no-repeat!important;
+}
+.ztree li span.button.tree-printer {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -16px -80px no-repeat!important;
+}
+.ztree li span.button.tree-system-lock-screen {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -32px -80px no-repeat!important;
+}
+.ztree li span.button.tree-system-search {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -48px -80px no-repeat!important;
+}
+.ztree li span.button.tree-text-editor {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -64px -80px no-repeat!important;
+}
+.ztree li span.button.tree-text-html {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -80px -80px no-repeat!important;
+}
+.ztree li span.button.tree-user-home {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -96px -80px no-repeat!important;
+}
+.ztree li span.button.tree-user-trash {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -112px -80px no-repeat!important;
+}
+.ztree li span.button.tree-view-refresh {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -128px -80px no-repeat!important;
+}
+.ztree li span.button.btn-setting {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -144px -80px no-repeat!important;
+	}
+.ztree li span.button.btn-myplan {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -160px -80px no-repeat!important;
+}
+.ztree li span.button.tree-depart-area {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -176px -80px no-repeat!important;
+}
+.ztree li span.button.tree-depart-labor {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) 0px -96px no-repeat!important;
+}
+.ztree li span.button.tree-depart-normal {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -16px -96px no-repeat!important;
+}
+
+/*button*/
+.btn-expand {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -32px -96px no-repeat!important;
+}
+.btn-collapse {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -48px -96px no-repeat!important;
+}
+.btn-save {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -64px -96px no-repeat!important;
+}
+.btn-delete {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -80px -96px no-repeat!important;
+}
+.btn-app {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -96px -96px no-repeat!important;
+}
+
+/*messageBox*/
+.l-dialog-image{ 
+	width:48px; height:48px;float:left;overflow:hidden; 
+	background:url(icons/icon16x16/dialog-icons.png) no-repeat !important;
+}
+.l-dialog-image-donne{background-position:0px 0px !important; }
+.l-dialog-image-error{background-position:0px -48px !important; }
+.l-dialog-image-question{background-position:0px -144px !important; }
+.l-dialog-image-warn{background-position:0px -96px !important; }
+
+/*首页小图标*/
+.tree-bug {
+    background:url(icons/icon16x16/zTreeStyle-icon.png) no-repeat!important;
+}	
+.tree-group {
+	background: url(icons/icon16x16/zTreeStyle-icon.png)-16px 0px no-repeat!important;
+}
+.tree-menu {
+	background: url(icons/icon16x16/zTreeStyle-icon.png)-32px 0px no-repeat!important;
+}	
+.tree-organisation {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -48px 0px no-repeat!important;
+}	
+.tree-apply {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -64px 0px no-repeat!important;
+}
+.tree-car {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -80px 0px no-repeat!important;
+}
+.tree-clock {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -96px 0px no-repeat!important;
+}
+.tree-destop {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -112px 0px no-repeat!important;
+}
+.tree-doc {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -128px 0px no-repeat!important;
+}
+.tree-duty {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -144px 0px no-repeat!important;
+}
+.tree-group {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -160px 0px no-repeat!important;
+}
+.tree-ie {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -176px 0px  no-repeat!important;
+}
+.tree-letter {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) 0px -16px no-repeat!important;
+}
+.tree-pdf {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -16px -16px no-repeat!important;
+}
+.tree-phone {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -32px -16px no-repeat!important;
+}
+.tree-provider {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -48px -16px no-repeat!important;
+}
+.tree-search {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -64px -16px no-repeat!important;
+}
+.tree-setting {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -80px -16px no-repeat!important;
+}
+.tree-star {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -96px -16px no-repeat!important;
+}
+.tree-tel {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -112px -16px no-repeat!important;
+}
+.tree-userm {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -128px -16px no-repeat!important;
+}
+.tree-users {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -144px -16px no-repeat!important;
+}
+.tree-comments {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -160px -16px no-repeat!important;
+}
+.tree-database {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -176px -16px no-repeat!important;
+}
+.tree-image {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) 0px -32px no-repeat!important;
+}
+.tree-plugin {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -16px -32px no-repeat!important;
+}
+.tree-user {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -32px -32px no-repeat!important;
+}
+.tree-bookmark-new {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -48px -32px no-repeat!important;
+}
+.tree-book-new {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -64px -32px no-repeat!important;
+}
+.tree-contact-new {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -80px -32px no-repeat!important;
+}
+.tree-document-new {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -96px -32px no-repeat!important;
+}
+.tree-document-open {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -112px -32px no-repeat!important;
+}
+.tree-document-print-preview {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -128px -32px no-repeat!important;
+}
+.tree-document-properties {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -144px -32px  no-repeat!important;
+}
+.tree-document-save {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -160px -32px no-repeat!important;
+}
+.tree-edit-cut {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -176px -32px no-repeat!important;
+}
+.tree-edit-delete {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) 0px -48px no-repeat!important;
+}
+.tree-edit-find {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -16px -48px no-repeat!important;
+}
+.tree-edit-find-replace {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -32px -48px no-repeat!important;
+}
+.tree-edit-paste {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -48px -48px no-repeat!important;
+}
+.tree-edit-redo {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -64px -48px no-repeat!important;
+}
+.tree-edit-select-all {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -80px -48px no-repeat!important;
+}
+.tree-edit-undo {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -96px -48px no-repeat!important;
+}
+.tree-emblem-system {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -112px -48px no-repeat!important;
+}
+.tree-folder {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -128px -48px no-repeat!important;
+}
+.tree-folder-new {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -144px -48px no-repeat!important;
+}
+.tree-folder-remote {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -160px -48px no-repeat!important;
+}
+.tree-folder-saved-search {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -176px -48px no-repeat!important;
+}
+.tree-input-gaming {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) 0px -64px no-repeat!important;
+}
+.tree-input-mouse {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -16px -64px no-repeat!important;
+}
+.tree-mail-attachment {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -32px -64px no-repeat!important;
+}
+.tree-mail-forward {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -48px -64px no-repeat!important;
+}
+.tree-mail-message-new {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -64px -64px no-repeat!important;
+}
+.tree-mail-reply-all {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -80px -64px no-repeat!important;
+}
+.tree-mail-send-receive {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -96px -64px no-repeat!important;
+}
+.tree-media-floppy {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -112px -64px no-repeat!important;
+}
+.tree-new {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -128px -64px no-repeat!important;
+}
+.tree-office-address-book {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -144px -64px no-repeat!important;
+}
+.tree-office-spreadsheet {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -160px -64px no-repeat!important;
+}
+.tree-package-x-generic {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -176px -64px no-repeat!important;
+}
+.tree-preferences-system {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) 0px -80px no-repeat!important;
+}
+.tree-printer {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -16px -80px no-repeat!important;
+}
+.tree-system-lock-screen {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -32px -80px no-repeat!important;
+}
+.tree-system-search {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -48px -80px no-repeat!important;
+}
+.tree-text-editor {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -64px -80px no-repeat!important;
+}
+.tree-text-html {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -80px -80px no-repeat!important;
+}
+.tree-user-home {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -96px -80px no-repeat!important;
+}
+.tree-user-trash {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -112px -80px no-repeat!important;
+}
+.tree-view-refresh {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -128px -80px no-repeat!important;
+}
+.btn-setting {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -144px -80px no-repeat!important;
+	}
+.btn-myplan {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -160px -80px no-repeat!important;
+}
+.tree-depart-area {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -176px -80px no-repeat!important;
+}
+.tree-depart-labor {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) 0px -96px no-repeat!important;
+}
+.tree-depart-normal {
+	background: url(icons/icon16x16/zTreeStyle-icon.png) -16px -96px no-repeat!important;
+}
+/*首页大图标*/
+.menu_tree-bug {
+	background: url(icons/icon32x32/tree-bug_1.png) center no-repeat!important;
+}	
+.menu_tree-group {
+	background: url(icons/icon32x32/tree-group_1.png) center no-repeat!important;
+}
+.menu_tree-menu {
+	background: url(icons/icon32x32/tree-menu_1.png) center no-repeat!important;
+}	
+.menu_tree-organisation {
+	background: url(icons/icon32x32/tree-organisation_1.png) center no-repeat!important;
+}	
+.menu_tree-apply {
+	background: url(icons/icon32x32/tree-apply_1.png) center no-repeat!important;
+}
+.menu_tree-car {
+	background: url(icons/icon32x32/tree-car_1.png) center no-repeat!important;
+}
+.menu_tree-clock {
+	background: url(icons/icon32x32/tree-clock_1.png) center no-repeat!important;
+}
+.menu_tree-destop {
+	background: url(icons/icon32x32/tree-destop_1.gif) center no-repeat!important;
+}
+.menu_tree-doc {
+	background: url(icons/icon32x32/tree-doc_1.png) center no-repeat!important;
+}
+.menu_tree-duty {
+	background: url(icons/icon32x32/tree-duty_1.png) center no-repeat!important;
+}
+.menu_tree-ie {
+	background: url(icons/icon32x32/tree-ie_1.png) center no-repeat!important;
+}
+.menu_tree-img {
+	background: url(icons/icon32x32/tree-image_1.png) center no-repeat!important;
+}
+.menu_tree-letter {
+	background: url(icons/icon32x32/tree-letter_1.png) center no-repeat!important;
+}
+.menu_tree-pdf {
+	background: url(icons/icon32x32/tree-pdf_1.png) center no-repeat!important;
+}
+.menu_tree-phone {
+	background: url(icons/icon32x32/tree-phone_1.png) center no-repeat!important;
+}
+.menu_tree-provider {
+	background: url(icons/icon32x32/tree-provider_1.png) center no-repeat!important;
+}
+.menu_tree-search {
+	background: url(icons/icon32x32/tree-search_1.png) center no-repeat!important;
+}
+.menu_tree-setting {
+	background: url(icons/icon32x32/tree-setting_1.png) center no-repeat!important;
+}
+.menu_tree-star {
+	background: url(icons/icon32x32/tree-star_1.png) center no-repeat!important;
+}
+.menu_tree-tel {
+	background: url(icons/icon32x32/tree-tel_1.png) center no-repeat!important;
+}
+.menu_tree-userm {
+	background: url(icons/icon32x32/tree-userm_1.png) center no-repeat!important;
+}
+.menu_tree-users {
+	background: url(icons/icon32x32/tree-users_1.png) center no-repeat!important;
+}
+.menu_tree-comments {
+	background: url(icons/icon32x32/tree-comments_1.png) center no-repeat!important;
+}
+.menu_tree-database {
+	background: url(icons/icon32x32/tree-database_1.png) center no-repeat!important;
+}
+.menu_tree-image {
+	background: url(icons/icon32x32/tree-image_1.png) center no-repeat!important;
+}
+.menu_tree-plugin {
+	background: url(icons/icon32x32/tree-plugin_1.png) center no-repeat!important;
+}
+.menu_tree-user {
+	background: url(icons/icon32x32/tree-user_1.png) center no-repeat!important;
+}
+.menu_tree-bookmark-new {
+	background: url(icons/icon32x32/tree-bookmark-new_1.png) center no-repeat!important;
+}
+.menu_tree-book-new {
+	background: url(icons/icon32x32/tree-book-new_1.png) center no-repeat!important;
+}
+.menu_tree-contact-new {
+	background: url(icons/icon32x32/tree-contact-new_1.png) center no-repeat!important;
+}
+.menu_tree-document-new {
+	background: url(icons/icon32x32/tree-document-new_1.png) center no-repeat!important;
+}
+.menu_tree-document-open {
+	background: url(icons/icon32x32/tree-document-open_1.png) center no-repeat!important;
+}
+.menu_tree-document-print-preview {
+	background: url(icons/icon32x32/tree-document-print-preview_1.png) center no-repeat!important;
+}
+.menu_tree-document-properties {
+	background: url(icons/icon32x32/tree-document-properties_1.png) center no-repeat!important;
+}
+.menu_tree-document-save {
+	background: url(icons/icon32x32/tree-document-save_1.png) center no-repeat!important;
+}
+.menu_tree-edit-cut {
+	background: url(icons/icon32x32/tree-edit-cut_1.png) center no-repeat!important;
+}
+.menu_tree-edit-delete {
+	background: url(icons/icon32x32/tree-edit-delete_1.png) center no-repeat!important;
+}
+.menu_tree-edit-find {
+	background: url(icons/icon32x32/tree-edit-find-replace_1.png) center no-repeat!important;
+}
+.menu_tree-edit-find-replace {
+	background: url(icons/icon32x32/tree-edit-find-replace_1.png) center no-repeat!important;
+}
+.menu_tree-edit-paste {
+	background: url(icons/icon32x32/tree-edit-paste_1.png) center no-repeat!important;
+}
+.menu_tree-edit-redo {
+	background: url(icons/icon32x32/tree-edit-redo_1.png) center no-repeat!important;
+}
+.menu_tree-edit-select-all {
+	background: url(icons/icon32x32/tree-edit-select-all_1.png) center no-repeat!important;
+}
+.menu_tree-edit-undo {
+	background: url(icons/icon32x32/tree-edit-undo_1.png) center no-repeat!important;
+}
+.menu_tree-emblem-system {
+	background: url(icons/icon32x32/tree-emblem-system_1.png) center no-repeat!important;
+}
+.menu_tree-folder {
+	background: url(icons/icon32x32/tree-folder_1.png) center no-repeat!important;
+}
+.menu_tree-folder-new {
+	background: url(icons/icon32x32/tree-folder-new_1.png) center no-repeat!important;
+}
+.menu_tree-folder-remote {
+	background: url(icons/icon32x32/tree-folder-remote_1.png) center no-repeat!important;
+}
+.menu_tree-folder-saved-search {
+	background: url(icons/icon32x32/tree-folder-saved-search_1.png) center no-repeat!important;
+}
+.menu_tree-input-gaming {
+	background: url(icons/icon32x32/tree-input-gaming_1.png) center no-repeat!important;
+}
+.menu_tree-input-mouse {
+	background: url(icons/icon32x32/tree-input-mouse_1.png) center no-repeat!important;
+}
+.menu_tree-mail-attachment {
+	background: url(icons/icon32x32/tree-mail-attachment_1.png) center no-repeat!important;
+}
+.menu_tree-mail-forward {
+	background: url(icons/icon32x32/tree-mail-forward_1.png) center no-repeat!important;
+}
+.menu_tree-mail-message-new {
+	background: url(icons/icon32x32/tree-mail-message-new_1.png) center no-repeat!important;
+}
+.menu_tree-mail-reply-all {
+	background: url(icons/icon32x32/tree-mail-reply-sender_1.png) center no-repeat!important;
+}
+.menu_tree-mail-send-receive {
+	background: url(icons/icon32x32/tree-mail-send-receive_1.png) center no-repeat!important;
+}
+.menu_tree-media-floppy {
+	background: url(icons/icon32x32/tree-media-floppy_1.png) center no-repeat!important;
+}
+.menu_tree-new {
+	background: url(icons/icon32x32/tree-new_1.png) center no-repeat!important;
+}
+.menu_tree-office-address-book {
+	background: url(icons/icon32x32/tree-office-address-book_1.png) center no-repeat!important;
+}
+.menu_tree-office-spreadsheet {
+	background: url(icons/icon32x32/tree-office-spreadsheet_1.png) center no-repeat!important;
+}
+.menu_tree-package-x-generic {
+	background: url(icons/icon32x32/tree-package-x-generic_1.png) center no-repeat!important;
+}
+.menu_tree-preferences-system {
+	background: url(icons/icon32x32/tree-preferences-system_1.png) center no-repeat!important;
+}
+.menu_tree-printer {
+	background: url(icons/icon32x32/tree-printer_1.png) center no-repeat!important;
+}
+.menu_tree-system-lock-screen {
+	background: url(icons/icon32x32/tree-system-lock-screen_1.png) center no-repeat!important;
+}
+.menu_tree-system-search {
+	background: url(icons/icon32x32/tree-system-search_1.png) center no-repeat!important;
+}
+.menu_tree-text-editor {
+	background: url(icons/icon32x32/tree-text-editor_1.png) center no-repeat!important;
+}
+.menu_tree-text-html {
+	background: url(icons/icon32x32/tree-text-html_1.png) center no-repeat!important;
+}
+.menu_tree-user-home {
+	background: url(icons/icon32x32/tree-user-home_1.png) center no-repeat!important;
+}
+.menu_tree-user-trash {
+	background: url(icons/icon32x32/tree-user-trash_1.png) center no-repeat!important;
+}
+.menu_tree-view-refresh {
+	background: url(icons/icon32x32/tree-view-refresh_1.png) center no-repeat!important;
+}
+
+/* single icon */
+.icon-arrow-in {
+	background: url(icons/icon16x16/arrow-in.png) center no-repeat!important;
+}
+.icon-arrow-out {
+	background: url(icons/icon16x16/arrow-out.png) center no-repeat!important;
+}
+.icon-excel {
+	background: url(icons/icon16x16/document-excel.png) center no-repeat!important;
+}
+.icon-key{
+	background: url(icons/icon16x16/key.png) center no-repeat!important;
+}
+.icon-process{
+	background:url(icons/icon32x32/process.png) center no-repeat !important;
+}
+.icon-emailbox{
+	background:url(icons/icon32x32/emailbox.png) center no-repeat !important;
+}

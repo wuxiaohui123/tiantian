@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	 <package name="position" namespace="/org/position" extends="ta-default" strict-method-invocation="false">
+	 	<action name="positionMgAction" class="com.yinhai.ta3.organization.action.PositionMgAction">
+	 		<result name="success">/org/position/position/positionAuthrity.jsp</result>
+	 		<result name="toAdd">/org/position/position/addPosition.jsp</result>
+	 		<result name="operWin">/org/position/position/positionOper.jsp</result>
+	 		<result name="toFuncOpPurview">/org/position/position/funcOpPurview.jsp</result>
+	 		<result name="recyclePermissions">/org/position/position/recycleUsePermission.jsp</result>
+	 		<result name="grantUsePermissions">/org/position/position/grantUsePermission.jsp</result>
+	 		<result name="sharePosition">/org/position/position/sharePosition.jsp</result>
+	 		<result name="setEffectiveTime">/org/position/position/setEffectiveTime.jsp</result>
+	 		<allowed-methods>*</allowed-methods>
+	 	</action>
+	 	<action name="personalPositionMgAction" class="com.yinhai.ta3.organization.action.PersonalPositionMgAction">
+	 		<result name="success">/org/position/position/personalPositionAuthrity.jsp</result>
+	 		<result name="toClonePermissions">/org/position/position/clonePermissions.jsp</result>
+	 		<result name="toFuncOpPurview">/org/position/position/funcOpPurview.jsp</result>
+	 		<result name="recyclePermissions">/org/position/position/recycleUsePermission.jsp</result>
+	 		<result name="grantUsePermissions">/org/position/position/grantUsePermission.jsp</result>
+	 		<result name="setEffectiveTime">/org/position/position/setEffectiveTime.jsp</result>
+	 		<allowed-methods>*</allowed-methods>
+	 	</action>
+	 	<action name="adminMgAction" class="com.yinhai.ta3.organization.action.AdminMgAction">
+	 		<result name="success">/org/position/admin/adminMg.jsp</result>
+	 		<result name="toAddAdminMgUser">/org/position/admin/addAdminMg.jsp</result>
+	 		<result name="toOrgMgScope">/org/position/admin/orgMgScope.jsp</result>
+	 		<result name="toAdminYab003Scope">/org/position/admin/adminYab003Scope.jsp</result>
+	 		<result name="toTransformAuthority">/org/position/admin/transformAuthority.jsp</result>
+	 		<result name="toFuncGrantingPurview">/org/position/admin/funcGrantingPurview.jsp</result>
+	 		<result name="grantAuthorityPermissions">/org/position/admin/grantAuthorityPermission.jsp</result>
+	 		<result name="recycleAuthorityPermissions">/org/position/admin/recycleAuthorityPermission.jsp</result>
+	 		<result name="toFuncAdminUsePoermission">/org/position/admin/funcAdminUsePermission.jsp</result>
+	 		<result name="recyclePermissions">/org/position/admin/recycleAdminUsePermission.jsp</result>
+	 		<result name="grantUsePermissions">/org/position/admin/grantAdminUsePermission.jsp</result>
+	 		<allowed-methods>*</allowed-methods>
+	 	</action>
+	 	<action name="positionSettingMgAction" class="com.yinhai.ta3.organization.action.PositionSettingMgAction">
+	 		<result name="success">/org/position/positionsetting/positionSettingMg.jsp</result>
+	 		<result name="assignUser">/org/position/positionsetting/assignUser.jsp</result>
+	 		<result name="assignPositionsToUser">/org/position/positionsetting/assignPositionsToUser.jsp</result>
+	 		<allowed-methods>*</allowed-methods>
+	 	</action>
+	 	<action name="similarAuthorityAction" class="com.yinhai.ta3.organization.action.SimilarAuthorityAction">
+	 		<result name="success">/org/position/similarauthority/similarAuthority.jsp</result>
+	 		<result name="similarAuthority">/org/position/similarauthority/grantSimilarAuthority.jsp</result>
+	 		<allowed-methods>*</allowed-methods>
+	 	</action>
+	 	<action name="delegatePositionAction" class="com.yinhai.ta3.organization.action.DelegatePositionAction">
+	 		<result name="success">/org/position/delegateposition/delegatePosition.jsp</result>
+	 		<result name="permissionInfo">/org/position/delegateposition/delegatePositionPermissions.jsp</result>
+	 		<result name="add">/org/position/delegateposition/addDelegatePosition.jsp</result>
+	 		<allowed-methods>*</allowed-methods>
+	 	</action>
+	 	<action name="dataAccessDimensionManagementAction" class="com.yinhai.ta3.organization.action.DataAccessDimensionManagementAction">
+	 		<result name="success">/org/dimension/dataAccessDimensionMg.jsp</result>
+	 		<result name="toDimension">/org/dimension/dataAccessDimension.jsp</result>
+	 		<result name="toDimension1">/org/dimension/dataAccessDimension1.jsp</result>
+	 		<allowed-methods>*</allowed-methods>
+	 	</action>
+	 	<action name="innerControlAction" class="com.yinhai.ta3.organization.action.InnerControlAction">
+	 		<result name="success">/org/position/innercontrol/innerControl.jsp</result>
+	 		<result name="adminPop">/org/position/innercontrol/adminPop.jsp</result>
+	 		<result name="positionPop">/org/position/innercontrol/positionPop.jsp</result>
+	 		<result name="businessPop">/org/position/innercontrol/businessPop.jsp</result>
+	 		<result name="menuPop">/org/position/innercontrol/menuPop.jsp</result>
+	 		<allowed-methods>*</allowed-methods>
+	 	</action>
+	 	<action name="yab003MgAction" class="com.yinhai.ta3.organization.action.Yab003MgAction">
+	 		<result name="success">/org/position/yab003/yab003Mg.jsp</result>
+	 		<result name="toYab139">/org/position/yab003/yab139Mg.jsp</result>
+	 		<result name="toYab003">/org/position/yab003/yab003Scope.jsp</result>
+	 		<allowed-methods>*</allowed-methods>
+	 	</action>
+	 	
+	 	<action name="positionUserMgAction" class="com.yinhai.ta3.organization.action.PositionUserMgAction">
+	 		<result name="success">/org/position/positionMg.jsp</result>
+	 		<result name="addPosition">/org/position/addPosition.jsp</result>
+	 		<result name="operWin">/org/position/position/positionOper.jsp</result>
+	 		<result name="toFuncOpPurview">/org/position/funcOpPurview.jsp</result>
+	 		<result name="recyclePermissions">/org/position/batchRecycleUsePermission.jsp</result>
+	 		<result name="grantUsePermissions">/org/position/batchGrantUsePermission.jsp</result>
+	 		<result name="sharePosition">/org/position/sharePosition.jsp</result>
+	 		<result name="assignPositionsToUser">/org/position/assignPositionsToUser.jsp</result>
+	 		<result name="assignUsersToPosition">/org/position/assignUsersToPosition.jsp</result>
+	 		<result name="setEffectiveTime">/org/position/position/setEffectiveTime.jsp</result>
+	 		<result name="toPosMissionWindow">/org/position/positionMission.jsp</result>
+	 		<allowed-methods>*</allowed-methods>
+	 	</action>
+	 	
+	 </package>
+</struts>

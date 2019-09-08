@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	 <package name="admin" namespace="/org/admin" extends="ta-default" strict-method-invocation="false">
+	 	<action name="adminUserMgAction" class="com.yinhai.ta3.organization.action.AdminUserMgAction">
+	 		<result name="success">/org/admin/adminMg.jsp</result>
+	 		<result name="toAddAdminMgUser">/org/admin/addAdminMg.jsp</result>
+	 		<result name="toOrgMgScope">/org/admin/adminOrgScope.jsp</result>
+	 		<result name="toAdminYab003Scope">/org/admin/adminYab139Scope.jsp</result>
+	 		<result name="toTransformAuthority">/org/admin/transformAuthority.jsp</result>
+	 		<result name="toFuncGrantingPurview">/org/admin/funcGrantingPurview.jsp</result>
+	 		<result name="grantAuthorityPermissions">/org/admin/batchGrantAuthorityPermission.jsp</result>
+	 		<result name="recycleAuthorityPermissions">/org/admin/batchRecycleAuthorityPermission.jsp</result>
+	 		<result name="toFuncAdminUsePoermission">/org/admin/funcAdminUsePermission.jsp</result>
+	 		<result name="recyclePermissions">/org/admin/batchRecycleAdminUsePermission.jsp</result>
+	 		<result name="grantUsePermissions">/org/admin/batchGrantAdminUsePermission.jsp</result>
+	 		<allowed-methods>*</allowed-methods>
+	 	</action>
+	 </package>
+</struts>

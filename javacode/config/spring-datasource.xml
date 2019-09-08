@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<!-- 以下所有bean的id请勿改动 -->
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:jdbc.properties</value>
+				<value>classpath:redis.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource"
+		init-method="init" destroy-method="close">
+		<!-- 基本属性 url、user、password -->
+		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+		<property name="dbType" value="${jdbc.databaseType}" />
+		<!-- 配置初始化大小、最小、最大 -->
+		<property name="initialSize" value="1" />
+		<property name="minIdle" value="1" />
+		<property name="maxActive" value="20" />
+		<!-- 配置获取连接等待超时的时间 -->
+		<property name="maxWait" value="60000" />
+		<!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+		<property name="timeBetweenEvictionRunsMillis" value="60000" />
+		<!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+		<property name="minEvictableIdleTimeMillis" value="300000" />
+		<!-- property name="validationQuery" value="SELECT 'x'" / -->
+		<property name="testWhileIdle" value="true" />
+		<property name="testOnBorrow" value="true" />
+		<property name="testOnReturn" value="true" />
+		<!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+		<property name="poolPreparedStatements" value="true" />
+		<property name="maxPoolPreparedStatementPerConnectionSize"
+			value="20" />
+		<!-- 配置监控统计拦截的filters -->
+		<property name="filters" value="stat" />
+	</bean>
+	<!-- <bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean"> 
+		<property name="jndiName"> <value>dsdemo</value> </property> </bean> -->
+
+	<!-- dataSourceproxy 配置代理管理单数据源事务 -->
+	<bean id="dataSourceProxy"
+		class="org.springframework.jdbc.datasource.TransactionAwareDataSourceProxy">
+		<property name="targetDataSource" ref="dataSource"/>
+	</bean>
+	<!-- 针对单一数据源的事务管理器 -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSourceProxy"/>
+	</bean>
+
+	<!-- 针对全局事务处理的weblogic JTA事务管理器 如果需要全局事务则打开 -->
+	<!-- <bean id="transactionJTAManager" class="org.springframework.transaction.jta.WebLogicJtaTransactionManager"> 
+		</bean> -->
+
+	<!-- spring事务代理 -->
+	<bean id="transactionProxy"
+		class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"
+		lazy-init="true">
+		<property name="transactionManager">
+			<ref bean="transactionManager" />
+			<!-- <ref bean="transactionJTAManager"/> -->
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-AppException,-PrcException,-IllegalArgumentException
+				</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- 设置sqlmap的配置 -->
+	<!-- <bean id="sqlExecutor" class="com.yinhai.sysframework.persistence.ibatis.LimitSqlExecutor">
+		<property name="dialect">
+			<bean class="com.yinhai.sysframework.persistence.ibatis.MySQLDialect"/>
+		</property>
+	 </bean>-->
+	<bean id="sqlExecutor" class="com.yinhai.sysframework.persistence.ibatis.LimitSqlExecutor">
+		<property name="dialect">
+			<bean class="com.yinhai.sysframework.persistence.ibatis.OracleDialect" />
+		</property>
+	</bean>
+
+	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<property name="configLocations">
+			<list>
+				<value>classpath:/resource/SqlmapConfig-system.xml</value>
+				<value>classpath:/resource/SqlmapConfig-scheduler.xml</value>
+				<value>classpath:/resource/SqlmapConfig-abpmn.xml</value>               <!--流程引擎 -->
+				<value>classpath:bs/sqlmap/SqlmapConfig-synthesis.xml</value>           <!--公用类 -->
+				<value>classpath:bs/sqlmap/SqlmapConfig-publicBusiness.xml</value>      <!-- 公共业务 -->
+				<!-- <value>classpath:bs/sqlmap/SqlmapConfig-benefit.xml</value> 待遇通用 -->
+				<!-- <value>classpath:bs/sqlmap/SqlmapConfig-medicalbenefit.xml</value> 
+					医疗待遇 -->
+				<!-- <value>classpath:bs/sqlmap/SqlmapConfig-pensionbenefit.xml</value> 
+					养老待遇 -->
+				<!-- <value>classpath:bs/sqlmap/SqlmapConfig-govpensionbenefit.xml</value> 
+					机关养老 -->
+				<!-- <value>classpath:bs/sqlmap/SqlmapConfig-unemployedbenefit.xml</value> 
+					失业待遇 -->
+				<!-- <value>classpath:bs/sqlmap/SqlmapConfig-workinjurybenefit.xml</value> 
+					工商待遇 -->
+			</list>
+		</property>
+		<property name="dataSource" ref="dataSourceProxy"/>
+	</bean>
+</beans>

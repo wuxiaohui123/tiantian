@@ -1,0 +1,203 @@
+@charset "utf-8";
+
+* {
+	font-size: 13px;
+}
+
+.tab a {
+	text-decoration: none;
+}
+
+/* new jdstock */
+.contentArea ul {
+	list-style: none;
+	margin: 2px 0px;
+}
+
+.store-selector .area-list li {
+	padding: 2px 0 2px 15px;
+	clear: none;
+}
+
+.store-selector .tab li {
+	float: left;
+	clear: none;
+	padding: 0;
+}
+
+.yh-ta-stock {
+	position: relative;
+}
+
+.yh-ta-stock .tab {
+	width: 98%;
+	height: 25px;
+	float: left;
+	padding-left:10px;
+	border-bottom: 2px solid #edd28b;
+	overflow: visible;
+	*overflow: hidden;
+}
+/*
+.yh-ta-stock .tab .current a {
+	color: #000;
+}*/
+.yh-ta-stock .tab a {
+	position: relative;
+	float: left;
+	height: 23px;
+	line-height: 23px;
+	padding: 0 21px 1px 11px;
+	margin-right: 3px;
+	border: 1px solid #ddd;
+	border-bottom: 0;
+	color: #ccc;
+	text-align: center;
+	cursor: pointer;
+}
+
+.yh-ta-stock .tab a.ta-sp-hover {
+	height: 25px;
+	background-color: #fff;
+	border: 2px solid #edd28b;
+	border-bottom: 0;
+	padding: 0 20px 0 10px;
+	line-height: 22px;
+	color: #000;
+}
+
+/*.yh-ta-stock .tab .current a {
+	background-repeat: repeat-x;
+}*/
+.yh-ta-stock .tab .current a {
+	cursor: default;
+}
+
+/*.yh-ta-stock .tab .current a i {
+	background-position: 0 -28px;
+}*/
+.yh-ta-stock .tab a i {
+	position: absolute;
+	right: 5px;
+	top: 10px;
+	display: block;
+	width: 7px;
+	height: 5px;
+	overflow: hidden;
+	background-position: 0 -35px;
+	background-image:
+		url("images/yh-stock.png");
+	background-repeat: no-repeat;
+}
+
+/*.yh-ta-stock .tab .current a:hover i {
+	background-position: 0 -28px;
+}*/
+.yh-ta-stock .tab a:hover i {
+	top: 11px;
+	right: 4px;
+	background-position: 0 -28px;
+	*top: 9px;
+}
+
+.area-list {
+	padding-top: 5px;
+}
+
+.area-list li {
+	float: left;
+	width: 80px;
+	padding: 2px 0 2px 15px;
+	clear: none;
+}
+
+.area-list li a {
+	float: left;
+	padding: 2px 4px;
+	color: #005aa0;
+	text-decoration: none;
+	cursor: default;
+}
+
+.area-list li a:hover {
+	background: #005ea7;
+	color: #fff;
+	border-radius:2px;
+}
+
+.area-list .long-area {
+	width: 170px;
+}
+
+.store-selector {
+	float: left;
+	height: 24px;
+	margin-right: 6px;
+	position: absolute;
+	display: inline;
+	z-index: 2;
+}
+
+.text {
+	border-bottom: 0 none;
+	height: 22px;
+	z-index: 1;
+	background: none repeat scroll 0 0 #FFFFFF;
+	border: 1px solid #CECBCE;
+	float: left;
+	line-height: 23px;
+	overflow: hidden;
+	padding: 0 20px 0 4px;
+	position: relative;
+	top: 0;
+}
+
+.text b {
+	background-position: -264px -190px;
+	display: block;
+	height: 22px;
+	overflow: hidden;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 17px;
+	background-image: url("images/newicon20130509.png");
+	background-repeat: no-repeat;
+}
+
+.yh-taselectpanel .contentArea {
+	background: none repeat scroll 0 0 #FFFFFF;
+	border: 1px solid #CECBCE;
+	box-shadow: 0 0 5px #DDDDDD;
+	display: none;
+	left: -45px;
+	padding: 5px 15px;
+	position: absolute;
+	top: 22px;
+	width: 360px;
+	min-height: 30px;
+}
+
+.close {
+	cursor: pointer;
+	background-position: -257px -86px;
+	display: none;
+	height: 17px;
+	left: 335px;
+	position: absolute;
+	top: 20px;
+	width: 17px;
+	z-index: 0;
+	background-image: url("images/newicon20130509.png");
+	background-repeat: no-repeat;
+}
+
+.hide {
+	display: none;
+}
+
+.bottom-hide{
+	border-bottom-width:0px;
+	border-bottom-style:none;
+}
+

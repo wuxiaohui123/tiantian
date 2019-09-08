@@ -1,0 +1,504 @@
+@CHARSET "UTF-8";
+/**
+@author lins
+*/
+.datagrid{
+	border:1px solid #ddd;
+}
+.slick-header.ui-state-default, .slick-headerrow.ui-state-default {
+	width: 100%;
+	overflow: hidden;
+	border-left: 0px;
+	border-bottom:1px solid #ddd;
+}
+.slick-header-columns, .slick-headerrow-columns {
+	width: 999999px;
+	position: relative;
+	white-space: nowrap;
+	cursor: default;
+	overflow: hidden;
+	height :30px!important;
+}
+
+.slick-header-column.ui-state-default {
+	 color : black !important;
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 16px;
+	/*_height: 25px;*/
+	line-height: 16px;
+	margin: 0;
+	padding: 6px 4px 6px 4px;
+	border-right: 1px solid silver;
+	border-left: 0px;
+	border-top: 0px;
+	float: left;
+}
+
+.slick-headerrow-column.ui-state-default {
+    padding: 0px 4px 0px 4px;
+    _padding:4px;
+}
+
+.slick-header-column-sorted {
+	font-style: italic;
+}
+
+.slick-sort-indicator {
+	display: inline-block;
+	width: 8px;
+	height: 5px;
+	margin-left: 4px;
+}
+
+.slick-sort-indicator-desc {
+	background: url(images/sort-desc.gif);
+}
+
+.slick-sort-indicator-asc {
+	background: url(images/sort-asc.gif);
+}
+
+.slick-resizable-handle {
+	position: absolute;
+	font-size: 0.1px;
+	display: block;
+	cursor: col-resize;
+	width: 4px;
+	right: 0px;
+	top: 0;
+	height: 100%;
+}
+
+.slick-sortable-placeholder {
+	background: silver;
+}
+
+.grid-canvas {
+	position: relative;
+	outline: 0;
+	background-color: white;
+}
+.slick-full-canvas-fixed {position: fixed !important; top: 0; left: 0; right: 0;bottom: 0;z-index:8000}
+.slick-full-canvas {position: fixed !important; top: 0; left: 0; right: 0;bottom: 0;z-index:8000}
+.slick-tool-max {background:url('images/slick-tools.gif') no-repeat 0px -16px;}
+.slick-row.ui-widget-content, .slick-row.ui-state-active {
+	position: absolute;
+	border: 0px;
+	color: #333;
+}
+
+.slick-cell,.slick-headerrow-column {
+	float: left;
+	_filter: chroma(color = #ffffff);
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	vertical-align: middle;
+	z-index: 1;
+	
+    margin: 0;
+	white-space: nowrap;
+	cursor: default;
+}
+.slick-group {
+}
+
+.slick-group-toggle {
+    display: inline-block;
+}
+
+.slick-cell.highlighted {
+    background: lightskyblue;
+    background: rgba(0,0,255,0.2);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.slick-cell.flashing {
+    border: 1px solid red !important;
+    background-color: #cfe9f7 !important;;
+}
+
+.slick-cell.editable {
+	z-index: 11;
+	overflow: visible;
+	background: white;
+	border-color: black;
+	border-style: solid;
+}
+
+.slick-cell:focus {
+	outline: none;
+}
+
+.slick-reorder-proxy {
+	display: inline-block;
+	background: blue;
+	opacity: 0.15;
+	filter: alpha(opacity=15);
+	cursor: move;
+}
+
+.slick-reorder-guide {
+	display: inline-block;
+	height: 2px;
+	background: blue;
+	opacity: 0.7;
+	filter: alpha(opacity=70);
+}
+
+.slick-selection {
+    z-index: 10;
+    position: absolute;
+    border: 2px dashed black;
+}
+
+.slick-pager
+{
+	width: 100%;
+	height:30px;
+	/**border: 1px solid gray;**/
+	border-top: 0;
+	vertical-align: middle;
+}
+.slick-pager split {
+	background: url('images/grid-blue-split.gif') repeat-x ;
+}
+.grid-icon-excel {
+	background: url('images/excel.png') no-repeat !important;
+}
+.slick-pager .slick-pager-status
+{
+	display: inline-block;
+	padding-left: 10px;
+	font-size: 12px;
+	/**color: #416AA3;*/
+}
+
+.slick-pager .ui-icon-container
+{
+	display: inline-block;
+	margin: 2px;
+	border-color: gray;
+}
+
+.slick-pager .slick-pager-nav
+{
+	display: inline-block;
+	float: left;
+	padding-left: 20px;
+}
+
+.slick-pager .slick-pager-settings
+{
+	display: block;
+	float: right;
+	/**padding: 2px;**/
+}
+
+.slick-pager .slick-pager-settings *
+{
+	vertical-align: middle;
+}
+
+.slick-pager .slick-pager-settings a
+{
+	padding-left: 5px;
+	padding-top : 5px;
+	text-decoration: underline;
+	cursor: pointer;
+}
+ .slick-cell-selection {
+    text-align: right;
+    font-size: 10px;
+}
+.slick-cell-checkbox input[type=checkbox],.slick-cell-checkbox input[type=radio] {
+	margin-top: 5px;
+}
+.slick-icon-edit{
+	background-position: 40px;
+	background:url('images/pencil.gif') no-repeat !important;
+}
+/**pager*/
+.slick-pager-nav-dis{
+	float:left;
+	height:30px;
+}
+.slick-pager-nav-dis span{
+	display:block;
+	float: left;
+	height:25px;
+	line-height:25px;
+}
+.slick-pager-nav-dis input{
+	display:block;
+	float: left;
+	margin:4px 0 0 8px!important;
+	height:16px;
+	font-size:12px;
+}
+.slick-pager-nav-dis span {
+	margin:2px 0 0 8px;
+}
+.slick-pager-nav-dis .tool-separator {
+	margin-top:0px;
+	margin-right:2px;
+	height:18px;
+}
+.slick-icon-page-first{
+	background:url('images/page-first.png')  left center no-repeat !important;
+	padding-left:20px;
+}
+.slick-icon-page-first-dis{
+	background:url('images/page-first-disabled.png')  left center no-repeat !important;
+	padding-left:20px;
+}
+.slick-icon-page-last{
+	background:url('images/page-last.png')  right center no-repeat !important;
+	padding-right:20px;
+}
+.slick-icon-page-last-dis{
+	background:url('images/page-last-disabled.png')  right center no-repeat !important;
+	padding-right:20px;
+}
+.slick-icon-page-next{
+	background:url('images/page-next.png')  right center no-repeat !important;
+	padding-right:20px;
+}
+
+.slick-icon-page-button {
+	width:auto;
+	height:25px;
+	border:1px solid transparent;
+	display:block;
+	float: left;
+	margin-left:8px;
+	line-height:25px;
+}
+.slick-icon-page-button:hover{
+	border:1px solid #ccc;
+}
+.slick-icon-page-button:active{
+	background-color:#87bcd1 !important;;
+}
+.slick-icon-page-next-dis{
+	background:url('images/page-next-disabled.png') right center no-repeat !important;
+	padding-right:20px;
+}
+.slick-icon-page-prev{
+	background:url('images/page-prev.png') left center no-repeat !important;
+	padding-left:20px;
+}
+.slick-icon-page-prev-dis{
+	background:url('images/page-prev-disabled.png')  left center no-repeat !important;
+	padding-left:20px;
+}
+/** default theme*/
+.slick-header-columns {
+/*    background: url('images/datagrid_header_bg.gif') repeat-x center bottom;*/
+    background: #EEEEEE;
+}
+
+.slick-header-column {
+    /*background: url('images/datagrid_header_bg.gif') repeat-x center bottom;*/
+   background:#f1f1f1;
+}
+
+.slick-header-column:hover, .slick-header-column-active {
+    /* background: white url('images/header-columns-over-bg.gif') repeat-x center bottom;*/
+}
+
+.slick-headerrow {
+    background: #fafafa;
+    border-bottom :1px dotted silver;
+}
+
+.slick-headerrow-column {
+    background: #fafafa;
+    border-bottom: 0;
+    height: 100%;
+    
+}
+
+.slick-row.ui-state-active {
+    background: #F5F7D7;
+}
+
+.slick-row {
+    position: absolute;
+    background: white;
+    border: 0px;
+
+}
+.slick-row:hover{
+	background:#3366ff;
+	color:white;
+}
+.slick-viewport {
+	width:100%;
+	overflow-x:auto;
+	outline:0;
+	position:relative;
+	overflow-y:auto;
+	background-color: white;
+}
+.slick-row.selected {
+    z-index: 10;
+    background: #DFE8F6;
+}
+
+.slick-cell {
+    padding-left: 4px;
+    padding-right: 4px;
+    line-height: 24px;
+    border-bottom:1px solid #E9E9E9;
+    
+}
+
+.slick-group {
+    border-bottom: 2px solid silver;
+}
+
+.slick-group-toggle {
+    width: 9px;
+    height: 9px;
+    margin-right: 5px;
+}
+
+.slick-group-toggle.expanded {
+    background: url(images/collapse.gif) no-repeat center center;
+}
+.slick-edited-icon {
+    background: url(images/dirty.gif) no-repeat !important;
+}
+.slick-group-toggle.collapsed {
+    background: url(images/expand.gif) no-repeat center center;
+}
+
+.slick-group-totals {
+    color: gray;
+    background: white;
+}
+
+.slick-cell.selected {
+    background-color: #C5D0F5;
+}
+
+.slick-cell.active {
+    background-color: none;
+}
+
+
+.slick-sortable-placeholder {
+    background: silver!important;
+}
+
+.slick-row[row$="1"], .slick-row[row$="3"], .slick-row[row$="5"], .slick-row[row$="7"],	.slick-row[row$="9"] {
+}
+
+.slick-row.ui-state-active {
+    background: #F5F7D7;
+}
+
+.slick-row.loading {
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+
+.slick-cell.invalid {
+	border-color: red;
+}
+.slick-icon-edit-column {
+	background: url(images/dirty.gif) no-repeat right 4px;
+}
+/* editor*/
+input.editor-text {
+	width: 100%;
+	height: 100%;
+	border: 0;
+	margin: 0;
+	outline: 0;
+    padding: 0;
+}
+
+.slick-selectGrid-down {
+	border :1px solid gray;
+	-moz-box-shadow: 0px 2px 10px #333333;
+	-webkit-box-shadow:0px 2px 10px #333333;
+	box-shadow:0px 2px 10px #333333;
+	float : left;
+	padding: 1px 1px 1px 1px;
+	position :absolute;
+	background-color:white;
+	top:25px;
+	z-index:99999;
+}
+
+.slick-selectGrid-up {
+	border :1px solid gray;
+	-moz-box-shadow: 0px -2px 10px #333333;
+	-webkit-box-shadow:0px -2px 10px #333333;
+	box-shadow:0px -2px 10px #333333;
+	float : left;
+	padding: 1px 1px 1px 1px;
+	position : absolute;
+	background-color:white;
+	top:25px;
+	z-index:99999;
+}
+
+.slick-grid-filter-input {
+	height:20px;
+	border:1px solid #ddd!important;
+	float:left;
+}
+
+
+/*************过滤样式**************/
+.datagrid-filter-icon{
+	display: block;
+	width:100%;
+	height:100%;
+	background:url("images/list_filter.png") center no-repeat;
+	margin:0 auto;
+	cursor:pointer;
+}
+.datagrid-filter-icon-open{
+	background:url("images/list_filter_open.png") center no-repeat;
+}
+.slick-headerrow,.slick-headerrow .slick-headerrow-columns,.slick-headerrow .slick-headerrow-columns .slick-headerrow-column {
+	overflow-y: visible!important; 
+	overflow-x: hidden!important; 
+}
+.slick-headerrow .ffb-input{
+	margin-top:4px;
+}
+.slick-headerrow-column .removefilter{
+	height:20px;
+	display:block;
+	border:1px solid #ddd;
+	border-right:none;
+	float:left;
+	width:12px;
+	background:#fff;
+	margin-top:4px;
+}
+.slick-headerrow-column .removefilter-show{
+	background:url("images/clean.png") #fff center no-repeat!important;
+}
+.slick-headerrow-column .filter-select{
+	float:left;
+}
+.slick-headerrow-column .filter-select input{
+	border-left:none;
+	height:20px;
+}
+/**************************yhoa**********************/
+.yhoaGridIgnoreColor{
+	color:#BBB6B6;
+	line-height:35px;
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMapConfig PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+	<settings useStatementNamespaces="true" />
+	<!--失业代缴医疗中断缴费sqlmap -->
+	<sqlMap resource="com/yinhai/unemployedbenefit/change/mendicalTerminated/sqlmap/mendicalTerminated.xml" />
+
+	<!--失业待遇转入转出sqlmap -->
+	<sqlMap resource="com/yinhai/unemployedbenefit/query/transferinandout/sqlmap/transferInAndOut.xml" />
+
+	<!--失业人员综合信息查询 sqlmap -->
+	<sqlMap resource="com/yinhai/unemployedbenefit/query/integrativequery/sqlmap/unemployIntegrativeQuery.xml" />
+
+	<!--失业待遇计算sqlmap -->
+	<sqlMap resource="com/yinhai/unemployedbenefit/adjust/sqlmap/umeBatchAdjust.xml" />
+	<sqlMap resource="com/yinhai/unemployedbenefit/approve/UneTreatmentCalculation/sqlmap/uneTreatmentCalculation.xml" />
+	<sqlMap resource="com/yinhai/unemployedbenefit/approve/treatmentrerun/sqlmap/treatmentRerun.xml" />
+
+	<!--失业待遇人员转出sqlmap -->
+	<sqlMap resource="com/yinhai/unemployedbenefit/transfer/sqlmap/transferOut.xml" />
+</sqlMapConfig>

@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans   http://www.springframework.org/schema/beans/spring-beans.xsd   http://www.springframework.org/schema/context         http://www.springframework.org/schema/context/spring-context-2.5.xsd         http://www.springframework.org/schema/tx         http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+	<!-- 该文件专门用来应用业务系统的service配置文件的 -->
+
+	<!-- 公共业务公共SERVICE -->
+	<bean id="publicBusinessService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.comm.service.impl.PublicBusinessServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+
+	<!-- 单位参保管理 -->
+	<!-- 新参保单位登记 -->
+	<bean id="registerEmployerInfoService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.manageEmployer.registerEmployerInfo.service.impl.RegisterEmployerInfoServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 将缴满人员查询 -->
+	<bean id="willPayFullQueryService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.publicQuery.willPayFullQuery.service.impl.WillPayFullQueryServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 银行抹账 -->
+	<bean id="billService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.manageFinancial.billQuery.service.impl.BillServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 养老单位欠费信息查询 -->
+	<bean id="unitYl110QFQueryService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.publicQuery.unitPersonQuery.service.impl.UnitYl110QFQueryServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 查询 -->
+	<bean id="unitBillInfoQueryService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.publicQuery.unitPersonQuery.service.impl.UnitBillInfoQueryServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 个人补中断 -->
+	<bean id="interruptService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.refundManage.interrupt.service.impl.InterruptServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 新参保单位登记复核 -->
+	<bean id="registerEmployerInfoCheckService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.manageEmployer.registerEmployerInfo.service.impl.RegisterEmployerInfoCheckServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 单位信息变更登记 -->
+	<bean id="maintainEmployerInfoService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.manageEmployer.maintainemployer.service.impl.MaintainEmployerInfoServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 单位信息变更登记复核 -->
+	<bean id="maintainEmployerInfoCheckService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.manageEmployer.maintainemployer.service.impl.MaintainEmployerInfoCheckServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 单位注销登记 -->
+	<bean id="unitCancellRegistService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.manageEmployer.unitcancellregist.service.impl.UnitCancellRegistServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 单位注销登记复核 -->
+	<bean id="unitCancellRegistCheckService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.manageEmployer.unitcancellregist.service.impl.UnitCancellRegistCheckServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 单位工伤浮动率调整 -->
+	<bean id="applyMWIFREService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.manageEmployer.mwifrechange.service.impl.ApplyMWIFREServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 保险登记证打印 -->
+	<bean id="socialSecurityPrintService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.manageEmployer.socialsecurityregistration.service.impl.SocialSecurityPrintServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 保险登记证年检 -->
+	<bean id="socialSecurityAsService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.manageEmployer.socialsecurityregistration.service.impl.SocialSecurityAsServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 个人参保管理 -->
+	<!-- 新参保人员登记 -->
+	<bean id="registerEmployeeService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.manageEmployee.registeremployee.service.impl.RegisterEmployeeServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 新参保人员登记复核 -->
+	<bean id="registerEmployeeCheck1Service" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.manageEmployee.registeremployee.service.impl.RegisterEmployeeCheck1ServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 单位参保人员补充登记 -->
+	<bean id="employeeSupplementService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.manageEmployee.employeeSupplement.service.impl.EmployeeSupplementServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 单位参保人员补充登记 (复核) -->
+	<bean id="employeeSupplementCheck1Service" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.manageEmployee.employeeSupplement.service.impl.EmployeeSupplementCheck1ServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 人员生存状态变更登记 -->
+	<bean id="surviveUpdateService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.manageEmployee.surviveupdate.service.impl.SurviveUpdateServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 不同当事人同险种之间调账 -->
+	<bean id="sameInsAdjustService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.manageFinancial.sameinsadjust.service.impl.SameInsAdjustServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 待转金指定单据分配 -->
+	<bean id="turnGoldAllotService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.manageFinancial.turnGoldRefund.service.impl.TurnGoldAllotServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 同当事人不同险种之间调账 -->
+	<bean id="difInsAdjustService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.manageFinancial.difinsadjust.service.impl.DifInsAdjustServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 人员参保变更登记 -->
+	<bean id="changeInsuranceInfoService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.manageEmployee.resumepayemp.service.impl.ChangeInsuranceInfoServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 人员参保变更登记复核 -->
+	<bean id="changeInsuranceInfoCheckService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.manageEmployee.resumepayemp.service.impl.ChangeInsuranceInfoCheckServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 社会保险费试算器 -->
+	<bean id="pensionTransferQueryService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.publicQuery.pensionTransferQuery.service.impl.PensionTransferQueryServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 人员批量调入 -->
+	<bean id="employeePlChangeService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.manageEmployer.maintainemployer.service.impl.EmployeePlChangeServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+
+	<!-- 人员批量调入审核 -->
+	<bean id="employeePlChangeCheckService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.manageEmployer.maintainemployer.service.impl.EmployeePlChangeCheckServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 人员多号合并 -->
+	<bean id="accountCombEmpService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.manageEmployee.accountcombemp.service.impl.AccountCombEmpServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 人员多号合并复核 -->
+	<bean id="accountCombEmpCheckService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.manageEmployee.accountcombemp.service.impl.AccountCombEmpCheck1ServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 人员基本信息登记 -->
+	<bean id="employeeaddService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.manageEmployee.employeeadd.service.impl.EmployeeaddServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 人员基本信息登记复核 -->
+	<bean id="employeeaddCheck1Service" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.manageEmployee.employeeadd.service.impl.EmployeeaddCheck1ServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+
+	<!-- 缴费情况统计查询 -->
+	<bean id="unitJFQueryService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.publicQuery.unitPersonQuery.service.impl.UnitJFQueryServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<bean id="flexibleQueryService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.publicQuery.countQuery.service.impl.FlexibleQueryServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 增减变动查询统计 -->
+	<bean id="regulationChangeService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.publicQuery.regulationChange.service.impl.RegulationChangeServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 参保关系转出登记 -->
+	<bean id="insurTransOutRegisterService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.moveEmployee.insurTransOutRegister.service.impl.InsurTransOutRegisterServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 参保关系转出登记复核 -->
+	<bean id="insurTransOutRegCheckService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.moveEmployee.insurTransOutRegister.service.impl.InsurTransOutRegCheckServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+
+	<!-- 人员信息变更登记 -->
+	<bean id="maintainBIEmployeeService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.manageEmployee.maintainbiemployee.service.impl.MaintainBIEmployeeServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+
+	<!-- 人员信息变更登记复核 -->
+	<bean id="maintainBIEmCheck1Service" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.manageEmployee.maintainbiemployee.service.impl.MaintainBIEmpCheck1ServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+
+	<!-- 批量人员参保变更登记 -->
+	<bean id="employerAae140ManageService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.manageEmployer.maintainemployer.service.impl.EmployerAae140ManageServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+
+	<!-- 人员生存状态变更登记复核 -->
+	<bean id="surviveUpdateCheckService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.manageEmployee.surviveupdate.service.impl.SurviveUpdateCheckServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+
+	<!-- 人员险种信息登记 -->
+	<bean id="employeeinsuredService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.manageEmployee.employeeinsured.service.impl.EmployeeinsuredServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 人员险种信息登记复核 -->
+	<bean id="employeeinsuredCheck1Service" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.manageEmployee.employeeinsured.service.impl.EmployeeinsuredCheck1ServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+
+	<!-- 人员在职转退休登记 -->
+	<bean id="retireEmpService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.manageEmployee.retireemp.service.impl.RetireEmpServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 人员在职转退休登记复核 -->
+	<bean id="retireEmpCheckService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.manageEmployee.retireemp.service.impl.RetireEmpCheckServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 参保关系转入登记 -->
+	<bean id="insurTransInRegisterService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.moveEmployee.insurTransInRegister.service.impl.InsurTransInRegisterServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 参保关系转入登记复核 -->
+	<bean id="insurTransInRegCheckService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.moveEmployee.insurTransInRegister.service.impl.InsurTransInRegCheckServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 参保关系转移申请 -->
+	<bean id="insurTransferApplyService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.moveEmployee.insurTransferApply.service.impl.InsurTransferApplyServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 打印《参保缴费凭证》 -->
+	<bean id="printInsurVoucherService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.moveEmployee.printInsurVoucher.service.impl.PrintInsurVoucherServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 参保关系转移申请复核 -->
+	<bean id="insurTransferApplyCheckService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.moveEmployee.insurTransferApply.service.impl.InsurTransferApplyCheckServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+
+	<!-- 人员特殊工种申报 -->
+	<bean id="specialExperienceDeclareService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.manageEmployee.registeremployee.service.impl.SpecialExperienceDeclareServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 参保关系转出登记 -->
+	<bean id="insurTransOutRegisterSIService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.moveEmployee.insurTransOutRegisterSI.service.impl.InsurTransOutRegisterSIServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 参保关系转出登记审核 -->
+	<bean id="insurTransOutRegSICheckService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.moveEmployee.insurTransOutRegisterSI.service.impl.InsurTransOutRegSICheckServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 参保关系转入登记 -->
+	<bean id="insurTransInRegisterSIService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.moveEmployee.insurTransInRegisterSI.service.impl.InsurTransInRegisterSIServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 参保关系转入登记审核 -->
+	<bean id="insurTransInRegSICheckService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.moveEmployee.insurTransInRegisterSI.service.impl.InsurTransInRegSICheckServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 医疗退休行政审批 -->
+	<bean id="medicalApprovalService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.publicBusiness.manageEmployee.medicalApproval.service.impl.MedicalApprovalServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 征地农民登记  --> 
+  	<bean id="landAcquisitionPeasantService" parent="transactionProxy"> 
+    	<property name="target"> 
+        	<bean class="com.yinhai.publicBusiness.manageEmployee.landAcquisitionPeasant.service.impl.LandAcquisitionPeasantServiceImpl" parent="yhsi3BaseService"/> 
+      	</property> 
+  	</bean>
+  	<!-- 征地农民登记  复核--> 
+  	<bean id="landAcquisitionPeasantCheckService" parent="transactionProxy"> 
+      	<property name="target"> 
+         	<bean class="com.yinhai.publicBusiness.manageEmployee.landAcquisitionPeasant.service.impl.LandAcquisitionPeasantCheckServiceImpl" parent="yhsi3BaseService"/> 
+      	</property> 
+  	</bean>
+  	<!-- 征地农民时间认定  --> 
+  	<bean id="landAcquisitionTimeService" parent="transactionProxy"> 
+      	<property name="target"> 
+         	<bean class="com.yinhai.publicBusiness.manageEmployee.landAcquisitionPeasant.service.impl.LandAcquisitionTimeServiceImpl" parent="yhsi3BaseService"/> 
+      	</property> 
+  	</bean>
+  	<!-- 征地农民时间认定 复核 --> 
+  	<bean id="landAcquisitionTimeCheckService" parent="transactionProxy"> 
+      	<property name="target"> 
+         	<bean class="com.yinhai.publicBusiness.manageEmployee.landAcquisitionPeasant.service.impl.LandAcquisitionTimeCheckServiceImpl" parent="yhsi3BaseService"/> 
+      	</property> 
+  	</bean>
+</beans>

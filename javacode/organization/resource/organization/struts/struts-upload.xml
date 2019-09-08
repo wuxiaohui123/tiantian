@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	 <package name="upload" namespace="/org/upload" extends="ta-default" strict-method-invocation="false">
+	 	<action name="uploadOrgUserAction" class="com.yinhai.ta3.organization.action.UploadOrgUserAction">
+	 		<result name="success">/org/upload/uploadOrgUse.jsp</result>
+	 		<allowed-methods>*</allowed-methods>
+	 	</action>
+	 	
+	 </package>
+</struts>

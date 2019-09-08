@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="tascheduler">
+	
+	<select id="getAllJobs" parameterClass="map" resultClass="com.yinhai.sysframework.dto.BaseDTO">
+		SELECT
+		a.sched_name as schedname, <!---->
+		a.job_name as jobname, <!---->
+		a.job_group as jobgroup, <!---->
+		a.description as jobdesc, <!---->
+		a.job_class_name as jobclass, <!---->
+		a.is_durable as durable, <!---->
+		a.is_nonconcurrent as nonconcurrent, <!---->
+		a.is_update_data as isUpdateData, <!---->
+		a.requests_recovery as requestsRec, <!---->
+		b.trigger_name as triname, <!---->
+		b.trigger_group as trigroup, <!---->
+		b.trigger_state as state, <!---->
+		b.next_fire_time as nT, <!---->
+		b.prev_fire_time as pT, <!---->
+		b.start_time as sT, <!---->
+		b.end_time as eT  <!---->
+		FROM qrtz_job_details a, qrtz_triggers b
+		WHERE a.sched_name = b.sched_name
+		AND a.job_name = b.job_name
+		AND a.job_group = b.job_group
+		AND b.trigger_name = 'tri_'||a.job_name
+	</select>
+	
+	<select id="getJobByKey" parameterClass="map" resultClass="com.yinhai.sysframework.dto.BaseDTO">
+		SELECT
+		a.sched_name as schedname, <!---->
+		a.job_name as jobname, <!---->
+		a.job_group as jobgroup, <!---->
+		a.description as jobdesc, <!---->
+		a.job_class_name as jobclass, <!---->
+		a.is_durable as durable, <!---->
+		a.is_nonconcurrent as nonconcurrent, <!---->
+		a.is_update_data as isUpdateData, <!---->
+		a.requests_recovery as requestsRec, <!---->
+		b.trigger_type as tritype, <!---->
+		b.trigger_name as triname, <!---->
+		b.trigger_group as trigroup, <!---->
+		b.trigger_state as state, <!---->
+		b.next_fire_time as nT, <!---->
+		b.prev_fire_time as pT, <!---->
+		b.start_time as sT, <!---->
+		b.end_time as eT  <!---->
+		FROM qrtz_job_details a, qrtz_triggers b
+		WHERE a.sched_name = b.sched_name
+		AND a.job_name = b.job_name
+		AND a.job_group = b.job_group
+		AND a.job_name = #job_name#
+		AND a.job_group = #job_group#
+		AND b.trigger_name = 'tri_'||#job_name#
+		AND b.trigger_group = #trigger_group#
+	</select>
+	
+	<select id="getCronExp" parameterClass="map" resultClass="string">
+		SELECT a.cron_expression 
+		  FROM qrtz_cron_triggers a 
+		 WHERE a.trigger_name = 'tri_'||#job_name#
+		   AND a.trigger_group = #trigger_group#
+	</select>
+	
+	<select id="getRepeatInfo" parameterClass="map" resultClass="com.yinhai.sysframework.dto.BaseDTO">
+		SELECT a.repeat_count, a.repeat_interval 
+		  FROM qrtz_simple_triggers a 
+		 WHERE a.trigger_name = 'tri_'||#job_name#
+		   AND a.trigger_group = #trigger_group#
+	</select>
+	
+	<insert id="insertJobLog" parameterClass="map">
+		INSERT INTO qrtz_job_log(
+		log_id,
+		job_name,
+		address,
+		service_id,
+		fired_time,
+		success,
+		log_msg
+		)VALUES(
+		#log_id#,
+		#job_name#,
+		#address#,
+		#service_id#,
+		#fired_time#,
+		#success#,
+		#log_msg#
+		)
+	</insert>
+	
+	<select id="getJobLogs" parameterClass="map" resultClass="com.yinhai.sysframework.dto.BaseDTO">
+		SELECT log_id, job_name, address, service_id, fired_time,
+		       success, log_msg
+		  FROM qrtz_job_log
+		 WHERE 1 = 1
+		 <isNotEmpty prepend="AND" property="job_name">
+		 	LOWER(job_name) = LOWER(#job_name:VARCHAR#)
+		 </isNotEmpty>
+		 <isNotEmpty prepend="AND" property="address">
+		 	address like #address:VARCHAR#||'%'
+		 </isNotEmpty>
+		 <isNotEmpty prepend="AND" property="service_id">
+		 	LOWER(service_id) = LOWER(#service_id:VARCHAR#)
+		 </isNotEmpty>
+		 <isNotEmpty prepend="AND" property="success">
+		 	success = #success:VARCHAR#
+		 </isNotEmpty>
+		 <isNotEmpty prepend="AND" property="start_time">
+		 	<![CDATA[fired_time >= #start_time:TIMESTAMP#]]>
+		 </isNotEmpty>
+		 <isNotEmpty prepend="AND" property="end_time">
+		 	<![CDATA[fired_time <= #end_time:TIMESTAMP#]]>
+		 </isNotEmpty>
+		 ORDER BY fired_time DESC
+	</select>
+	
+	<delete id="clearSuccLog" parameterClass="map">
+		DELETE FROM qrtz_job_log WHERE success = '1'
+	</delete>
+	
+	<select id="getLatestLog" parameterClass="map" resultClass="com.yinhai.sysframework.dto.BaseDTO">
+		SELECT log_id, job_name, address, service_id, fired_time,
+		       success, log_msg
+		  FROM QRTZ_JOB_LOG
+		 WHERE log_id = #log_id:VARCHAR#
+	       AND FIRED_TIME = (
+		SELECT MAX (FIRED_TIME)
+		  FROM QRTZ_JOB_LOG
+		 WHERE JOB_NAME = #job_name:VARCHAR#)
+	</select>
+
+</sqlMap>

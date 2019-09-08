@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<bean id="loadUserAccountInfo" parent="transactionProxy">
+    	<property name="target">
+			<bean class="com.yinhai.ta3.system.security.ta3.LoadUserAccountService">
+				<property name="hibernateDao" ref="hibernateDao"/>
+				<property name="organizationService" ref="organizationService"/>
+			</bean>
+		</property>
+	</bean>
+	<!-- 用户登录密码错误，锁定用户操作，不带事物 -->
+	<bean id="failLoginCheckUser" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.ta3.system.security.ta3.FailLoginCheckUser">
+				<property name="userDao" ref="userDao"></property>
+			</bean>
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="*">PROPAGATION_NOT_SUPPORTED,-AppException ,-PrcException </prop>
+			</props>
+		</property>
+	</bean>	
+	<bean id="userLogin" parent="transactionProxy">
+    	<property name="target">
+			<bean class="com.yinhai.sysframework.security.ta3.UserLoginHelper">
+				<property name="permissionService" ref="permissionService"/>
+				<property name="loadUserAccountInfo" ref="loadUserAccountInfo"/>
+				<property name="md5PasswordEncoder" ref="md5PasswordEncoder"/>
+				<property name="timeService" ref="timeService"></property>
+				<property name="failLoginCheckUser" ref="failLoginCheckUser"></property>
+				<property name="serverAddressService" ref="serverAddressService"></property>
+			</bean>
+		</property>
+	</bean>
+</beans>

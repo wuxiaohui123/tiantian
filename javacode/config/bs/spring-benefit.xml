@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans   http://www.springframework.org/schema/beans/spring-beans.xsd   http://www.springframework.org/schema/context         http://www.springframework.org/schema/context/spring-context-2.5.xsd         http://www.springframework.org/schema/tx         http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+	<!-- 该文件专门用来应用业务系统的service配置文件的 -->
+
+	<!--单个待遇项终止:ItemTerminatedtaskname环节名称:ItemTerminated service -->
+	<bean id="itemTerminatedService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.benefit.change.itemTerminated.service.impl.ItemTerminatedServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+
+	<!-- 待遇公用方法 -->
+	<bean id="benefitCommUtilService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.benefit.common.benefitCommUtil.service.impl.BenefitCommUtilServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+
+	<!--待遇停发经办:IntermitTreatment service -->
+	<bean id="intermitTreatmentService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.benefit.change.intermitresumetreatment.service.impl.IntermitTreatmentServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!--待遇停发复核:IntermitTreatmentCheck1 service -->
+	<bean id="intermitTreatmentCheck1Service" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.benefit.change.intermitresumetreatment.service.impl.IntermitTreatmentCheck1ServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!--待遇停发审批:IntermitTreatmentCheck2 service -->
+	<bean id="intermitTreatmentCheck2Service" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.benefit.change.intermitresumetreatment.service.impl.IntermitTreatmentCheck2ServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+
+	<!--待遇续发经办:ResumeTreatment service -->
+	<bean id="resumeTreatmentService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.benefit.change.resumetreatment.service.impl.ResumeTreatmentServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!--待遇续发复核:ResumeTreatmentCheck1 service -->
+	<bean id="resumeTreatmentCheck1Service" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.benefit.change.resumetreatment.service.impl.ResumeTreatmentCheck1ServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!--待遇续发审批:ResumeTreatmentCheck2 service -->
+	<bean id="resumeTreatmentCheck2Service" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.benefit.change.resumetreatment.service.impl.ResumeTreatmentCheck2ServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+
+	<!--待遇终止经办:TreatmentTerminate service -->
+	<bean id="treatmentTerminateService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.benefit.change.treatmentterminate.service.impl.TreatmentTerminateServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!--待遇终止复核:TreatmentTerminateCheck1 service -->
+	<bean id="treatmentTerminateCheck1Service" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.benefit.change.treatmentterminate.service.impl.TreatmentTerminateCheck1ServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!--待遇终止审批 :TreatmentTerminateCheck2 service -->
+	<bean id="treatmentTerminateCheck2Service" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.benefit.change.treatmentterminate.service.impl.TreatmentTerminateCheck2ServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+
+	<!--供养亲属续期(经办):renewalTerminateService service -->
+	<bean id="renewalTerminateService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.benefit.change.renewalterminate.service.impl.RenewalTerminateServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!--供养亲属续期(复核):renewalTerminateCheck1Service service -->
+	<bean id="renewalTerminateCheck1Service" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.benefit.change.renewalterminate.service.impl.RenewalTerminateCheck1ServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!--供养亲属续期(审批):renewalTerminateCheck2Service service -->
+	<bean id="renewalTerminateCheck2Service" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.benefit.change.renewalterminate.service.impl.RenewalTerminateCheck2ServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+
+	<bean id="specialRefundService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.benefit.refund.specialrefund.service.impl.SpecialRefundServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!--特殊补退复核:specialRefundCheck1Service service -->
+	<bean id="specialRefundCheck1Service" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.benefit.refund.specialrefund.service.impl.SpecialRefundCheck1ServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!--特殊补退审批:specialRefundCheck2Service service -->
+	<bean id="specialRefundCheck2Service" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.benefit.refund.specialrefund.service.impl.SpecialRefundCheck2ServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+
+	<!--一次性补退经办:OnceRefund service -->
+	<bean id="onceRefundService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.benefit.refund.oncerefund.service.impl.OnceRefundServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!--一次性补退复核:onceRefundCheck1Service service -->
+	<bean id="onceRefundCheck1Service" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.benefit.refund.oncerefund.service.impl.OnceRefundCheck1ServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!--一次性补退审批:onceRefundCheck2Service service -->
+	<bean id="onceRefundCheck2Service" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.benefit.refund.oncerefund.service.impl.OnceRefundCheck2ServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!--待遇调整文号维护 service -->
+	<bean id="dytzWhService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.benefit.adjust.dytzWh.service.impl.DytzWhServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 零星调整经办 :sporadicAdjustService service -->
+	<bean id="sporadicAdjustService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.benefit.adjust.sporadicadjust.service.impl.SporadicAdjustServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 零星调整复核 :sporadicAdjustCheck1Service service -->
+	<bean id="sporadicAdjustCheck1Service" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.benefit.adjust.sporadicadjust.service.impl.SporadicAdjustCheck1ServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- 零星调整审批:sporadicAdjustCheck2Service service -->
+	<bean id="sporadicAdjustCheck2Service" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.benefit.adjust.sporadicadjust.service.impl.SporadicAdjustCheck2ServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!--供养亲属待遇核定:FamilyTreamt service -->
+	<bean id="familyTreamtService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.benefit.approve.familytreamt.service.impl.FamilyTreamtServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!--供养亲属待遇审核审批:FamilyTreamtCheck1 service -->
+	<bean id="familyTreamtCheck1Service" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.benefit.approve.familytreamt.service.impl.FamilyTreamtCheck1ServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- ***************************信息维护 开始*********************************** -->
+	<!--发放信息维护经办:PaymentInfoMaintenance service -->
+	<bean id="paymentInfoMaintenanceService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.benefit.maintenance.paymentinfomaintenance.service.impl.PaymentInfoMaintenanceServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- ***************************信息维护 开始*********************************** -->
+
+	<!-- ***************************账户信息 开始*********************************** -->
+	<bean id="accountInterestService" class="com.yinhai.benefit.account.accountinterest.service.impl.AccountInterestServiceImpl" parent="yhsi3BaseService">
+		<property name="accountInterestOneService">
+			<ref bean="accountInterestOneService" />
+		</property>
+	</bean>
+	<bean id="accountInterestOneService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.benefit.account.accountinterest.service.impl.AccountInterestOneServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- ***************************账户信息 结束*********************************** -->
+</beans>

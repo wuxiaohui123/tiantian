@@ -1,0 +1,252 @@
+@CHARSET "UTF-8";
+/*-------------------------------------
+zTree Icons Skin
+
+version:	2.0
+author:		Hunter.z
+email:		hunter.z@263.net
+website:	http://code.google.com/p/jquerytree/
+
+-------------------------------------*/
+
+/*树的图标*/
+.ztree li span.button.tree-bug {
+	background: url(./img/icon/001.png) no-repeat!important;
+}	
+.ztree li span.button.tree-group {
+	background: url(./img/icon/002.png) no-repeat!important;
+}
+.ztree li span.button.tree-menu {
+	background: url(./img/icon/003.png) no-repeat!important;
+}	
+.ztree li span.button.tree-organisation {
+	background: url(./img/icon/004.png) no-repeat!important;
+}	
+.ztree li span.button.tree-apply {
+	background: url(./img/icon/005.png) no-repeat!important;
+}
+.ztree li span.button.tree-car {
+	background: url(./img/icon/006.png) no-repeat!important;
+}
+.ztree li span.button.tree-clock {
+	background: url(./img/icon/007.png) no-repeat!important;
+}
+.ztree li span.button.tree-destop {
+	background: url(./img/icon/008.png) no-repeat!important;
+}
+.ztree li span.button.tree-doc {
+	background: url(./img/icon/009.png) no-repeat!important;
+}
+.ztree li span.button.tree-duty {
+	background: url(./img/icon/010.png) no-repeat!important;
+}
+.ztree li span.button.tree-groups {
+	background: url(./img/icon/011.png) no-repeat!important;
+}
+.ztree li span.button.tree-ie {
+	background: url(./img/icon/012.png) no-repeat!important;
+}
+.ztree li span.button.tree-img {
+	background: url(./img/icon/013.png) no-repeat!important;
+}
+.ztree li span.button.tree-letter {
+	background: url(./img/icon/014.png) no-repeat!important;
+}
+.ztree li span.button.tree-pdf {
+	background: url(./img/icon/015.png) no-repeat!important;
+}
+.ztree li span.button.tree-phone {
+	background: url(./img/icon/016.png) no-repeat!important;
+}
+.ztree li span.button.tree-provider {
+	background: url(./img/icon/017.png) no-repeat!important;
+}
+.ztree li span.button.tree-search {
+	background: url(./img/icon/018.png) no-repeat!important;
+}
+.ztree li span.button.tree-setting {
+	background: url(./img/icon/019.png) no-repeat!important;
+}
+.ztree li span.button.tree-star {
+	background: url(./img/icon/020.png) no-repeat!important;
+}
+.ztree li span.button.tree-tel {
+	background: url(./img/icon/021.png) no-repeat!important;
+}
+.ztree li span.button.tree-userm {
+	background: url(./img/icon/022.png) no-repeat!important;
+}
+.ztree li span.button.tree-users {
+	background: url(./img/icon/023.png) no-repeat!important;
+}
+.ztree li span.button.tree-comments {
+	background: url(./img/icon/024.png) no-repeat!important;
+}
+.ztree li span.button.tree-database {
+	background: url(./img/icon/025.png) no-repeat!important;
+}
+.ztree li span.button.tree-image {
+	background: url(./img/icon/026.png) no-repeat!important;
+}
+.ztree li span.button.tree-plugin {
+	background: url(./img/icon/027.png) no-repeat!important;
+}
+.ztree li span.button.tree-user {
+	background: url(./img/icon/028.png) no-repeat!important;
+}
+.ztree li span.button.tree-bookmark-new {
+	background: url(./img/icon/029.png) no-repeat!important;
+}
+.ztree li span.button.tree-book-new {
+	background: url(./img/icon/030.png) no-repeat!important;
+}
+.ztree li span.button.tree-contact-new {
+	background: url(./img/icon/031.png) no-repeat!important;
+}
+.ztree li span.button.tree-document-new {
+	background: url(./img/icon/032.png) no-repeat!important;
+}
+.ztree li span.button.tree-document-open {
+	background: url(./img/icon/033.png) no-repeat!important;
+}
+.ztree li span.button.tree-document-print-preview {
+	background: url(./img/icon/034.png) no-repeat!important;
+}
+.ztree li span.button.tree-document-properties {
+	background: url(./img/icon/035.png) no-repeat!important;
+}
+.ztree li span.button.tree-document-save {
+	background: url(./img/icon/036.png) no-repeat!important;
+}
+.ztree li span.button.tree-edit-cut {
+	background: url(./img/icon/037.png) no-repeat!important;
+}
+.ztree li span.button.tree-edit-delete {
+	background: url(./img/icon/038.png) no-repeat!important;
+}
+.ztree li span.button.tree-edit-find {
+	background: url(./img/icon/039.png) no-repeat!important;
+}
+.ztree li span.button.tree-edit-find-replace {
+	background: url(./img/icon/040.png) no-repeat!important;
+}
+.ztree li span.button.tree-edit-paste {
+	background: url(./img/icon/041.png) no-repeat!important;
+}
+.ztree li span.button.tree-edit-redo {
+	background: url(./img/icon/042.png) no-repeat!important;
+}
+.ztree li span.button.tree-edit-select-all {
+	background: url(./img/icon/043.png) no-repeat!important;
+}
+.ztree li span.button.tree-edit-undo {
+	background: url(./img/icon/044.png) no-repeat!important;
+}
+.ztree li span.button.tree-emblem-system {
+	background: url(./img/icon/045.png) no-repeat!important;
+}
+.ztree li span.button.tree-folder {
+	background: url(./img/icon/046.png) no-repeat!important;
+}
+.ztree li span.button.tree-folder-new {
+	background: url(./img/icon/047.png) no-repeat!important;
+}
+.ztree li span.button.tree-folder-remote {
+	background: url(./img/icon/048.png) no-repeat!important;
+}
+.ztree li span.button.tree-folder-saved-search {
+	background: url(./img/icon/049.png) no-repeat!important;
+}
+.ztree li span.button.tree-input-gaming {
+	background: url(./img/icon/050.png) no-repeat!important;
+}
+.ztree li span.button.tree-input-mouse {
+	background: url(./img/icon/051.png) no-repeat!important;
+}
+.ztree li span.button.tree-mail-attachment {
+	background: url(./img/icon/052.png) no-repeat!important;
+}
+.ztree li span.button.tree-mail-forward {
+	background: url(./img/icon/053.png) no-repeat!important;
+}
+.ztree li span.button.tree-mail-message-new {
+	background: url(./img/icon/054.png) no-repeat!important;
+}
+.ztree li span.button.tree-mail-reply-all {
+	background: url(./img/icon/055.png) no-repeat!important;
+}
+.ztree li span.button.tree-mail-send-receive {
+	background: url(./img/icon/056.png) no-repeat!important;
+}
+.ztree li span.button.tree-media-floppy {
+	background: url(./img/icon/057.png) no-repeat!important;
+}
+.ztree li span.button.tree-new {
+	background: url(./img/icon/058.png) no-repeat!important;
+}
+.ztree li span.button.tree-office-address-book {
+	background: url(./img/icon/059.png) no-repeat!important;
+}
+.ztree li span.button.tree-office-spreadsheet {
+	background: url(./img/icon/060.png) no-repeat!important;
+}
+.ztree li span.button.tree-package-x-generic {
+	background: url(./img/icon/061.png) no-repeat!important;
+}
+.ztree li span.button.tree-preferences-system {
+	background: url(./img/icon/062.png) no-repeat!important;
+}
+.ztree li span.button.tree-printer {
+	background: url(./img/icon/063.png) no-repeat!important;
+}
+.ztree li span.button.tree-system-lock-screen {
+	background: url(./img/icon/064.png) no-repeat!important;
+}
+.ztree li span.button.tree-system-search {
+	background: url(./img/icon/065.png) no-repeat!important;
+}
+.ztree li span.button.tree-text-editor {
+	background: url(./img/icon/066.png) no-repeat!important;
+}
+.ztree li span.button.tree-text-html {
+	background: url(./img/icon/067.png) no-repeat!important;
+}
+.ztree li span.button.tree-user-home {
+	background: url(./img/icon/068.png) no-repeat!important;
+}
+.ztree li span.button.tree-user-trash {
+	background: url(./img/icon/069.png) no-repeat!important;
+}
+.ztree li span.button.tree-view-refresh {
+	background: url(./img/icon/070.png) no-repeat!important;
+}
+.ztree li span.button.btn-setting {
+	background: url(./img/icon/071.png) no-repeat!important;
+}
+.ztree li span.button.btn-myplan {
+	background: url(img/icon/072.png) no-repeat!important;
+}
+.ztree li span.button.tree_system {
+	background: url(img/icon/tree_system.png) no-repeat!important;
+}
+.ztree li span.button.tree_syspath {
+	background: url(img/icon/tree_syspath.png) no-repeat!important;
+}
+.ztree li span.button.tree_servers {
+	background: url(img/icon/tree_servers.png) no-repeat!important;
+}
+.ztree li span.button.tree_rightsmana {
+	background: url(img/icon/tree_rightsmana.png) no-repeat!important;
+}
+.ztree li span.button.tree_report {
+	background: url(img/icon/tree_report.png) no-repeat!important;
+}
+.ztree li span.button.tree_menumana{
+	background: url(img/icon/tree_menumana.png) no-repeat!important;
+}
+.ztree li span.button.tree_exception {
+	background: url(img/icon/tree_exception.png) no-repeat!important;
+}
+.ztree li span.button.tree_code {
+	background: url(img/icon/tree_code.png) no-repeat!important;
+}

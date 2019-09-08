@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMapConfig PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+<sqlMapConfig>
+	<settings useStatementNamespaces="true"/>
+	<!-- 公共业务COMM -->
+	<!-- <sqlMap resource="com/yinhai/publicBusiness/comm/sqlmap/publicBusiness.xml"/>
+	单位查询
+	<sqlMap resource="com/yinhai/publicBusiness/publicQuery/unitPersonQuery/sqlmap/unitperson.xml"/>
+	单位参保登记  
+	<sqlMap resource="com/yinhai/publicBusiness/manageEmployer/registerEmployerInfo/sqlmap/registerEmployerInfo.xml"/>  
+	单位信息参保复核 
+	<sqlMap resource="com/yinhai/publicBusiness/manageEmployer/registerEmployerInfo/sqlmap/registerEmployerInfoCheck.xml"/>  
+	单位信息维护 
+	<sqlMap resource="com/yinhai/publicBusiness/manageEmployer/maintainemployer/sqlmap/maintainEmployerInfo.xml"/>  
+	单位信息维护 复核
+	<sqlMap resource="com/yinhai/publicBusiness/manageEmployer/maintainemployer/sqlmap/maintainEmployerInfoCheck.xml"/>  
+	单位注销
+	<sqlMap resource="com/yinhai/publicBusiness/manageEmployer/unitcancellregist/sqlmap/unitCancellRegist.xml"/>  
+	人员生存状态变更登记
+ 	<sqlMap resource="com/yinhai/publicBusiness/manageEmployee/surviveupdate/sqlmap/surviveUpdate.xml"/>
+	日志查询
+ 	<sqlMap resource="com/yinhai/publicBusiness/publicQuery/logQuery/sqlmap/logInfoQuery.xml"/>
+ 	 个人参保信息变更登记
+  	<sqlMap resource="com/yinhai/publicBusiness/manageEmployee/resumepayemp/sqlmap/changeInsuranceInfo.xml"/>
+  	个人参保信息变更登记复核
+  	<sqlMap resource="com/yinhai/publicBusiness/manageEmployee/resumepayemp/sqlmap/changeInsuranceInfoCheck.xml"/>
+  	单位参保人员补充登记  
+  	<sqlMap resource="com/yinhai/publicBusiness/manageEmployee/employeeSupplement/sqlmap/employeeSupplement.xml"/>
+  	个人基本信息登记  
+  	<sqlMap resource="com/yinhai/publicBusiness/manageEmployee/employeeadd/sqlmap/employeeadd.xml"/> 	 
+  	个人基本信息登记复核  
+  	<sqlMap resource="com/yinhai/publicBusiness/manageEmployee/employeeadd/sqlmap/employeeaddCheck.xml"/>
+  	流程名称:个人参保维护
+	<sqlMap resource="com/yinhai/publicBusiness/manageEmployee/maintainbiemployee/sqlmap/maintainBIEmployee.xml"/>
+	人员批量参保变更登记
+  	<sqlMap resource="com/yinhai/publicBusiness/manageEmployer/maintainemployer/sqlmap/employerAae140Manage.xml"/> 
+  	个人保险信息登记  
+  	<sqlMap resource="com/yinhai/publicBusiness/manageEmployee/employeeinsured/sqlmap/employeeinsured.xml"/> 	 
+  	个人保险信息登记复核  
+  	<sqlMap resource="com/yinhai/publicBusiness/manageEmployee/employeeinsured/sqlmap/employeeinsuredCheck.xml"/>
+  	流程名称:在职转退休
+  	<sqlMap resource="com/yinhai/publicBusiness/manageEmployee/retireemp/sqlmap/retireEmp.xml"/>
+  	人员特殊工种申报  
+  	<sqlMap resource="com/yinhai/publicBusiness/manageEmployee/registeremployee/sqlmap/specialExperience.xml"/> 
+  	新参保人员登记  
+  	<sqlMap resource="com/yinhai/publicBusiness/manageEmployee/registeremployee/sqlmap/registerEmployee.xml"/> 
+  	新参保人员登记复核  
+  	<sqlMap resource="com/yinhai/publicBusiness/manageEmployee/registeremployee/sqlmap/registerEmployeeCheck.xml"/>
+  	机关转企业
+	<sqlMap resource="com/yinhai/publicBusiness/manageEmployee/medicalApproval/sqlmap/medicalApproval.xml"/>
+	征地农民登记
+  	<sqlMap resource="com/yinhai/publicBusiness/manageEmployee/landAcquisitionPeasant/sqlmap/landAcquisitionPeasant.xml"/>
+  	征地农民时间认定
+  	<sqlMap resource="com/yinhai/publicBusiness/manageEmployee/landAcquisitionPeasant/sqlmap/landAcquisitionTime.xml"/>
+  	个人补欠费
+  	<sqlMap resource="com/yinhai/publicBusiness/refundManage/adjustperson/sqlmap/adjustPerson.xml"/>
+	参保关系转移申请
+  	<sqlMap resource="com/yinhai/publicBusiness/moveEmployee/insurTransferApplySI/sqlmap/insurTransferApplySI.xml"/>
+	参保关系转出登记
+  	<sqlMap resource="com/yinhai/publicBusiness/moveEmployee/insurTransOutRegisterYb/sqlmap/insurTransOutRegisterYb.xml"/>
+	参保关系转移申请审批
+   	<sqlMap resource="com/yinhai/publicBusiness/moveEmployee/insurTransferApplyYb/sqlmap/insurTransferApplyYb.xml"/>
+  	个人补中断   
+   	<sqlMap resource="com/yinhai/publicBusiness/refundManage/interrupt/sqlmap/interrupt.xml"/> 
+   	个人征集和单据打印
+  	<sqlMap resource="com/yinhai/publicBusiness/refundManage/refundBillPrint/sqlmap/refundBillPrint.xml"/>
+  	个人基数调整补收
+  	<sqlMap resource="com/yinhai/publicBusiness/refundManage/baseadjustmentRefund/sqlmap/baseadjustmentRefund.xml"/>
+  	个人欠款退账
+  	<sqlMap resource="com/yinhai/publicBusiness/refundManage/arrearsRebates/sqlmap/arrearsRebates.xml"/> -->
+  	<sqlMap resource="com/yinhai/comm/test/sqlmap/emp.xml"/>
+</sqlMapConfig>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE sqlMapConfig PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+	<settings useStatementNamespaces="true" />
+	<!--待遇变更（停、续、终）经办:IntermitResumeTreatment sqlmap -->
+	<sqlMap resource="com/yinhai/benefit/change/intermitresumetreatment/sqlmap/intermitResumeTreatment.xml" />
+
+	<!--单个待遇项待遇终止经办:itemTerminated sqlmap -->
+	<sqlMap resource="com/yinhai/benefit/change/itemTerminated/sqlmap/itemTerminated.xml" />
+
+	<!--待遇终止经办:TreatmentTerminate sqlmap -->
+	<sqlMap resource="com/yinhai/benefit/change/treatmentterminate/sqlmap/treatmentTerminate.xml" />
+
+	<!--待遇变更：供养亲属续期:renewalTerminate sqlmap -->
+	<sqlMap resource="com/yinhai/benefit/change/renewalterminate/sqlmap/renewalTerminate.xml" />
+
+	<!--待遇变更：供养亲属续期复核:renewalTerminateCheck1 sqlmap -->
+	<sqlMap resource="com/yinhai/benefit/change/renewalterminate/sqlmap/renewalTerminateCheck1.xml" />
+
+	<!--待遇变更：供养亲属续期审批:renewalTerminateCheck2 sqlmap -->
+	<sqlMap resource="com/yinhai/benefit/change/renewalterminate/sqlmap/renewalTerminateCheck2.xml" />
+
+	<!--特殊补退:SpecialRefund sqlmap -->
+	<sqlMap resource="com/yinhai/benefit/refund/specialrefund/sqlmap/specialRefund.xml" />
+
+	<!-- 待遇公用 -->
+	<sqlMap resource="com/yinhai/benefit/common/benefitCommUtil/sqlmap/benefitCommUtil.xml" />
+
+	<!--一次性待遇补退:OnceRefund sqlmap -->
+	<sqlMap resource="com/yinhai/benefit/refund/oncerefund/sqlmap/onceRefund.xml" />
+
+	<!--待遇调整文号:TreatmentTerminate sqlmap -->
+	<sqlMap resource="com/yinhai/benefit/adjust/dytzWh/sqlmap/dytzWh.xml" />
+
+	<!-- **************************待遇调整********************************** -->
+	<!-- 零星调整 :SporadicAdjust sqlmap -->
+	<sqlMap resource="com/yinhai/benefit/adjust/sporadicadjust/sqlmap/sporadicAdjust.xml" />
+
+	<!-- ********************************查询 开始************************************* -->
+	<sqlMap resource="com/yinhai/benefit/query/treatmentchage/sqlmap/treatmentchage.xml" />
+	<sqlMap resource="com/yinhai/benefit/query/treatmentreisreiminfo/sqlmap/treatmentreisreiminfo.xml" />
+	<sqlMap resource="com/yinhai/benefit/query/paymentinfo/sqlmap/paymentinfo.xml" />
+	<sqlMap resource="com/yinhai/benefit/query/treatmentinfo/sqlmap/treatmentinfo.xml" />
+	<sqlMap resource="com/yinhai/benefit/query/adjustinfo/sqlmap/adjustinfo.xml" />
+	<sqlMap resource="com/yinhai/benefit/query/basicinformation/sqlmap/familyRegisterQuery.xml" />
+	<!-- 在职退保信息查询 :WithdrawInsurance sqlmap -->
+	<sqlMap resource="com/yinhai/benefit/query/withdrawinsurance/sqlmap/withdrawInsurance.xml" />
+	<!-- ********************************查询 结束************************************* -->
+
+	<!-- **************************供养亲属待遇登记********************************** -->
+	<sqlMap resource="com/yinhai/benefit/account/familyregister/sqlmap/familyRegister.xml" />
+
+	<!-- **************************供养亲属待遇核定********************************** -->
+	<sqlMap resource="com/yinhai/benefit/approve/familytreamt/sqlmap/familyTreamt.xml" />
+
+	<!-- **************************信息维护 开始********************************** -->
+	<!--发放信息维护:PaymentInfoMaintenance sqlmap -->
+	<sqlMap resource="com/yinhai/benefit/maintenance/paymentinfomaintenance/sqlmap/paymentInfoMaintenance.xml" />
+	<!-- **************************信息维护 结束********************************** -->
+
+	<!-- **************************账户信息 开始********************************** -->
+	<!-- 账户计息 ：accountInterest sqlmap -->
+	<sqlMap resource="com/yinhai/benefit/account/accountinterest/sqlmap/accountInterest.xml" />
+	<!-- **************************账户信息 结束********************************** -->
+
+	<!-- **************************公用信息********************************** -->
+	<!--发放信息:paymentBaseInfo sqlmap -->
+	<sqlMap resource="com/yinhai/benefit/common/paymentInfo/sqlmap/paymentBaseInfo.xml" />
+
+	<!-- 零星支付 :BackCheckPayment sqlmap -->
+	<sqlMap resource="com/yinhai/benefit/payment/backcheckpayment/sqlmap/backCheckPayment.xml" />
+
+	<!-- 特殊发放 :CheckPayment sqlmap -->
+	<sqlMap resource="com/yinhai/benefit/payment/checkpayment/sqlmap/specialcheckPayment.xml" />
+
+	<!-- 失败重发 :PayFailRePay sqlmap -->
+	<sqlMap resource="com/yinhai/benefit/payment/payfailrepay/sqlmap/payFailRePay.xml" />
+
+	<!-- 支付计划 :Payment sqlmap -->
+	<sqlMap resource="com/yinhai/benefit/payment/payment/sqlmap/payment.xml" />
+
+	<!-- 退发分解 :ResolveTreatment sqlmap -->
+	<sqlMap resource="com/yinhai/benefit/payment/resolvetreatment/sqlmap/resolvetreatment.xml" />
+
+	<!-- 退发收款 :BackPayment sqlmap -->
+	<sqlMap resource="com/yinhai/benefit/payment/backpayment/sqlmap/backPayment.xml" />
+
+	<!-- 无报盘格式回盘：paymentfailure sqlmap -->
+	<sqlMap resource="com/yinhai/benefit/payment/paymentfailure/sqlmap/paymentfailure.xml" />
+
+	<!-- 一次性待遇批量支付 :DisposableBatchPayment sqlmap -->
+	<sqlMap resource="com/yinhai/benefit/payment/disposablebatchpayment/sqlmap/disposableBatchPayment.xml" />
+
+	<!-- 应付核定 :CheckPayment sqlmap -->
+	<sqlMap resource="com/yinhai/benefit/payment/checkpayment/sqlmap/checkPayment.xml" />
+
+</sqlMapConfig>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans   
+						http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<import resource="activiti.cfg.xml" />
+	<!-- ABPM流程引擎公共service -->
+	<bean id="abpmnAppService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.abpmn.core.AbpmnAppServiceImpl" parent="baseService" />
+		</property>
+	</bean>
+
+	<!-- 流程部署管理 -->
+	<bean id="processDeployService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.abpmn.app.service.impl.ProcessDeployServiceImpl" parent="baseService" />
+		</property>
+	</bean>
+
+	<!-- 流程模型设计 -->
+	<bean id="processModelService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.abpmn.app.service.impl.ProcessModelServiceImpl" parent="baseService" />
+		</property>
+	</bean>
+	<!-- 流程角色配置 -->
+	<bean id="processRoleService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.abpmn.app.service.impl.ProcessRoleServiceImpl" parent="baseService" />
+		</property>
+	</bean>
+	<!-- 流程引擎配置 -->
+	<bean id="processConfigService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.abpmn.app.service.impl.ProcessConfigServiceImpl" parent="baseService" />
+		</property>
+	</bean>
+</beans>
+ 

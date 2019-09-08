@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	
+	<bean id="serverExceptionDao" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.ta3.sysapp.syslogmg.dao.impl.ServerExceptionLogDaoImpl">
+				<property name="dao" ref="hibernateDao"/>
+			</bean>
+		</property>
+	</bean>	
+	
+	<bean id="serverExceptionService" parent="transactionProxy">
+    	<property name="target">
+			<bean class="com.yinhai.ta3.sysapp.syslogmg.service.impl.ServerExceptionServiceImpl" parent="baseService">
+				<property name="serverExceptionDao" ref="serverExceptionDao"/>
+			</bean>	
+		</property>
+	</bean>		
+</beans>

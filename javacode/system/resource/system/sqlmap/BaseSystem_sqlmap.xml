@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<!-- Checked -->
+<sqlMap namespace="BaseSystem">
+	<select id="getSysStrTimestamp" resultClass="java.lang.String" parameterClass="map">
+		<![CDATA[SELECT TO_CHAR(SYSDATE,'YYYY-MM-DD HH24:MI:SS') FROM dual]]>
+	</select>
+	<select id="getSysStrDate" resultClass="java.lang.String" parameterClass="map">
+		<![CDATA[SELECT TO_CHAR(SYSDATE,'YYYY-MM-DD') FROM dual]]>
+	</select>
+	<select id="getSysDate" resultClass="java.sql.Date">
+		<![CDATA[SELECT TRUNC(SYSDATE,'DD') FROM dual]]>
+	</select>
+	<select id="getSysTimestamp" resultClass="java.sql.Timestamp">
+		<![CDATA[SELECT SYSDATE FROM dual]]>
+	</select>
+	<select id="getSequence" resultClass="java.lang.String" >
+	 SELECT $sequenceName$.NEXTVAL from dual
+	</select>
+</sqlMap>

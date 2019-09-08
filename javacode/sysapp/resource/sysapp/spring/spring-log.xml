@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- 在线离线用户日志 -->
+	<bean id="userLineSessionLogService" parent="transactionProxy">
+    	<property name="target">
+			<bean class="com.yinhai.ta3.sysapp.syslogmg.service.impl.UserLineSessionLogServiceImpl" parent="wsbaseService">
+				<property name="timeService" ref="timeService"/>
+				<property name="hibernateDao" ref="hibernateDao"/>
+			</bean>	
+		</property>
+	</bean>	
+	<!-- 权限功能访问日志 -->
+	<bean id="accessLogService" parent="transactionProxy">
+    	<property name="target">
+			<bean class="com.yinhai.ta3.sysapp.syslogmg.service.impl.AccessLogServiceImpl" parent="wsbaseService">
+				<property name="hibernateDao" ref="hibernateDao"/>
+				<property name="menuDao" ref="menuDao"/>
+				<property name="timeService" ref="timeService"/>
+			</bean>
+		</property>
+	</bean>	
+		<!-- 菜单访问日志监听 -->
+	<bean id="accesLogListener" parent="transactionProxy">
+    	<property name="target">
+			<bean class="com.yinhai.ta3.sysapp.syslogmg.listener.AccessLogListener" parent="baseService">
+			</bean>
+		</property>
+	</bean>
+	<bean id="offLineLogListener" parent="transactionProxy">
+    	<property name="target">
+			<bean class="com.yinhai.ta3.sysapp.syslogmg.listener.OffLineLogListener" parent="baseService">
+			</bean>
+		</property>
+	</bean>
+	<bean id="onLineLogListener" parent="transactionProxy">
+    	<property name="target">
+			<bean class="com.yinhai.ta3.sysapp.syslogmg.listener.OnLineLogListener" parent="baseService">
+			</bean>
+		</property>
+	</bean>
+</beans>

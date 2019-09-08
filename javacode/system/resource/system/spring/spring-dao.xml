@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<!-- 设置sqlmap的配置 -->
+     <bean id="sqlExecutor" class="com.yinhai.sysframework.persistence.ibatis.LimitSqlExecutor">
+        <property name="dialect">
+            <bean class="com.yinhai.sysframework.persistence.ibatis.MySQLDialect" />
+        </property>
+    </bean>
+    <!--<bean id="sqlExecutor" class="com.yinhai.sysframework.persistence.ibatis.LimitSqlExecutor">
+        <property name="dialect">
+            <bean class="com.yinhai.sysframework.persistence.ibatis.OracleDialect" />
+        </property>
+    </bean>-->
+   	<bean id="absDao" abstract="true" class="com.yinhai.sysframework.persistence.ibatis.AbstractDaoSupport" init-method="initialize">
+   		<property name="sqlMapClient"><ref bean="sqlMapClient"/></property>
+   		<property name="sqlExecutor"><ref bean="sqlExecutor"/></property>
+   	</bean>
+   <!--<bean id="saveOldFieldData" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.sysapp.service.impl.SaveOldFieldServiceImpl" parent="baseService">
+			</bean>
+		</property>
+	</bean>-->
+   	<bean id="dao" class="com.yinhai.sysframework.persistence.ibatis.BaseDaoSupport" parent="absDao" >
+		<!-- <property name="saveOldFieldData" >
+		      <ref bean="saveOldFieldData" />
+		</property>
+		 -->
+	</bean>
+	<bean id="baseService" class="com.yinhai.sysframework.service.BaseService">
+		<property name="dao" ref="dao"/>
+		<property name="sequenceService" ref="sequenceService"/>
+		<property name="timeService" ref="timeService"/>
+	</bean>	
+	
+	<bean id="wsbaseService" class="com.yinhai.sysframework.service.WsBaseService">
+		<property name="sequenceService" ref="sequenceService"/>
+		<property name="timeService" ref="timeService"/>
+	</bean>	
+	
+	<bean id="hibernateDao" class="com.yinhai.sysframework.dao.hibernate.SimpleDao">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="serverAddressDao" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.ta3.system.cache.ehcache.dao.impl.ServerAddressDaoImpl">
+				<property name="sessionFactory" ref="sessionFactory"/>
+			</bean>
+		</property>
+	</bean>
+	<!-- 由于appCodeDao可能在没有事务的环境中被使用，会导致session找不到，所以需要绑定事务-->
+	<bean id="appCodeDao" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.ta3.system.codetable.AppCodeDaoImpl">
+				<property name="sessionFactory" ref="sessionFactory"/>
+			</bean>
+		</property>
+	</bean>				
+</beans>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	 <package name="agencies" namespace="/org/agencies" extends="ta-default">
+	 	<action name="agenciesMgAction" class="com.yinhai.ta3.organization.action.AgenciesMgAction">
+	 		<result name="success">/org/yab003/yab003Mg.jsp</result>
+	 		<result name="addYab003">/org/yab003/addYab003.jsp</result>
+	 		<result name="addYab003Grid">/org/yab003/addYab003Grid.jsp</result>
+	 		<result name="editYab003">/org/yab003/editYab003Mg.jsp</result>
+	 	</action>
+	 </package>
+</struts>

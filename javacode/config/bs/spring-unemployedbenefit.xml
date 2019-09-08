@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+	<!-- 失业代缴医疗中断缴费 -->
+	<bean id="mendicalterminatedService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.unemployedbenefit.change.mendicalTerminated.service.impl.mendicalTerminatedServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+
+	<!-- 批量待遇调整 -->
+	<bean id="umeBatchAdjustService" class="com.yinhai.unemployedbenefit.adjust.service.impl.UmeBatchAdjustServiceImpl" parent="yhsi3BaseService">
+		<property name="umeBatchAdjustOneService">
+			<ref bean="umeBatchAdjustOneService" />
+		</property>
+	</bean>
+	<bean id="umeBatchAdjustOneService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.unemployedbenefit.adjust.service.impl.UmeBatchAdjustOneServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+
+	<bean id="uneStopNewlyService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.unemployedbenefit.approve.UneTreatmentCalculation.service.impl.UneStopNewlyServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+
+	<bean id="uneTreatmentCalculationCheck1Service" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.unemployedbenefit.approve.UneTreatmentCalculation.service.impl.UneTreatmentCalculationCheck1ServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+
+	<bean id="uneTreatmentCalculationCheck2Service" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.unemployedbenefit.approve.UneTreatmentCalculation.service.impl.UneTreatmentCalculationCheck2ServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+
+	<bean id="uneTreatmentCalculationService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.unemployedbenefit.approve.UneTreatmentCalculation.service.impl.UneTreatmentCalculationServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+</beans>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd  http://www.springframework.org/schema/context
+	 http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+	<bean id="serviceLocator" class="com.yinhai.sysframework.service.ServiceLocator" />
+	<bean id="codeTableLocator" class="com.yinhai.sysframework.codetable.service.CodeTableLocator" >
+		<property name="codeCacheService" ref="codeCacheService"/>
+	</bean>
+	<bean id="sequenceService" class="com.yinhai.ta3.system.sequence.SequenceService">
+		<property name="hibernateDao" ref="hibernateDao"/>
+		<property name="defaultSeq" value="SEQ_DEFAULT"/>
+	</bean>	
+	<bean id="wsSequenceService" class="com.yinhai.ta3.system.sequence.WsSequenceService">
+		<property name="sequenceService" ref="sequenceService"/>
+	</bean>	
+	<bean id="timeService" class="com.yinhai.ta3.system.TimeService">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="permissionService" parent="transactionProxy">
+    	<property name="target">
+			<bean class="com.yinhai.ta3.system.sysapp.PermissionService">
+				<property name="menuDao" ref="menuDao"/>
+				<property name="timeService" ref="timeService"/>
+				<property name="userDao" ref="userDao"/>
+				<property name="positionDao" ref="positionDao"/>	
+				<property name="hibernateDao" ref="hibernateDao"/>				
+			</bean>
+		</property>
+	</bean>		
+	
+	<bean id="codeCacheService" parent="transactionProxy">
+    	<property name="target">
+			<bean class="com.yinhai.ta3.system.codetable.CodeCacheServiceImpl">
+				<property name="appCodeDao" ref="appCodeDao"/>
+			</bean>	
+		</property>
+	</bean>
+	<bean id="codelevelCacheService" parent="transactionProxy">
+    	<property name="target">
+			<bean class="com.yinhai.sysframework.codetable.service.impl.CodeLevelCacheServiceImpl">
+				<property name="dao" ref="dao"/>
+				<property name="codeTableViewName" value="v_aa11tree"/>
+			</bean>
+		</property>
+	</bean>	
+	<bean id="menuService" parent="transactionProxy">
+    	<property name="target">
+			<bean class="com.yinhai.ta3.system.sysapp.MenuService">
+				<property name="menuDao" ref="menuDao"/>
+			</bean>	
+		</property>
+	</bean>	
+	<!-- 系统参数 -->
+ 	<bean id="configService" parent="transactionProxy"> 
+	 	<property name="target"> 
+ 	 		<bean class="com.yinhai.ta3.system.config.ConfigServiceImpl" parent="hibernateDao" >
+	 			<property name="cloneConfigService" ref="cloneConfigService"></property> 
+	 		</bean> 
+ 	 	</property> 
+ 	 </bean> 
+	 <bean id="cloneConfigService" parent="transactionProxy">
+	 	<property name="target">
+	 		<bean class="com.yinhai.ta3.system.config.CloneConfigServiceImpl" parent="wsbaseService" >
+	 			<property name="hibernateDao" ref="hibernateDao"></property>
+	 		</bean>
+	 	</property>
+	 </bean>
+	 <bean id="changePosAndMenuService" parent="transactionProxy">
+	 	<property name="target">
+	 		<bean class="com.yinhai.ta3.system.web.ChangePosAndMenuServiceImpl" parent="wsbaseService" >
+	 			<property name="hibernateDao" ref="hibernateDao"></property>
+	 		</bean>
+	 	</property>
+	 </bean>
+</beans>

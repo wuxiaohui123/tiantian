@@ -1,0 +1,521 @@
+a{
+	text-decoration: none
+}
+ul, li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.header {
+    position: relative;
+}
+.header_bg{
+	position: absolute;
+	height:82px;
+	right:0px;
+	top:0px;
+	z-index:-1;
+	width:100%;
+}
+.header-border {
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+.header-nav {
+    position: absolute;
+    height: 37px;
+    left: 10px;
+    background-color: transparent;
+}
+
+.uid, .setting-text {
+    display: block;
+    float: left;
+    width: auto;
+    font-weight: bold;
+    max-width: 80px;
+}
+
+.setting-text {
+    font-weight: normal;
+}
+.setting{
+	top:75px;
+	left:380px;
+}
+.menu-list {
+    height: auto;
+    width: 110px;
+    position: absolute;
+    display: none;
+    background: #FFFFFF;
+    border: 1px solid #ddd;
+    border-radius: 3px 3px 3px 3px;
+    -webkit-box-shadow: #CCC 1px 2px 5px 0px;
+    z-index:10;
+}
+
+.menu-list li {
+    height: 25px;
+    padding: 0 10px;
+	cursor:pointer;
+}
+
+.menu-list li span {
+    display: block;
+    width: auto;
+    *width:90px;
+    line-height: 25px;
+    height: 25px;
+    overflow: hidden;
+    padding-left:15px;
+}
+.menu-list li:hover span{
+	color:#fff;
+}
+.uid-r {
+    display: block;
+    float: right;
+    width: 10px;
+    height: 10px;
+    margin: 5px 0px 0px 5px;
+    font-size: 0px;
+}
+
+.header-link {
+    position: absolute;
+    width: 450px;
+    height: 20px;
+    color: #417EB7;
+    display: block;
+    right:0px;
+    top:17px;
+}
+
+.header-link-split {
+    color: #bbb;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.header-link li {
+    float: right;
+    width: auto;
+    padding: 0 3px;
+    display:inline;
+}
+
+.header-link a {
+    padding: 3px;
+    border-radius: 4px;
+    display: block;
+    height: 19px;
+    overflow: hidden;
+    
+}
+
+.header-link a b{
+   font-weight:bold;
+}
+.header-link .header-arraw{
+	height:20px;
+	width:10px;
+   background: url("images/arraw.gif") 0px 6px no-repeat;
+   cursor: pointer;
+}
+.header-link .header-arraw.arrawdown{
+   background: url("images/arraw.gif") -21px 6px no-repeat;
+}
+.header-link a:hover, .header-link a:hover b{
+    color: #fff !important;
+}
+
+.header-logoutdiv {
+    position: absolute;
+    top: 2px;
+    right: 10px;
+}
+
+.header-logoutdiv a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #417EB7;
+}
+
+.header-logoutdiv a:hover {
+    color: red;
+}
+
+.header-searchbox {
+    background: url("images/search.png") no-repeat scroll 0 0 transparent !important;
+    padding: 0 0 0 16px;
+    width: 100px;
+    margin: 2px 2px 0px 5px;
+    color: #CCC;
+}
+
+.header-search {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 250px;
+}
+
+.header-search input {
+    float: left;
+    color: #ccc;
+    height: 26px;
+    width: 188px;
+    border: 1px solid #ccc;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    padding: 0 5px;
+    outline: none;
+    border-right: none;
+	line-height:26px;
+}
+
+.header-search input:focus {
+    border-color: #6093DD;
+}
+
+.header-search span {
+    height: 26px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    display: block;
+    float: left;
+    width: 43px;
+    cursor: pointer;
+}
+
+.header-search span b {
+    display: block;
+    width: 100%;
+    height: 26px;
+}
+
+.header-rolebtn {
+    cursor: pointer;
+}
+
+.header-rolebtn:hover {
+    color: red;
+}
+
+.tabRightClickDiv {
+    position: absolute;
+    width: 120px;
+    border: 1px solid #DDDDDD;
+    background-color: #FFFFFF;
+    border-bottom: 0;
+}
+
+.tabRightClickDivChild {
+    width: 100px;
+    border-bottom: 1px solid #DDDDDD;
+    height: 20px;
+    background: url("../images/icon_close.png") 6px center no-repeat;
+    padding-left: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.tabRightClickDivChild span {
+    display: block;
+    position: relative;
+    top: 2px;
+}
+
+/***********************tab部分***************************/
+#indexTabs {
+    overflow: hidden;
+    width: auto;
+    height: 37px;
+    min-width: auto;
+    float: left;
+}
+
+.index_menuTab {
+    width: auto;
+    float: left;
+    margin: 0;
+    height: 32px;
+    position: relative;
+    cursor: pointer;
+    margin: 4px 0 0 2px!important;
+    background-color:#ffffff;
+}
+
+.index_menuTab_act {
+    font-weight: bold;
+    color: #15428b;
+    height: 28px !important;
+}
+
+.index_menuTab a {
+    display: block;
+    width: 13px;
+    height: 13px;
+    position: absolute;
+    right: 2px;
+    top: 3px;
+    display: none;
+    font-family: "nui" !important;
+    border-radius: 2px;
+    text-align: center;
+    line-height: 15px;
+    font-weight: bold;
+	padding-left:1px;
+}
+
+.index_menuTab div {
+    height: 31px;
+    float: left;
+    text-align: center;
+    padding: 0px 10px 0px 10px;
+    font-size: 14px !important;
+    line-height: 32px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    border: 1px solid #ccc;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.index_menuTab_act .index_tab_center {
+    color: #fff;
+    height: 32px !important;
+    width: 86px;
+    font-weight: bold;
+}
+
+.index_menuTab_noact .index_tab_center:hover {
+    background-color: #B3C7FA;
+}
+
+.index_menuTab_act {
+    font-weight: bold;
+}
+
+.index_menuTab_noact {
+}
+
+.index_menuTab_noact .index_tab_center {
+    width: 86px;
+}
+
+.tab-list {
+    width: 190px;
+    position: absolute;
+    display: none;
+    background: #FFFFFF;
+    border: 1px solid #ddd;
+    border-radius: 3px 3px 3px 3px;
+    -webkit-box-shadow: #CCC 1px 2px 5px 0px;
+    font-family: 'Microsoft Yahei', verdana;
+	font-size: 12px;
+}
+
+.tab-list li {
+    width: 155px;
+    height: 25px;
+    padding: 0 10px 0 25px;
+    cursor: pointer;
+    list-style-type: none;
+}
+
+.tab-list li span {
+    width: 120px;
+    display: block;
+    float: left;
+    line-height: 25px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.tab-list li:hover span {
+    color: #fff;
+}
+
+.tab-list li:hover .list-li-close {
+    display: block;
+}
+
+.tab-list-icon {
+    float: left;
+    width: 22px;
+    height: 28px;
+    border-bottom: none;
+    border-left: none;
+    display: none;
+    margin: 14px 0 0 -1px;
+    border-top-right-radius: 3px;
+    cursor: pointer;
+}
+
+.tab-list-icon div {
+    width: 100%;
+    height: 100%;
+    background: url("../images/icon_cd_xl.png") center no-repeat;
+}
+
+.list-li-close {
+    position: relative;
+    width: 20px;
+    height: 25px;
+    display: none;
+    float: right;
+    font-weight: bold;
+    font-size: 14px;
+    color: #fff;
+    line-height: 25px;
+}
+
+.close-all {
+    background: url("../images/icon_closer.png") 6px center no-repeat;
+    height: 30px;
+    border-bottom: 1px solid #ddd;
+}
+
+.list-item-act {
+    background: url("../images/yuan.png") 6px center no-repeat;
+}
+
+#mainFrameBox {
+}
+
+#mainFrameBox iframe {
+    height: 100%;
+}
+
+.unselect {
+    -webkit-user-select: none;
+}
+
+
+.index-tool > div {
+    float: left;
+}
+
+.index-tool {
+    position: absolute;
+    z-index: 3;
+    right: 20px;
+    top: 10px;
+}
+
+.sys-list {
+    position: absolute;
+    z-index: 9;
+    display: none;
+    border: 1px solid #ddd;
+    /* For IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#cccccc')";
+    /* For IE 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#888888');
+	-moz-box-shadow: 2px 2px 3px #888888;
+	-webkit-box-shadow: 2px 2px 3px #888888;
+	box-shadow: 2px 2px 3px #888888;
+	background:#fff;
+	width:160px;
+}
+.sys-list li{
+	width:160px;
+	margin-top:3px;
+}
+.sys-list li a{
+	text-decoration: none;
+	padding :0 5px;
+	width:150px;
+	display:block;
+}
+.sys-list li a:hover{
+	background:#3671c7;
+	color:#fff;
+}
+.color-list a{
+	float:left;
+	margin:4px 0 0 5px;
+	border: 1px solid transparent;
+	border-radius: 3px;
+	width:10px;
+	height:10px;
+	font-size: 0px;
+}
+.color-list a:hover{
+	border: 1px solid #ff8040;
+}
+
+.index-style{
+	height:230px;
+	margin-top:20px;
+}
+.roles{
+	position:absolute;
+}
+.roles span{
+	padding-left:17px;
+}
+.child-menu span{
+	background:url(../images/arrow-l.gif)center left no-repeat;
+}
+.child-menu span:hover{
+	background:url(../images/arrow-l-w.gif) center left no-repeat;
+}
+.pos-now{
+	 background: url("../images/yuan.png") 0px center no-repeat;
+}
+.pos-now:hover{
+	 background: url("../images/yuan-w.png") 0px center no-repeat;
+}
+
+
+.index_tab_center {
+}
+
+.index_menuTab_act .index_tab_center {
+    background-color: #6C95C9;
+}
+
+.index_menuTab_noact .index_tab_center:hover {
+}
+
+.index_menuTab_noact .index_tab_center {
+    border: 1px solid #B9C4CF;
+}
+
+.index_menuTab a {
+    color: #A2C1E2;
+}
+
+.index_menuTab a:hover {
+    color: #064483;
+    background: #77A7D9;
+}
+
+.tab-list li:hover {
+    background: #36C;
+}
+
+.list-item-act:hover {
+    background: #36C url("../images/yuan-w.png") 6px center no-repeat !important;
+}
+
+.close-all:hover {
+    background: #36C url("../images/icon_closer.png") 6px center no-repeat !important;
+}
+
+.menu-list li:hover{
+	 background: #36C;
+}
+
+.header-border {
+    background-color:#6C95C9;
+}

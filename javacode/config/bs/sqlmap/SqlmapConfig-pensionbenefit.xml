@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMapConfig PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+	<settings useStatementNamespaces="true" />
+	<!-- **************************基本信息 开始************************* -->
+	<!--视同缴费年限认定经办 sqlmap -->
+	<sqlMap resource="com/yinhai/pensionbenefit/others/stjfnxrd/sqlmap/stjfnxrd.xml" />
+	<!--视同缴费年限认定复核 sqlmap -->
+	<sqlMap resource="com/yinhai/pensionbenefit/others/stjfnxrd/sqlmap/stjfnxrdCheck1.xml" />
+
+	<!--特殊工种认定经办 sqlmap -->
+	<sqlMap resource="com/yinhai/pensionbenefit/others/tsgzrd/sqlmap/tsgzrd.xml" />
+
+	<!--退休行政审批:AdministrativeApproval sqlmap -->
+	<sqlMap resource="com/yinhai/pensionbenefit/approve/administrativeapproval/sqlmap/administrativeApproval.xml" />
+	<!--退休行政审批复核:AdministrativeApprovalCheck1 sqlmap -->
+	<sqlMap resource="com/yinhai/pensionbenefit/approve/administrativeapproval/sqlmap/administrativeApprovalCheck1.xml" />
+	<!-- **************************基本信息 结束************************* -->
+
+	<!-- **************************信息维护 开始************************* -->
+	<!--基本信息维护:BasicInfoMaintenance sqlmap -->
+	<sqlMap resource="com/yinhai/pensionbenefit/maintenance/basicinfomaintenance/sqlmap/basicInfoMaintenance.xml" />
+	<!-- **************************信息维护 结束************************* -->
+	<!--一次性待遇批量补差核定 sqlmap -->
+	<sqlMap resource="com/yinhai/pensionbenefit/approve/oneTreDiffBatchApp/sqlmap/oneTreDiffBatchApp.xml" />
+
+	<!-- **************************查询 开始************************* -->
+	<!--核对个人银行帐户信息 sqlmap -->
+	<sqlMap resource="com/yinhai/pensionbenefit/query/checkbankaccountinfo/sqlmap/checkBankAccountInfo.xml" />
+	<!--离退休人员综合信息查询 sqlmap -->
+	<sqlMap resource="com/yinhai/pensionbenefit/query/integrativequery/sqlmap/integrativeQuery.xml" />
+	<!-- 年度待遇调整清单 -->
+	<sqlMap resource="com/yinhai/pensionbenefit/query/annualadjustmentslist/sqlmap/annualAdjustmentsQuery.xml" />
+	<!-- 特殊待遇明细查询 -->
+	<sqlMap resource="com/yinhai/pensionbenefit/query/specialTreatmentDetail/sqlmap/specialTreatmentQuery.xml" />
+	<!--退休信息查询 sqlmap -->
+	<sqlMap resource="com/yinhai/pensionbenefit/query/retiredInfoquery/sqlmap/retiredInfo.xml" />
+	<!--养老拨付情况查询 sqlmap -->
+	<sqlMap resource="com/yinhai/pensionbenefit/query/pensionpaidInfo/sqlmap/pensionPaidInfo.xml" />
+	<!-- 基本信息查询 -->
+	<sqlMap resource="com/yinhai/pensionbenefit/query/retirebasic/sqlmap/retirebasic.xml" />
+	<!-- **************************查询 结束************************* -->
+	  <!--流程名称:DifferentMedical环节名称:DifferentMedical sqlmap-->  
+  <sqlMap resource="com/yinhai/pensionbenefit/others/differentmedical/sqlmap/differentMedical.xml"/> 
+</sqlMapConfig>
+ 

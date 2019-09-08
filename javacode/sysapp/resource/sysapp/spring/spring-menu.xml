@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+	<bean id="menuMgService" parent="transactionProxy">
+    	<property name="target">
+			<bean class="com.yinhai.ta3.sysapp.menumg.service.impl.MenuMgServiceImpl">
+				<property name="menuDao" ref="menuDao"/>
+				<property name="permissionService" ref="permissionService"/>
+				<property name="commonMenuService" ref="commonMenuService"></property>
+			</bean>
+		</property>
+	</bean>	
+	<bean id="commonMenuService" parent="transactionProxy">
+    	<property name="target">
+			<bean class="com.yinhai.ta3.sysapp.menumg.service.impl.CommonMenuServiceImpl" parent="wsbaseService">
+				<property name="hibernateDao" ref="hibernateDao"></property>
+			</bean>
+		</property>
+	</bean>	
+</beans>

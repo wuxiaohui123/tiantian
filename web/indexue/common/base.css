@@ -1,0 +1,65 @@
+@charset "utf-8";
+/*======================Reset=======================*/
+html, body, div, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, blockquote,  
+pre, form, fieldset, table, th, td, img, textarea, div,a {border:0 none;margin:0;padding:0;outline: 0;font-size: 100%; text-align:left; vertical-align: baseline;background: transparent; line-height:1.8em;}
+
+h1 {	font-size: 25px;}
+h2 {	font-size: 23px;}
+h3 {	font-size: 21px;}
+h4 {	font-size: 19px;}
+h5 {	font-size: 17px;}
+h6 {	font-size: 15px;}
+select{font-size:12px;font-family:simsun;}
+ul,ol,li{list-style-type:none}
+a {color:#666;text-decoration:none; outline:none;/*FF标准去虚线框*/}
+a {star:expression(this.onFocus=this.blur()); /* for Ie*去虚线框*/ }
+a:hover{color:#FF6600;text-decoration:underline;}
+:focus {outline: none;}
+body {line-height: 1.5em;width: 100%;display: table; font-size:12px; font-family:Arial, 'Liberation Sans', FreeSans, sans-serif, "宋体";}
+table {border-collapse: separate;border-spacing: 0;}
+caption, th, td {text-align: left;font-weight: normal;}
+table, td, th {vertical-align: middle;}
+blockquote:before, blockquote:after, q:before, q:after {content: "";}
+a img {border: none;outline: none;}
+ol {margin-left: 2em;}
+sup {vertical-align: text-top;}
+sub {vertical-align: text-bottom;}
+
+/*======================浮动==================*/
+.clear{clear:both;height:0px;overflow:hidden;}
+.clearfix:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
+.clearfix { display: inline-block; }
+* html .clearfix { zoom:1}
+.clearfix { display:block; }
+.bugfix{zoom:1}
+
+/*==========限制Detail页内图片大小======避免页面撑暴========*/
+/*.content img { max-width:100%;width:expression(width>669?"100%":width+"px");}
+--说明 .content img { max-width:100%;width:expression(width>（外层宽度px）?"100%":width+"px");}--*/
+
+
+/*=====================文字样式===========================*/
+.size_10{font-size:10px}
+.size_11{font-size:11px}
+.size_12{font-size:12px}
+.size_13{font-size:13px}
+.size_14{font-size:14px}
+.size_16{font-size:16px}
+.size_18{font-size:18px}
+.size_20{font-size:20px}
+
+.fc_white { color: #fff; }
+.fc_red { color: #D00000; }
+.fc_red02 { color: #F73501; }
+.fc_black { color: #000; }
+.fc_blue { color: #336599; }
+.fc_blue02 { color: #0A4E97; }
+.fc_gray { color: #333; }
+.fc_orange { color: #FF663A; }
+.fc_green { color: #007B00; }
+.fontCn{font-size:16px;color:#333;display:block;width:60px;float:left;}
+.fontEn{font-size:12px;color:#333;display:block;float:left;}
+.line_h26 { line-height: 26px; }
+.line_h20 { line-height: 20px; }
+.fontccc {color: #ccc; font-color:#ccc}
+.disable {background:#ccc !important;}

@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+<!-- The SQL in these maps files has purposely been typed with more verbosity than is actually required.
+ For example, many of the selects could have just used SELECT * FROM... instead of listing all of the columns.
+ This is to demonstrate that even complex SQL can be handled and coded and formatted the way SQL was meant
+ to be (i.e. not a bunch of concatenated strings in a Java class). -->
+<!-- Checked -->
+<!-- 表aa10 (代码表) 的所有SQL语句映射配置表  生成时间：2005-04-28 16:32:03 -->
+<sqlMap namespace="appcode">
+	<typeAlias alias="appcode" type="com.yinhai.sysframework.codetable.domain.AppCode"/>
+
+	<!--输入参数-->
+	<parameterMap id="param_appcode" class="appcode">
+		<parameter property="codeType" javaType="java.lang.String"     jdbcType="VARCHAR"  />    <!-- 代码类别     -->
+		<parameter property="codeValue" javaType="java.lang.String"     jdbcType="VARCHAR"  />    <!-- 代码值       -->
+		<parameter property="codeTypeDESC" javaType="java.lang.String"     jdbcType="VARCHAR"  />    <!-- 类别名称     -->
+		<parameter property="codeDESC" javaType="java.lang.String"     jdbcType="VARCHAR"  />    <!-- 代码名称     -->
+		<parameter property="yab003" javaType="java.lang.String"     jdbcType="VARCHAR"  />    <!-- 社保经办机构     -->
+		<parameter property="validFlag" javaType="java.lang.String"     jdbcType="VARCHAR"  />    <!-- 有效标志     -->
+		<parameter property="ver" javaType="java.lang.String"     jdbcType="VARCHAR"  />    <!-- 有效标志     -->
+	</parameterMap>
+
+	<!-- 输出参数 -->
+	<resultMap id="result_appcode" class="appcode">
+		<result property="codeType" column="aaa100" javaType="java.lang.String"     jdbcType="VARCHAR"  />    <!-- 代码类别     -->
+		<result property="codeValue" column="aaa102" javaType="java.lang.String"     jdbcType="VARCHAR"  />    <!-- 代码值       -->
+		<result property="codeTypeDESC" column="aaa101" javaType="java.lang.String"     jdbcType="VARCHAR"  />    <!-- 类别名称     -->
+		<result property="codeDESC" column="aaa103" javaType="java.lang.String"     jdbcType="VARCHAR"  />    <!-- 代码名称     -->
+		<result property="yab003" javaType="java.lang.String"     jdbcType="VARCHAR"  />    <!-- 社保经办机构     -->
+		<result property="validFlag" javaType="java.lang.String"     jdbcType="VARCHAR"  />    <!-- 有效标志     -->
+		<result property="ver" javaType="java.lang.String"     jdbcType="VARCHAR"  />    <!-- 有效标志     -->
+	
+	</resultMap>
+
+	<!-- 查询所有数据的查询 -->
+	<select id="getAllAppCodes" parameterClass="map" resultClass="appcode">
+		SELECT
+		       aaa100 as codeType,   <!-- 代码类别     -->
+		       aaa102 as codeValue,   <!-- 代码值       -->
+		       aaa101 as codeTypeDESC,   <!-- 类别名称     -->
+		       aaa103 as codeDESC,    <!-- 代码名称     -->
+		       yab003 as yab003,   <!-- 社保经办机构     -->
+		       aae120 as validFlag,    <!-- 注销标志     -->
+		       ver as ver
+		  FROM $viewName$
+	 <dynamic prepend="WHERE">
+			<isNotEmpty prepend="AND" property="codeType">   <!-- 代码类别     -->
+				aaa100 = #codeType#
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="codeValue">   <!-- 代码值       -->
+				aaa102 = #codeValue#
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="yab003">   <!-- 代码值       -->
+				yab003 = #yab003#
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="validFlag">   <!-- 代码值       -->
+				aae120 = #validFlag#
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="codeTypeDESC">   <!-- 类别名称     -->
+				aaa101 = #codeTypeDESC#
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="codeDESC">   <!-- 代码名称     -->
+				aaa103 = #codeDESC#
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="ver">   <!-- 版本号     -->
+				<![CDATA[ver > #ver#]]>
+			</isNotEmpty>
+		</dynamic>		  
+		 ORDER BY aaa100 ,
+		 		  aaa102
+	</select>
+	<!-- 查询所有数据的查询 -->
+	<select id="getAllAppCodesForCache" parameterClass="map" resultClass="appcode">
+		SELECT
+		       aaa100 as codeType,   <!-- 代码类别     -->
+		       aaa102 as codeValue,   <!-- 代码值       -->
+		       aaa101 as codeTypeDESC,   <!-- 类别名称     -->
+		       aaa103 as codeDESC,    <!-- 代码名称     -->
+		       yab003 as yab003,   <!-- 社保经办机构     -->
+		       aae120 as validFlag,    <!-- 注销标志     -->
+		       ver as ver
+		  FROM $viewName$
+	 <dynamic prepend="WHERE">
+			<isNotEmpty prepend="AND" property="codeType">   <!-- 代码类别     -->
+				aaa100 = #codeType#
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="codeValue">   <!-- 代码值       -->
+				aaa102 = #codeValue#
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="yab003">   <!-- 代码值       -->
+				(yab003 = #orgId# OR yab003 = '9999')
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="validFlag">   <!-- 代码值       -->
+				aae120 = #validFlag#
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="codeTypeDESC">   <!-- 类别名称     -->
+				aaa101 = #codeTypeDESC#
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="codeDESC">   <!-- 代码名称     -->
+				aaa103 = #codeDESC#
+			</isNotEmpty>
+			<isNotEmpty prepend="AND" property="ver">   <!-- 版本号     -->
+				<![CDATA[ver > #ver#]]>
+			</isNotEmpty>
+		</dynamic>		  
+		 ORDER BY aaa100 ,
+		 		  aaa102
+	</select>
+
+	<!-- 查询所有数据的总数的查询 -->
+	<select id="getAllAppCodesCount" parameterClass="map" resultClass="java.lang.Integer">
+		SELECT COUNT(1) as value
+		  FROM (
+		SELECT
+		       aaa100 as codeType,   <!-- 代码类别     -->
+		       aaa102 as codeValue,   <!-- 代码值       -->
+		       aaa101 as codeTypeDESC,   <!-- 类别名称     -->
+		       aaa103 as codeDESC,    <!-- 代码名称     -->
+		       yab003 as yab003,   <!-- 社保经办机构     -->
+		       aae120 as validFlag,    <!-- 注销标志     -->
+		       ver as ver
+		  FROM aa10a1
+		  )
+	</select>
+
+	<!-- 查询一批数据的查询 -->
+	<select id="getAppCodes" parameterClass="map" resultClass="appcode">
+		SELECT
+		       a.aaa100 as codeType,   <!-- 代码类别     -->
+		       a.aaa102 as codeValue,   <!-- 代码值       -->
+		       a.aaa101 as codeTypeDESC,   <!-- 类别名称     -->
+		       a.aaa103 as codeDESC,    <!-- 代码名称     -->
+		       a.yab003 as yab003,   <!-- 社保经办机构     -->
+		       a.aae120 as validFlag,    <!-- 注销标志     -->
+		       a.ver as ver
+		  FROM aa10a1 a
+	<dynamic prepend="WHERE">
+		<isNotEmpty prepend="AND" property="codeType">   <!-- 代码类别     -->
+			<![CDATA[instr(a.aaa100,#codeType#)>0]]>
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="codeValue">   <!-- 代码值       -->
+			<![CDATA[instr(a.aaa102,#codeValue#)>0]]>
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="codeTypeDESC">   <!-- 类别名称     -->
+			<![CDATA[instr(a.aaa101,#codeTypeDESC#)>0]]>
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="codeDESC">   <!-- 代码名称     -->
+			<![CDATA[instr(a.aaa103,#codeDESC#)>0]]>
+		</isNotEmpty>
+	</dynamic>
+		 ORDER BY a.aaa100 ,
+		 		  a.aaa102
+	</select>
+
+	<!-- 通过主键进行查询 -->
+	<select id="getAppCodeByKey" parameterClass="map" resultClass="appcode">
+		SELECT
+		       a.aaa100 as codeType,   <!-- 代码类别     -->
+		       a.aaa102 as codeValue,   <!-- 代码值       -->
+		       a.aaa101 as codeTypeDESC,   <!-- 类别名称     -->
+		       a.aaa103 as codeDESC,    <!-- 代码名称     -->
+		       a.yab003 as yab003,   <!-- 社保经办机构     -->
+		       a.aae120 as validFlag    <!-- 注销标志     -->
+		       ,a.ver as ver
+		  FROM aa10a1 a
+		 WHERE 1 = 1
+<![CDATA[	   AND a.aaa100 = #codeType#    ]]>    <!-- 代码类别 -->
+<![CDATA[	   AND a.aaa102 = #codeValue#    ]]>    <!-- 代码值 -->
+	</select>
+
+	<!--通过Id进行查询-->
+	<select id="getAppCodeByMap" parameterClass="map" resultClass="appcode">
+		SELECT
+		       a.aaa100 as codeType,   <!-- 代码类别     -->
+		       a.aaa102 as codeValue,   <!-- 代码值       -->
+		       a.aaa101 as codeTypeDESC,   <!-- 类别名称     -->
+		       a.aaa103 as codeDESC,    <!-- 代码名称     -->
+		       a.yab003 as yab003,   <!-- 社保经办机构     -->
+		       a.aae120 as validFlag,    <!-- 注销标志     -->
+		       a.ver as ver
+		  FROM aa10a1 a
+		 <dynamic prepend="WHERE">
+		<isNotEmpty prepend="AND" property="codeType">   <!-- 代码类别     -->
+			a.aaa100 = #codeType#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="codeValue">   <!-- 代码值       -->
+			a.aaa102 = #codeValue#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="yab003">   <!-- 代码值       -->
+			a.yab003 = #yab003#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="validFlag">   <!-- 代码值       -->
+			a.aae120 = #validFlag#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="codeTypeDESC">   <!-- 类别名称     -->
+			a.aaa101 = #codeTypeDESC#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="codeDESC">   <!-- 代码名称     -->
+			a.aaa103 = #codeDESC#
+		</isNotEmpty>
+		
+		<isNotEmpty prepend="AND" property="ver">   <!-- 版本号     -->
+			<![CDATA[a.ver > #ver#]]>
+		</isNotEmpty>
+	</dynamic>
+		 ORDER BY a.aaa100 ,
+		 					a.aaa102
+	</select>
+
+	<!-- 通过动态SQL进行查询 -->
+	<select id="getAppCode" parameterClass="appcode" resultClass="appcode">
+		SELECT
+		       a.aaa100 as codeType,   <!-- 代码类别     -->
+		       a.aaa102 as codeValue,   <!-- 代码值       -->
+		       a.aaa101 as codeTypeDESC,   <!-- 类别名称     -->
+		       a.aaa103 as codeDESC,    <!-- 代码名称     -->
+		       a.yab003 as yab003,   <!-- 社保经办机构     -->
+		       a.aae120 as validFlag    <!-- 注销标志     -->
+		       ,ver as ver
+		  FROM aa10a1 a
+	<dynamic prepend="WHERE">
+		<isNotEmpty prepend="AND" property="codeType">   <!-- 代码类别     -->
+			a.aaa100 = #codeType#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="codeValue">   <!-- 代码值       -->
+			a.aaa102 = #codeValue#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="codeTypeDESC">   <!-- 类别名称     -->
+			a.aaa101 = #codeTypeDESC#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="codeDESC">   <!-- 代码名称     -->
+			a.aaa103 = #codeDESC#
+		</isNotEmpty>
+	</dynamic>
+		 ORDER BY a.aaa100 ,
+		 					a.aaa102
+	</select>
+
+	<!-- 通过动态SQL进行查询记录数 -->
+	<select id="getAppCodeCount" parameterClass="appcode" resultClass="java.lang.Integer">
+		SELECT count(1) as value FROM (
+		SELECT
+		       a.aaa100 as codeType,   <!-- 代码类别     -->
+		       a.aaa102 as codeValue,   <!-- 代码值       -->
+		       a.aaa101 as codeTypeDESC,   <!-- 类别名称     -->
+		       a.aaa103 as codeDESC,    <!-- 代码名称     -->
+		       a.yab003 as yab003,   <!-- 社保经办机构     -->
+		       a.aae120 as validFlag,    <!-- 注销标志     -->
+		       a.ver as ver
+		  FROM aa10a1 a
+	<dynamic prepend="WHERE">
+		<isNotEmpty prepend="AND" property="codeType">   <!-- 代码类别     -->
+			a.aaa100 = #codeType#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="codeValue">   <!-- 代码值       -->
+			a.aaa102 = #codeValue#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="codeTypeDESC">   <!-- 类别名称     -->
+			a.aaa101 = #codeTypeDESC#
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="codeDESC">   <!-- 代码名称     -->
+			a.aaa103 = #codeDESC#
+		</isNotEmpty>
+	</dynamic>
+		)
+	</select>
+
+	<!-- 插入单条数据 -->
+	<insert id="insertAppCode" parameterClass="appcode">
+		INSERT INTO aa10 (
+		       aaa100,  <!-- 代码类别     -->
+		       aaa102,  <!-- 代码值       -->
+		       aaa101,  <!-- 类别名称     -->
+		       aaa103,  <!-- 代码名称     -->
+		       yab003,   <!-- 社保经办机构     -->
+		       aae120)    <!-- 注销标志     -->
+		VALUES (
+		       #codeType:VARCHAR#,  <!-- 代码类别     -->
+		       #codeValue:VARCHAR#,  <!-- 代码值       -->
+		       #codeTypeDESC:VARCHAR#,  <!-- 类别名称     -->
+		       #codeDESC:VARCHAR#,  <!-- 代码名称     -->
+		       #yab003:VARCHAR#,  <!-- 社保经办机构     -->
+		       #validFlag:VARCHAR#)  <!-- 注销标志     -->
+	</insert>
+
+	<!-- 通过主键更新单条数据 -->
+	<update id="updateAppCodeByKey" parameterClass="map">
+		UPDATE aa10 SET
+		       aaa101 = #codeTypeDESC:VARCHAR#,       <!-- 类别名称     -->
+		       aaa103 = #codeDESC:VARCHAR#,            <!-- 代码名称     -->
+		       yab003 = #orgId:VARCHAR#,              <!-- 社保经办机构     -->
+		       aae120 = #validFlag:VARCHAR#           <!-- 注销标志     -->
+		 WHERE 1 = 1
+<![CDATA[	   AND aaa100 = #codeType#    ]]>    <!-- 代码类别 -->
+<![CDATA[	   AND aaa102 = #codeValue#    ]]>    <!-- 代码值 -->
+	</update>
+
+	<!--通过ID更新单条数据-->
+	<update id="updateAppCodeById" parameterClass="map">
+		UPDATE aa10 SET
+		       aaa101 = #codeTypeDESC:VARCHAR#,       <!-- 类别名称     -->
+		       aaa103 = #codeDESC:VARCHAR#            <!-- 代码名称     -->
+		 WHERE id = #id#
+	</update>
+
+	<!-- 通过动态SQL更新数据 -->
+	<update id="updateAppCode" parameterClass="appcode">
+		UPDATE aa10 SET
+		       aaa101 = #codeTypeDESC:VARCHAR#,       <!-- 类别名称     -->
+		       aaa103 = #codeDESC:VARCHAR#,            <!-- 代码名称     -->
+		       yab003 = #yab003:VARCHAR#,              <!-- 社保经办机构     -->
+		       aae120 = #validFlag:VARCHAR#           <!-- 注销标志     -->
+		 WHERE 1 = 1
+<![CDATA[	   AND aaa100 = #codeType#    ]]>    <!-- 代码类别 -->
+<![CDATA[	   AND aaa102 = #codeValue#    ]]>    <!-- 代码值 -->
+	</update>
+
+	<!--通过主键删除单条数据-->
+	<delete id="deleteAppCodeByKey" parameterClass="map">
+		DELETE FROM aa10
+		 WHERE 1 = 1
+<![CDATA[	   AND aaa100 = #codeType#    ]]>    <!-- 代码类别 -->
+<![CDATA[	   AND aaa102 = #codeValue#    ]]>    <!-- 代码值 -->
+	</delete>
+
+	<!--通过ID删除单条数据-->
+	<delete id="deleteAppCodeById" parameterClass="java.lang.String">
+		DELETE DELETE FROM aa10
+		 WHERE id = #id#
+	</delete>
+	
+	<select id="getDistinctYab003" parameterClass="map" resultClass="java.lang.String">
+		select distinct(yab003) from aa10a1 t
+	</select>
+</sqlMap>

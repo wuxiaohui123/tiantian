@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+   <import resource="hibernateconfig.xml"/>
+   <import resource="spring-datasource.xml"/>
+   <import resource="distributecache.xml"/>
+   <import resource="spring-event.xml"/>
+   <import resource="spring-cxf.xml"/>
+   <import resource="resource/spring-orgapi.xml"/>
+   <import resource="resource/spring-security.xml"/>
+   <import resource="spring-tasecurity.xml"/>
+   <import resource="resource/spring-system.xml"/>
+   <import resource="resource/spring-userlogin.xml"/>
+   <import resource="resource/spring-organization.xml"/>
+   <import resource="resource/spring-sysapp.xml"/>
+   <import resource="resource/spring-scheduler.xml"/>
+   <!-- Activiti流程引擎 -->
+   <!--<import resource="resource/spring-abpmn.xml" /> -->
+   <import resource="bs/spring-cfg-include.xml"/>
+</beans>

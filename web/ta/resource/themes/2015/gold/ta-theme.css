@@ -1,0 +1,118 @@
+.header_bg{
+	background:url("images/top_right.jpg") right 0 no-repeat;
+}
+.header-link a:hover {
+    background: #97802F;
+    color: #fff !important;
+}
+
+.header-link a:hover span {
+    color: #fff !important;
+}
+
+.uid-r {
+    background: url("images/bg.png") -64px -352px no-repeat;
+}
+
+.header-border {
+    background: url("images/bgx.png") 0 -87px;
+}
+
+.header-link a:hover .uid-r {
+    background: url("images/r-hover.png") no-repeat !important;
+}
+
+.header-search span {
+    border: 1px solid #459830;
+    background: url("images/search-btn.png");
+}
+
+.header-search span:hover {
+    background: url("images/search-btn-hover.png");
+    border: 1px solid #008000;
+}
+
+.header-search span:active {
+    background: url("images/search-btn-down.png");
+    border: 1px solid #008000;
+}
+
+.header-search span b {
+    background: url("images/search-icon.png") center no-repeat;
+}
+
+/**tab 样式**/
+.index_tab_center {
+}
+
+.tab-list-icon {
+    border: 1px solid #C9BE99;
+}
+
+.index_menuTab_act .index_tab_center {
+    background: url("images/bgx.png") 0 -272px repeat;
+    border: 1px solid #97802F;
+}
+
+.index_menuTab_noact .index_tab_center:hover {
+}
+
+.index_menuTab_noact .index_tab_center {
+    background: url("images/bgx.png") 0 -112px;
+    border: 1px solid #DDD;
+}
+
+.tab-list-icon {
+    background: url("images/bgx.png") 0 -112px;
+}
+
+.index_menuTab a {
+    color: #ded4b1;
+}
+
+.index_menuTab a:hover {
+    color: #816d24;
+    background: #D8D97A;
+}
+
+.tab-list li:hover {
+    background: #97802F;
+}
+
+.list-item-act:hover {
+    background: #97802F url("images/yuan-w.png") 6px center no-repeat !important;
+}
+
+.close-all:hover {
+    background: #97802F url("images/icon_close.png") 6px center no-repeat !important;
+}
+.menu-list li:hover{
+	 background: #97802F;
+}
+.tab-list-icon{
+	height:27px;
+}
+/*item change*/
+.buttonlayout-bc{
+	background-image: url("images/bgx.png");
+	background-position: 0 -320px;
+}
+.left-themes-color, 
+.slick-row:hover {
+	background-color: #fcfaef;
+}
+.select_button .select_button_item:hover,
+.slick-ffb-item:hover,
+.ffb-select_163 {
+	background-color: #97802F;
+}
+.fielddiv_163 .inputFocus{
+	border-color: #97802F;
+}
+
+.tabs li a.tabs-inner.tabs-inner_163{border:1px solid #DDD;color:#333; background:url('images/bgx.png') repeat-x 0 -112px; }
+
+.tabs li.tabs_163.tabs-selected a{border:1px solid #97802F;color:white; background:#FFF url('images/bgx.png') repeat-x 0 -272px; }
+
+.sexybutton_163.toolbarbt:hover .button_span{background:#97802F;color: #fff !important;}
+.commonmenu:hover{left:1px;top:1px;border-color: #97802F}

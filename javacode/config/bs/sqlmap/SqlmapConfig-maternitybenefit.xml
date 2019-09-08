@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMapConfig PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig> 
+  <settings useStatementNamespaces="true"/>  
+  <!--流程名称:TreatmentCalculate环节名称:TreatmentCalculate sqlmap-->  
+  <sqlMap resource="com/yinhai/maternitybenefit/approve/treatmentcalculate/sqlmap/treatmentCalculate.xml"/>
+  <!--流程名称:ReCalculate环节名称:ReCalculate sqlmap-->  
+  <sqlMap resource="com/yinhai/maternitybenefit/approve/medicalcalculate/sqlmap/medicalCalculate.xml"/> 
+  
+  <sqlMap resource="com/yinhai/maternitybenefit/account/maternityafter/sqlmap/maternityAfter.xml"/>
+  <sqlMap resource="com/yinhai/maternitybenefit/account/maternitybefore/sqlmap/maternityBefore.xml"/>
+  <sqlMap resource="com/yinhai/maternitybenefit/account/maternityplansurgery/sqlmap/maternityPlanSurgery.xml"/>
+  <sqlMap resource="com/yinhai/maternitybenefit/query/materegistration/sqlmap/mateRegistrationQuery.xml"/>
+  
+  <sqlMap resource="com/yinhai/maternitybenefit/approve/MedicalCal/sqlmap/MedicalCal.xml"/>
+  <sqlMap resource="com/yinhai/maternitybenefit/query/mateaBaseInFor/sqlmap/mateaBaseInFor.xml"/>
+  <sqlMap resource="com/yinhai/maternitybenefit/query/mateRegistrationInfo/sqlmap/mateRegistrationInfo.xml"/>
+</sqlMapConfig>

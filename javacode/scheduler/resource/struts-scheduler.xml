@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	 <package name="scheduler" namespace="/system" extends="ta-default" strict-method-invocation="false">
+	 	<action name="oracleJobAction" class="com.yinhai.ta3.sysapp.jobs.action.OracleJobAction">
+	 		<result name="success">/sysapp/schedule/oracleJobList.jsp</result>
+	 		<result name="createJob">/sysapp/schedule/createOracleJob.jsp</result>
+	 		<result name="continueJob">/sysapp/schedule/continueOracleJob.jsp</result>
+	 		<result name="viewjobmsgs">/sysapp/schedule/viewJobMsgs.jsp</result>
+	 		<allowed-methods>*</allowed-methods>
+	 	</action>
+	 	<action name="schedulerMgAction" class="com.yinhai.ta3.sysapp.scheduler.action.ScheduleManageAction">
+	 		<result name="success">/sysapp/schedule/scheduleManage.jsp</result>
+	 		<result name="edit">/sysapp/schedule/scheduleEdit.jsp</result>
+	 		<result name="cron">/sysapp/schedule/cronExpression.jsp</result>
+	 		<allowed-methods>getJobs</allowed-methods>
+	 	</action>	 		 	
+	 </package>
+</struts>

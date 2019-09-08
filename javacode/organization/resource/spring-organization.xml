@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans   
+						http://www.springframework.org/schema/beans/spring-beans.xsd   
+						http://www.springframework.org/schema/context         
+						http://www.springframework.org/schema/context/spring-context-2.5.xsd         
+						http://www.springframework.org/schema/tx         
+						http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+        
+     <!--  组织机构公用service -->
+   	<bean id="orgBaseService" class="com.yinhai.ta3.organization.service.impl.OrgBaseService" parent="baseService">
+		<property name="hibernateDao" ref="hibernateDao"/>
+		<property name="illegalOperationLog" ref="illegalOperationLog"/>
+	</bean>
+   <!-- 该文件专门用来引用系统的service配置文件的 -->
+	<import resource="organization/spring/spring-user.xml"/>
+	<import resource="organization/spring/spring-org.xml"/>
+	<import resource="organization/spring/spring-position.xml"/>
+	<import resource="organization/spring/spring-permission.xml"/>
+	<import resource="organization/spring/spring-adminMg.xml"/>
+	<import resource="organization/spring/spring-orgLog.xml"/>
+	<import resource="organization/spring/spring-similarAuthority.xml"/>
+	<import resource="organization/spring/spring-delegatePosition.xml"/>
+	<import resource="organization/spring/spring-yab003.xml"/>
+	<import resource="organization/spring/spring-upload.xml"/>
+	<import resource="organization/spring/spring-innercontrol.xml"/>
+	<import resource="organization/spring/spring-orguser.xml"/>
+</beans>

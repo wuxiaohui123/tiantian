@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMapConfig PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig> 
+  <settings useStatementNamespaces="true"/>
+  <!-- 三目管理 -->  
+  <sqlMap resource="com/yinhai/medicalbenefit/inventory/sqlmap/inventory.xml"/>
+  <!-- 医疗公共 -->
+  <sqlMap resource="com/yinhai/medicalbenefit/common/sqlmap/common.xml"/>
+  <!-- 医疗其他 -->
+  <sqlMap resource="com/yinhai/medicalbenefit/other/sqlmap/other.xml"/>
+  <!-- 医疗查询 -->
+  <sqlMap resource="com/yinhai/medicalbenefit/query/sqlmap/query.xml"/>
+</sqlMapConfig>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-4.3.xsd"
+	default-lazy-init="true">
+
+	<bean id="sessionFactory" class="com.yinhai.springext.MySessionFactoryBean">
+		<property name="dataSource" ref="dataSourceProxy"/>
+		
+		<property name="mappingLocationsExtends">
+			<list>
+				<value>classpath*:/Org.hbm.xml</value>
+			</list>
+		</property>
+		
+		<property name="mappingLocations">
+			<list>
+ 				<value>classpath*:/resource/organization/hbm/*.hbm.xml</value> 
+				<value>classpath*:/resource/sysapp/hbm/*.hbm.xml</value> 
+ 				<value>classpath*:/resource/system/hbm/*.hbm.xml</value> 
+				<value>classpath*:/resource/runqian/hbm/*.hbm.xml</value> 
+			</list>
+		</property>
+		
+		<property name="hibernateProperties">
+			<props>
+				<!--
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL57InnoDBDialect</prop>
+ 				<prop key="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</prop>
+ 				<prop key="hibernate.dialect">org.hibernate.dialect.OracleDialect</prop>
+				<prop key="hibernate.dialect">org.hibernate.dialect.DmDialect</prop>
+				-->
+				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">false</prop>
+				<prop key="hibernate.query.substitutions">true 1, false 0</prop>
+				<prop key="hibernate.jdbc.batch_size">20</prop>
+				<prop key="hibernate.cache.use_query_cache">true</prop>
+				<prop key="hibernate.cache.use_second_level_cache">true</prop>
+				<prop key="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory</prop>
+			</props>
+		</property>
+		<property name="entityInterceptor" ref="treeInterceptor"/>
+	</bean>
+	<bean id="treeInterceptor" class="com.yinhai.sysframework.dao.hibernate.TreeIntercptor"/>
+</beans>

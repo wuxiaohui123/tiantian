@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans   
+						http://www.springframework.org/schema/beans/spring-beans.xsd   
+						http://www.springframework.org/schema/context         
+						http://www.springframework.org/schema/context/spring-context-2.5.xsd         
+						http://www.springframework.org/schema/tx         
+						http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+   	
+ 	<bean id="userDao" class="com.yinhai.ta3.system.org.dao.impl.UserDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="orgDao" class="com.yinhai.ta3.system.org.dao.impl.OrgDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="positionDao" class="com.yinhai.ta3.system.org.dao.impl.PositionDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>	
+	<bean id="menuDao" class="com.yinhai.ta3.system.sysapp.dao.impl.MenuDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="organizationService" parent="transactionProxy">
+    	<property name="target">
+			<bean class="com.yinhai.ta3.system.org.OrganizationService">
+				<property name="userDao" ref="userDao"/>
+				<property name="positionDao" ref="positionDao"/>
+				<property name="orgDao" ref="orgDao"/>
+				<property name="timeService" ref="timeService"/>
+			</bean>
+		</property>
+	</bean>	
+	<bean id="organizationEntityService" parent="transactionProxy">
+    	<property name="target">
+			<bean class="com.yinhai.ta3.organization.api.impl.DbOrganizationEntityServiceImpl" parent="baseService">
+				<property name="md5PasswordEncoder" ref="md5PasswordEncoder"/>
+				<property name="hibernateDao" ref="hibernateDao"></property>
+			</bean>
+		</property>
+	</bean>		
+</beans>

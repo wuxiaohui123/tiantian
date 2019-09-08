@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+	<!-- 该文件专门用来应用业务系统的service配置文件的 -->
+	<!-- 业务配置SERVICE -->
+	<!-- 全局公用 -->
+ 	<import resource="spring-synthesis.xml" /> 
+	<!-- 公共业务 -->
+<!-- 	<import resource="spring-publicBusiness.xml" /> -->
+	<!-- 待遇通用 -->
+<!--    <import resource="spring-benefit.xml" /> -->
+   <!-- 养老待遇   -->
+<!--    <import resource="spring-pensionbenefit.xml" /> -->
+   <!-- 机关养老--> 
+<!--    <import resource="spring-govpensionbenefit.xml" /> -->
+   <!-- 医疗待遇 -->
+<!--    <import resource="spring-medicalbenefit.xml" /> -->
+   <!-- 失业待遇 -->
+<!--    <import resource="spring-unemployedbenefit.xml" /> -->
+	<!-- 工伤待遇 -->
+<!--    <import resource="spring-workinjurybenefit.xml" /> -->
+</beans>

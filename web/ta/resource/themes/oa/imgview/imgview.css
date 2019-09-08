@@ -1,0 +1,79 @@
+#xzy_zoom{
+      border: 5px solid #fff;
+      width:350px;
+      height:300px;
+      display: none;
+      top:0;left:0;
+      overflow: hidden;
+      position: absolute;
+      box-shadow:1px 0 6px 0 rgba(0, 0, 0, 0.6);
+      background-color: #f4f4f4;
+      cursor: move;
+      z-index: 1000;
+     
+      filter:progid:DXImageTransform.Microsoft.Shadow(color=#dddddd,direction=0,strength=6) 
+             progid:DXImageTransform.Microsoft.Shadow(color=#dddddd,direction=90,strength=10) 
+             progid:DXImageTransform.Microsoft.Shadow(color=#dddddd,direction=180,strength=10) 
+             progid:DXImageTransform.Microsoft.Shadow(color=#dddddd,direction=270,strength=6)"; /*ºÊ»›ie*/
+      background-color: #eee;
+	  -moz-box-shadow: 0 0 10px 2px #666;/*ºÊ»›firefox*/
+	  -webkit-box-shadow: 0 0 12px 0px #666;/*ºÊ»›safariªÚchrome*/
+	  box-shadow:0 0 12px 0px #666;/*ºÊ»›operaªÚie9*/
+       }
+       
+#xzy_zoom_title{
+    position: absolute;
+    z-index: 1002;
+    height: 22px;
+    overflow: hidden;
+    border-bottom: 1px solid #ddd;
+    line-height: 22px;
+    width:350px;
+    font-size: 12px;
+    font-family: "ÀŒÃÂ";
+    padding-left: 4px;
+    background-color: #99BBE8;
+    color: #fff
+}
+#xzy_zoom_title ul{
+    float: right;margin: 0;padding: 0;
+}
+#xzy_zoom_title ul li{
+    margin: 0;padding: 0;
+    float: left;
+    list-style: none;
+    height:22px;
+    width: 20px;
+    cursor: pointer;
+    background-image: url("zoom_close.gif");
+    background-repeat: no-repeat;
+    background-position: center 0;
+}
+#xzy_zoom_title #xzy_zoom_close{background-position: center -36px}
+#xzy_zoom_title #xzy_zoom_right{background-position: center -18px}
+#xzy_zoom_pic{
+    position: absolute;
+    z-index: 1001;
+    cursor: move;
+    border: 1px solid #ddd;
+}
+.zoom{
+    float: left;
+}
+.zoom_pic{
+    margin:5px 5px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    text-align: center
+}
+.z_pic{
+	margin-top:3px;
+}
+.zoom_pic:hover{border: 1px solid #6495ed;}
+.zoom_name{
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: #069
+}

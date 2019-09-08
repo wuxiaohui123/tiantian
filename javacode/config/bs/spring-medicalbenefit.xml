@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">  
+  <!-- 该文件专门用来应用业务系统的service配置文件的 -->  
+  
+  
+   <!-- 医疗待遇公共服务service -->
+	<bean id="callProcedureService" class="com.yinhai.medicalbenefit.common.service.impl.CallProcedureServiceImpl" parent="yhsi3BaseService"> 
+	   <property name="yhsi3BaseService">
+			<ref bean="yhsi3BaseService" /> 
+		</property>			
+ 	</bean> 
+
+	<!-- 公共接口 -->
+ 	<bean id="commonMedicareService" parent="transactionProxy">  
+		<property name="target">
+			<bean class="com.yinhai.medicalbenefit.common.service.impl.CommonMedicareServiceImpl" parent="yhsi3BaseService"/> 
+ 		</property> 
+ 	</bean> 
+ 	
+	<!-- 药品目录管理-->
+	<bean id="newDrugsService" parent="transactionProxy">  
+		<property name="target">  
+			<bean class="com.yinhai.medicalbenefit.inventory.service.impl.NewDrugsServiceImpl" parent="yhsi3BaseService"/>  
+ 		</property>  
+	</bean> 
+        <bean id="modifyDrugsService" parent="transactionProxy">  
+		<property name="target"> 
+ 			<bean class="com.yinhai.medicalbenefit.inventory.service.impl.ModifyDrugsServiceImpl" parent="yhsi3BaseService"/>  
+		</property>  
+	</bean> 
+    <bean id="stopDrugsService" parent="transactionProxy"> 
+		<property name="target"> 
+			<bean class="com.yinhai.medicalbenefit.inventory.service.impl.StopDrugsServiceImpl" parent="yhsi3BaseService"/> 
+		</property> 
+	</bean>
+	
+	<!-- 诊疗目录、服务设施、材料管理-->
+	<bean id="newClinicsService" parent="transactionProxy"> 
+		<property name="target"> 
+			<bean class="com.yinhai.medicalbenefit.inventory.service.impl.NewClinicsServiceImpl" parent="yhsi3BaseService"/> 
+		</property> 
+	</bean>
+	<bean id="modifyClinicsService" parent="transactionProxy"> 
+		<property name="target"> 
+			<bean class="com.yinhai.medicalbenefit.inventory.service.impl.ModifyClinicsServiceImpl" parent="yhsi3BaseService"/> 
+		</property> 
+	</bean>
+	<bean id="stopClinicsService" parent="transactionProxy"> 
+		<property name="target"> 
+			<bean class="com.yinhai.medicalbenefit.inventory.service.impl.StopClinicsServiceImpl" parent="yhsi3BaseService"/> 
+		</property> 
+	</bean>
+	 
+	<!-- 价格定比例参数管理 -->
+	<bean id="specialProjectAppService" parent="transactionProxy"> 
+		<property name="target"> 
+			<bean class="com.yinhai.medicalbenefit.other.service.impl.SpecialProjectAppServiceImpl" parent="yhsi3BaseService"/> 
+		</property> 
+	</bean>
+
+	<!-- 慢性病用药范围管理-->
+	<bean id="drugsRangService" parent="transactionProxy"> 
+		<property name="target"> 
+			<bean class="com.yinhai.medicalbenefit.inventory.service.impl.DrugsRangServiceImpl" parent="yhsi3BaseService"/> 
+		</property> 
+	</bean>
+	
+	<!-- 两定目录对码审核-->
+	<bean id="hosDrugsAuditService" parent="transactionProxy"> 
+		<property name="target"> 
+			<bean class="com.yinhai.medicalbenefit.inventory.service.impl.HosDrugsAuditServiceImpl" parent="yhsi3BaseService"/> 
+		</property> 
+	</bean>
+	
+	<!-- 与省目录对码-->
+	<bean id="provinceDrugsMatchService" parent="transactionProxy"> 
+		<property name="target"> 
+			<bean class="com.yinhai.medicalbenefit.inventory.service.impl.ProvinceDrugsMatchServiceImpl" parent="yhsi3BaseService"/> 
+		</property> 
+	</bean>
+	
+	<!-- 审批管理 -->
+	<!-- 黑名单新增 -->
+	<bean id="addBlackListService" parent="transactionProxy"> 
+		<property name="target"> 
+		  <bean class="com.yinhai.medicalbenefit.inventory.service.impl.AddBlackListServiceImpl" parent="yhsi3BaseService"/> 
+		</property> 
+	</bean>
+	<!-- 转院申请 -->
+	 <bean id="referralAppService" parent="transactionProxy"> 
+		<property name="target"> 
+		  <bean class="com.yinhai.medicalbenefit.other.service.impl.ReferralAppServiceImpl" parent="yhsi3BaseService"/> 
+		</property> 
+	</bean>
+	<!-- 特殊药品 -->
+	<bean id="specialDrugsAppService" parent="transactionProxy"> 
+		<property name="target"> 
+		  <bean class="com.yinhai.medicalbenefit.other.service.impl.SpecialDrugsAppServiceImpl" parent="yhsi3BaseService"/> 
+		</property> 
+	</bean>
+	<!-- 特殊诊疗项目 -->
+	 <bean id="specialClinicsAppService" parent="transactionProxy"> 
+		<property name="target"> 
+		  <bean class="com.yinhai.medicalbenefit.other.service.impl.SpecialClinicsAppServiceImpl" parent="yhsi3BaseService"/> 
+		</property> 
+	</bean>
+	<!-- 医疗欠费特权报销认定 -->
+	 <bean id="arrearsClearService" parent="transactionProxy"> 
+		<property name="target"> 
+		  <bean class="com.yinhai.medicalbenefit.other.service.impl.ArrearsClearServiceImpl" parent="yhsi3BaseService"/> 
+		</property> 
+	</bean>
+	<!-- 家庭病床 -->
+	<bean id="hosBedHomeAppService" parent="transactionProxy"> 
+		<property name="target"> 
+		  <bean class="com.yinhai.medicalbenefit.other.service.impl.HOSBedHomeAppServiceImpl" parent="yhsi3BaseService"/> 
+		</property> 
+	</bean>
+	<!-- 起付减免登记 -->
+	 <bean id="qifuReductionService" parent="transactionProxy"> 
+		<property name="target">
+			<bean class="com.yinhai.medicalbenefit.other.service.impl.QifuReductionServiceImpl" parent="yhsi3BaseService"/> 
+		</property>
+	 </bean>
+	 <!-- xujin  begin-->
+	<!-- 异地人员管理 -->
+	<bean id="offSitePlaceAppService" parent="transactionProxy"> 
+    <property name="target"> 
+      <bean class="com.yinhai.medicalbenefit.other.service.impl.OFFSitePlaceAppServiceImpl" parent="yhsi3BaseService"/> 
+    </property> 
+    </bean>
+    
+    <!-- 个人账户 -->
+	
+    <!-- 个人账户清退初审 -->
+	<bean id="accountGiveRegService" parent="transactionProxy"> 
+	 <property name="target"> 
+	   <bean class="com.yinhai.medicalbenefit.account.service.impl.AccountGiveRegServiceImpl" parent="yhsi3BaseService"/> 
+	 </property> 
+	</bean>
+	<!-- 个人账户清退 1-->
+	<bean id="accountGiveRegService1" parent="transactionProxy"> 
+	 <property name="target"> 
+	   <bean class="com.yinhai.medicalbenefit.account.service.impl.AccountGiveRegServiceImpl1" parent="yhsi3BaseService"/> 
+	 </property> 
+	</bean>   
+	<!-- 个人账户返还 -->
+	<bean id="accountReturnRegService" parent="transactionProxy"> 
+	  <property name="target"> 
+	    <bean class="com.yinhai.medicalbenefit.account.service.impl.AccountReturnRegServiceImpl" parent="yhsi3BaseService"/> 
+	  </property> 
+	</bean>
+	<!-- 补录个人账户 -->
+	<bean id="accountAgainRegService" parent="transactionProxy"> 
+	 <property name="target"> 
+	   <bean class="com.yinhai.medicalbenefit.account.service.impl.AccountAgainRegServiceImpl" parent="yhsi3BaseService"/> 
+	 </property> 
+	</bean>
+	<!-- 个人账户清继承-->
+	<bean id="accountGcRegService" parent="transactionProxy"> 
+	 <property name="target"> 
+	   <bean class="com.yinhai.medicalbenefit.account.service.impl.AccountGcRegServiceImpl" parent="yhsi3BaseService"/> 
+	 </property> 
+	</bean>
+</beans>

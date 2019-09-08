@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+	
+	<!--processKeyCN流程名称:massTreatmentTerminateService taskname环节名称:待遇批量停发 service -->
+	<bean id="massTreatmentTerminateService" class="com.yinhai.govpensionbenefit.approve.treamentqualifyplan.service.imp.MassTreatmentTerminateServiceImpl" parent="yhsi3BaseService">
+		<property name="massTreatmentTerminateChildService">
+			<ref bean="massTreatmentTerminateChildService" />
+		</property>
+	</bean>
+	<bean id="massTreatmentTerminateChildService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.govpensionbenefit.approve.treamentqualifyplan.service.imp.MassTreatmentTerminateChildServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<bean id="treamentQualifyService" class="com.yinhai.govpensionbenefit.approve.treamentqualifyplan.service.imp.TreamentQualifyServiceImpl" parent="yhsi3BaseService">
+		<property name="treamentQualifyChildService">
+			<ref bean="treamentQualifyChildService" />
+		</property>
+	</bean>
+	<bean id="treamentQualifyChildService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.govpensionbenefit.approve.treamentqualifyplan.service.imp.TreamentQualifyChildServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+    
+    <!--processKeyCN流程名称:treamentQualifyPlanService taskname环节名称:生存认证计划 service -->
+	<bean id="treamentQualifyPlanService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.govpensionbenefit.approve.treamentqualifyplan.service.imp.TreamentQualifyPlanServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+</beans>
+

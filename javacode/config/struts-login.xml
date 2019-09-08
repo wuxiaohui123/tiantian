@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="ta-login" extends="ta-default">
+        <action name="formLoginCheckAction" class="com.yinhai.ta3.system.security.ta3.FormLoginCheckAction">
+			<result name="success">/login.jsp</result>
+ 			<result name="loginSuccess" type="redirect">/indexAction.do</result>  
+        </action>  
+     </package>
+</struts>

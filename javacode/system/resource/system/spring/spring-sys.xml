@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd  http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	<!-- 
+	<bean id="sysConfigDataBase" class="com.yinhai.sysframework.config.SysConfig" init-method="init" destroy-method="destroy"> 
+	    <property name="configService" ref="configService"></property> 
+	    <property name="ehCacheManager" ref="ehCacheManager"/> 
+		<property name="curSyspathId" value="sysmg" /> 
+	</bean> 
+	-->
+	<!-- 读取配置文件 -->
+	<bean class="com.yinhai.sysframework.config.SysConfig" init-method="init" destroy-method="destroy">
+		<property name="fileEncoding" value="UTF-8"></property>
+	</bean>
+	<!-- 码表 -->
+	<bean id="codeTableInitService" class="com.yinhai.sysframework.codetable.CodeTableInitService" init-method="init" destroy-method="destroy">
+		<property name="codeCacheService" ref="codeCacheService" />
+		<property name="appCodeDao" ref="appCodeDao" />
+		<property name="ehCacheManager" ref="ehCacheManager" />
+	</bean>
+	<bean id="organizationEntityService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.ta3.organization.api.impl.DbOrganizationEntityServiceImpl" parent="baseService">
+				<property name="md5PasswordEncoder" ref="md5PasswordEncoder" />
+				<property name="hibernateDao" ref="hibernateDao"></property>
+			</bean>
+		</property>
+	</bean>
+</beans>

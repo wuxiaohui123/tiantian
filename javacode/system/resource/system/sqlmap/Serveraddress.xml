@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<!-- 表serveraddress (集群各个server的应用地址) 的所有SQL语句映射配置表  生成时间：2014-05-07 11:44:24 -->
+<sqlMap namespace="serveraddress">
+	<typeAlias alias="serveraddressDomain" type="com.yinhai.sysframework.cache.ehcache.domain.ServeraddressDomain"/>
+
+<!--TA+BEGIN--> 
+	<!-- 查询一批数据的查询 -->
+	<select id="getList" parameterClass="map" resultClass="serveraddressDomain">
+		SELECT 
+		       a.address as address,   <!-- 应用地址     -->
+		       a.cause as cause    <!-- 是否启用     -->
+		  FROM serveraddress a
+		 WHERE 1=1 
+		<isNotEmpty prepend="AND" property="address">   <!-- 应用地址     -->
+		       a.address = #address:VARCHAR#             
+		</isNotEmpty>
+		<isNotEmpty prepend="AND" property="canuse">   <!-- 是否启用     -->
+		       a.cause = #cause:VARCHAR#
+		</isNotEmpty>
+
+	</select>
+
+	<!-- 通过主键进行查询 -->
+	<select id="get" parameterClass="map" resultClass="serveraddressDomain">
+		SELECT 
+		       a.address as address,   <!-- 应用地址     -->
+		       a.cause as cause    <!-- 是否启用     -->
+		  FROM serveraddress a
+		 WHERE 1 = 1 
+<![CDATA[	   AND a.address = #address#    ]]>    <!-- 应用地址 -->
+	</select>
+
+	<!-- 插入单条数据 -->
+	<insert id="insert" parameterClass="serveraddressDomain">
+		INSERT INTO serveraddress (
+		       address,  <!-- 应用地址     -->
+		cause)  <!-- 是否启用     -->
+		VALUES (
+		       #address:VARCHAR#,  <!-- 应用地址     -->
+		       #cause:VARCHAR#)  <!-- 是否启用     -->
+	</insert>
+
+	<!-- 通过主键修改数据库记录，domain的每一个字段都要设值，如果是null，则数据库中也是null -->
+	<update id="update" parameterClass="map">
+		UPDATE serveraddress SET cause = #cause:VARCHAR#  <!-- 是否启用     -->
+		WHERE 1 = 1
+<![CDATA[	   AND address = #address#    ]]>    <!-- 应用地址 -->
+	</update>
+
+	<!-- 通过DTO更新单条数据,主键不能为空，只修改你设定值得字段，并且值不为null或"" -->
+	<update id="updateNotEmpty" parameterClass="map">
+		UPDATE serveraddress
+		 <dynamic prepend="SET"> 
+			<isNotEmpty prepend="," property="cause">   <!-- 是否启用     -->
+				cause = #cause:VARCHAR#
+			</isNotEmpty>
+		 </dynamic> 
+		 WHERE 1 = 1 
+<![CDATA[	   AND address = #address#    ]]>    <!-- 应用地址 -->
+	</update>
+
+	<!-- 通过DTO更新单条数据，主键不能为空，只修改你设定值得字段，值可以为null或"" -->
+	<update id="updateAvailable" parameterClass="map">
+		UPDATE serveraddress
+		 <dynamic prepend="SET"> 
+			<isPropertyAvailable prepend="," property="cause">   <!-- 是否启用     -->
+				cause = #cause:VARCHAR#
+			</isPropertyAvailable>
+		 </dynamic> 
+		 WHERE 1 = 1 
+<![CDATA[	   AND address = #address#    ]]>    <!-- 应用地址 -->
+	</update>
+
+	<!--通过主键删除单条数据-->
+	<delete id="delete" parameterClass="map">
+		DELETE  FROM  serveraddress 
+		 WHERE 1 = 1 
+<![CDATA[	   AND address = #address#    ]]>    <!-- 应用地址 -->
+	</delete>
+
+<!-- 查询一批数据的查询 -->
+	<select id="getAllCanUse" parameterClass="map" resultClass="java.lang.String">
+		SELECT 
+			a.address as address <!-- 应用地址 -->
+		  FROM serveraddress a
+		 WHERE 1=1 and cause = #cause:VARCHAR#
+	</select>
+<!--TA+END--> 
+</sqlMap>

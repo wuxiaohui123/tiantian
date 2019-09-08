@@ -1,0 +1,42 @@
+.SuggestFramework_List
+{
+border: 0px solid #479CC6;
+position:absolute;
+  top:23px;
+}
+
+.SuggestFramework_Heading
+{
+	
+	background-color: #479CC6;
+	color: #FFFFFF;
+	font-weight: bold;
+	border:.5pt solid #FFFFFF;
+	border-top:0pt solid #FFFFFF;
+	border-right:1px solid #FFFFFF;
+	border-bottom:1px solid #FFFFFF;
+	padding: 6px 6px 6px 12px;
+}
+
+.SuggestFramework_Highlighted
+{
+	background-color: #FBEC88;
+	color: #000000;
+	border:.5pt dashed #FFFFFF;
+	border-top:0pt dashed #FFFFFF;
+	border-right:1px dashed #FFFFFF;
+	border-bottom:1px dashed #FFFFFF;
+	padding: 0px 0px 0px 12px;
+}
+
+.SuggestFramework_Normal
+{
+	
+	background-color: #CAE8EA;	
+	color: #000000;
+	border:.5pt dashed #FFFFFF;
+	border-top:0pt dashed #FFFFFF;
+	border-right:1px dashed #FFFFFF;
+	border-bottom:1px dashed #FFFFFF;
+	padding: 0px 0px 0px 12px;
+}

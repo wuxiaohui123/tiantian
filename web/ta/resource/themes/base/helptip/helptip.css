@@ -1,0 +1,19 @@
+@CHARSET "UTF-8";
+.hint-mask{ background-color:#000; opacity:0.3; filter:alpha(opacity=30); position:fixed; z-index:1998; top:0px; left:0px;}
+.hint-tips { position:absolute; z-index:1999; display:none;}
+.hint-tips .hint-contents { position:relative;  background-color:#eee; padding:3px; }
+.hint-tips .hint-contents .hc-border { border:4px solid #f60; position:absolute; z-index:2000; top:-64px; left:0px;}
+.hint-tips .hint-contents .hc-arrow { width:43px; height:65px; background:url(image/help-tipss.png) 0px -167px no-repeat; position:absolute; z-index:2000; top:-62px; left:5px; }
+.hint-tips .hint-contents .hc-close{ width:37px; height:37px; background:url(image/help-tipss.png) 0px -130px no-repeat; position:absolute; z-index:2000; top:-22px; right:-22px; cursor:pointer;  }
+.hint-tips .hint-contents .hc-message { padding:10px;  border:3px dashed #66f; }
+.hint-tips .hint-contents .hc-message .hm-content { font-size:18px; color:#333; line-height:25px; }
+.hint-tips .hint-contents .hc-message .hm-opts { height:28px; margin-top:5px; position:relative;z-index:2000;}
+
+.hint-tips .hint-contents .hc-message .hm-opts .ho-pre { line-height:26px; float:left; width:70px; font-size:14px; background-color:#66f; color:#fff; text-align: center; cursor:pointer;display:none;}
+.hint-tips .hint-contents .hc-message .hm-opts .ho-pre:HOVER{background-color: #4343E3;}
+
+.hint-tips .hint-contents .hc-message .hm-opts .ho-next { line-height:26px; float:right; width:70px; font-size:14px; background-color:#66f; color:#fff; text-align: center; cursor:pointer;}
+.hint-tips .hint-contents .hc-message .hm-opts .ho-next:HOVER{background-color: #4343E3;}
+
+.hint-tips .hint-contents .hc-message .hm-opts .ho-last { line-height:28px; float:right; font-size:14px; color:#f60; cursor:pointer; cursor:pointer; display:none;}
+.hint-tips .hint-contents .hc-message .hm-opts .ho-last:hover{ text-decoration:underline; }

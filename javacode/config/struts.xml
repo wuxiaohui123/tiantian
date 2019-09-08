@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	
+	<!-- 开发阶段使用，修改action时不用重启服务器，此参数会导致action访问变慢 -->
+	<constant name="struts.convention.classes.reload" value="false" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="webwork.devMode" value="false" />
+	
+	<constant name="struts.action.extension" value="do" />
+	<!-- 指定Web应用的默认编码集,相当于调用HttpServletRequest的setCharacterEncoding方法-->
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.custom.i18n.resources" value="orgResource"/>
+	<constant name="struts.locale" value="zh_CN" /> 
+	<constant name="struts.ui.theme" value="simple" />
+	<!-- 当struts的配置文件修改后,系统是否自动重新加载该文件,默认值为false(生产环境下使用),开发阶段最好打开 -->
+	<constant name="struts.configuration.xml.reload" value="false" />
+	<constant name="struts.multipart.maxSize" value="2097152000" />
+	
+	<!-- <constant name="struts.freemarker.templatesCache" value="false" /> -->
+	<!-- 设置浏览器是否缓存静态内容,默认值为true(生产环境下使用),开发阶段最好关闭 -->
+    <constant name="struts.serve.static.browserCache" value="false"/>
+    <!--  对于一些web应用服务器不能处理HttpServletRequest.getParameterMap()像 WebLogic, Orion, and OC4J等，须设置成true,默认为false. -->
+	<constant name="struts.dispatcher.parametersWorkaround" value="true" />
+	
+	<constant name="struts.convention.action.fileProtocols" value="jar,zip" />
+	
+	<!-- 默认true,当使用ear包时，改成false，扫描app-inf或者父容器中jar包 -->
+	<constant name="struts.convention.exclude.parentClassLoader" value="false" />
+	
+	<!--<constant name="struts.convention.action.includeJars" value="^.*/ta3-.*\.jar(!/)?,^.*?/_wl_cls_gen.*?jar(!/)?" />--><!-- ^.*/ta3.*\.jar(!/)$ -->
+	<constant name="struts.convention.action.suffix" value="Action" />
+	<constant name="struts.convention.action.disableScanning" value="false" />
+	<constant name="struts.convention.package.locators" value="action,actions,web,test" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="true" />
+	
+	<package name="ta-default" extends="struts-default" strict-method-invocation="false">
+	 	<interceptors>
+	 		<interceptor name="repeatedSubmission" class="com.yinhai.webframework.RepeatedSubmissionInterceptor"/>
+	 		<interceptor name="myValue" class="com.yinhai.webframework.MySubmitValueIntercptor"/>
+ 	 		<interceptor name="exception" class="com.yinhai.webframework.MyExceptionMappingInterceptor"/>
+	 		<interceptor name="changePositionOrMenu" class="com.yinhai.ta3.system.web.ChangePositionOrMenuInterceptor"/>
+            <interceptor name="taSession" class="com.yinhai.webframework.security.TaSessionInterceptor"/>
+            <interceptor-stack name="ta3Stack">
+             	<interceptor-ref name="exception"/>
+               	<interceptor-ref name="repeatedSubmission"/>
+               	<interceptor-ref name="myValue"/>
+                <interceptor-ref name="alias"/>
+                <interceptor-ref name="servletConfig"/>
+                <interceptor-ref name="i18n"/> 
+                <interceptor-ref name="prepare"/>
+                <interceptor-ref name="chain"/>
+                <interceptor-ref name="debugging"/> 
+                <interceptor-ref name="scopedModelDriven"/>
+                <interceptor-ref name="modelDriven"/>
+                <interceptor-ref name="fileUpload"/>
+                <interceptor-ref name="checkbox"/>
+                <interceptor-ref name="multiselect"/>
+                <interceptor-ref name="staticParams"/>
+                <interceptor-ref name="actionMappingParams"/>
+                <interceptor-ref name="params">
+                  <param name="excludeParams">dojo\..*,^struts\..*</param>
+                </interceptor-ref> 
+                <interceptor-ref name="conversionError"/>
+                <interceptor-ref name="taSession">
+                  <param name="excludeActions">FormLoginCheckAction,UserPassAction</param>
+                </interceptor-ref>
+               <interceptor-ref name="validation">
+                    <param name="excludeMethods">input,back,cancel,browse</param>
+                </interceptor-ref>
+                <interceptor-ref name="workflow">
+                    <param name="excludeMethods">input,back,cancel,browse</param>
+                </interceptor-ref>
+                
+                 <interceptor-ref name="changePositionOrMenu"/>
+	       </interceptor-stack>
+        </interceptors>
+        <default-interceptor-ref name="ta3Stack"/>
+	 	<global-results>
+	 		<result name="unhandledException">/ta/exception.jsp</result>
+	 		<result name="appException">/ta/appexception.jsp</result>
+	 		<result name="login">/login.jsp</result>
+	 		<result name="tojson">/ta/tojson.jsp</result>
+	 		<result name="tofile">/ta/tofile.jsp</result>
+	 		<result name="to404">/ta/404.jsp</result>
+	 	</global-results>
+	 	<global-exception-mappings>
+	 	 	<exception-mapping exception="com.yinhai.sysframework.exception.AppException" result="appException"/>
+	 	 	<exception-mapping exception="com.yinhai.sysframework.exception.IllegalInputAppException" result="appException"/>
+	 	 	<exception-mapping exception="com.yinhai.sysframework.exception.PrcException" result="appException"/>
+	 	 	<exception-mapping exception="java.lang.Exception" result="unhandledException"/>
+	 	</global-exception-mappings>
+        <action name="formLogoutAction" class="com.yinhai.ta3.system.security.ta3.FormLogoutAction">
+			<result name="success" type="redirect">/login.jsp</result>
+        </action>                 
+        <!-- 默认表格导出excel -->
+        <action name="exportGridDefaultExcel" class="com.yinhai.ta3.system.web.TaCommonAction" method="taCommonExportExcl">
+			<result name="none"/> 
+        </action>
+         <!-- 默认表格导出excel所有数据 -->
+        <action name="exportGridDataAllExcel" class="com.yinhai.ta3.system.web.TaCommonAction" method="taCommonDataAllExportExcl">
+			<result name="none"/> 
+        </action>
+        <!-- button新增type属性 -->
+        <action name="resetCurrentPage" class="com.yinhai.ta3.system.web.TaCommonAction" method="taResetCurrentPage">
+			<result name="none"/> 
+        </action>
+        <action name="commonAction" class="com.yinhai.ta3.system.web.TaCommonAction">
+			<result name="none"/> 
+        </action>        
+        <!-- 无权限跳转的action -->
+        <!-- <action name="accessdeniedAction" class="com.yinhai.webframework.security.action.AccessdeniedAction">
+			<result name="success">/ta/accessdenied.jsp</result> 
+        </action> -->
+        <!--
+        <action name="indexAction" class="com.yinhai.ta3.common.ta3ext.IndexAction">
+			<result name="success">/index.jsp</result> 
+			<result name="default">/index.jsp</result> 
+			<result name="mini">/index.jsp</result> 
+			<result name="classic">/index-c.jsp</result> 
+			<result name="oa">/index_oa.jsp</result> 
+			<result name="ds">/index_ds.jsp</result> 
+		    <result name="360">/index_360.jsp</result>  
+			<result name="welcome">/welcome.jsp</result> 
+        </action>
+        -->
+     </package>
+	 <include file="struts-login.xml"/>
+	 <include file="struts-index.xml"/>
+	 <include file="resource/struts-system.xml"/>
+	 <include file="resource/struts-organization.xml"/>
+	 <include file="resource/struts-sysapp.xml"/>
+	 <include file="resource/struts-scheduler.xml"/>
+	 <include file="resource/struts-runqian.xml"/>
+	 <include file="resource/struts-importexport.xml"/>
+</struts>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE sqlMapConfig PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig> 
+  <settings useStatementNamespaces="true"/>
+ <!-- 待遇批量调整 -->
+  <sqlMap resource="com/yinhai/workinjurybenefit/approve/adjust/stTreLstImp/sqlmap/injuredBathAdjust.xml"/>
+  <!--工伤待遇重算-->  
+  <sqlMap resource="com/yinhai/workinjurybenefit/approve/recalculate/sqlmap/reCalculate.xml"/>
+  <!--工伤医疗待遇核定-->  
+  <sqlMap resource="com/yinhai/workinjurybenefit/approve/medicalcalculate/sqlmap/medicalCalculate.xml"/> 
+  <!--工伤工亡待遇核定-->  
+  <sqlMap resource="com/yinhai/workinjurybenefit/approve/treatmentcalculate/sqlmap/treatmentCalculate.xml"/>
+  <!--工伤医疗情况登记-->
+   <sqlMap resource="com/yinhai/workinjurybenefit/account/medicalcalculatedetail/sqlmap/medicalcalculatedetail.xml"/>
+  <!--劳动能力鉴定费核定-->  
+  <sqlMap resource="com/yinhai/workinjurybenefit/approve/judgecalculate/sqlmap/judgeCalculate.xml"/>
+  <!--老工伤待遇核定-->  
+  <sqlMap resource="com/yinhai/workinjurybenefit/approve/oldinjuredcalculate/sqlmap/oldinjuredCalculate.xml"/>
+  <!--先行性支付-->  
+  <sqlMap resource="com/yinhai/workinjurybenefit/approve/treatearlierpay/sqlmap/treatEarlierPay.xml"/>
+  <!--先行性支付复核-->  
+  <sqlMap resource="com/yinhai/workinjurybenefit/approve/treatearlierpay/sqlmap/treatEarlierPayCheck1.xml"/>
+   <!--一次性医疗补助金核定-->  
+  <sqlMap resource="com/yinhai/workinjurybenefit/approve/medicalsubsidycalculate/sqlmap/medicalSubsidyCalculate.xml"/>
+    <!--第三方赔偿金录入-->  
+   <sqlMap resource="com/yinhai/workinjurybenefit/account/thirdcompensation/sqlmap/thirdCompensation.xml"/>
+   <!--辅助器具配置情况登记-->  
+     <sqlMap resource="com/yinhai/workinjurybenefit/account/auxiliaryapparatusdetail/sqlmap/auxiliaryapparatusdetail.xml"/>
+   <!--工伤认定-->  
+  <sqlMap resource="com/yinhai/workinjurybenefit/account/workinjurycognizance/sqlmap/workinjuryCognizance.xml"/>
+  <!--工伤申报-->  
+  <sqlMap resource="com/yinhai/workinjurybenefit/account/workinjurydeclaration/sqlmap/workinjuryDeclaration.xml"/>
+    <!--劳动能力鉴定-->  
+  <sqlMap resource="com/yinhai/workinjurybenefit/account/judgelaboringability/sqlmap/judgeLaboringability.xml"/>
+  <!--老工伤信息录入-->  
+  <sqlMap resource="com/yinhai/workinjurybenefit/account/oldworkinjurycognizance/sqlmap/oldworkinjuryCognizance.xml"/>
+</sqlMapConfig>

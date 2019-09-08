@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.yinhai.ta3.system.codetable.Aa10a1" table="AA10A1" >
+        <composite-id name="id" class="com.yinhai.sysframework.codetable.domain.AppCodeId">
+            <key-property name="codeType" type="java.lang.String">
+                <column name="AAA100" length="20" />
+            </key-property>
+            <key-property name="codeValue" type="java.lang.String">
+                <column name="AAA102" length="6" />
+            </key-property>
+        </composite-id>
+        <property name="codeTypeDESC" type="java.lang.String">
+            <column name="AAA101" length="50" not-null="true" />
+        </property>
+        <property name="codeDESC" type="java.lang.String">
+            <column name="AAA103" length="50" not-null="true" />
+        </property>
+        <property name="yab003" type="java.lang.String">
+            <column name="YAB003" length="4" not-null="true" />
+        </property>
+        <property name="validFlag" type="java.lang.String">
+            <column name="AAE120" length="6" not-null="true" />
+        </property>
+        <property name="ver" type="java.lang.Integer">
+            <column name="VER" precision="2" />
+        </property>
+    </class>
+</hibernate-mapping>

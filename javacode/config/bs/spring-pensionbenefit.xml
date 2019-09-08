@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+	<!-- **************************基本信息 开始************************* -->
+	<!--processKeyCN流程名称:stjfnxrdService taskname环节名称:视同缴费年限认定经办 service -->
+	<bean id="stjfnxrdService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.pensionbenefit.others.stjfnxrd.service.impl.StjfnxrdServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+
+	<!--processKeyCN流程名称:stjfnxrdService taskname环节名称:视同缴费年限认定复核 service -->
+	<bean id="stjfnxrdCheck1Service" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.pensionbenefit.others.stjfnxrd.service.impl.StjfnxrdCheck1ServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+
+	<!--processKeyCN流程名称:stjfnxrdService taskname环节名称:视同缴费年限认定审批 service -->
+	<bean id="stjfnxrdCheck2Service" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.pensionbenefit.others.stjfnxrd.service.impl.StjfnxrdCheck2ServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+
+	<!--processKeyCN流程名称:tsgzrdService taskname环节名称:特殊工种认定经办 service -->
+	<bean id="tsgzrdService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.pensionbenefit.others.tsgzrd.service.impl.TsgzrdServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+
+	<!--processKeyCN流程名称:tsgzrdService taskname环节名称:特殊工种认定复核 service -->
+	<bean id="tsgzrdCheck1Service" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.pensionbenefit.others.tsgzrd.service.impl.TsgzrdCheck1ServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+
+	<!--processKeyCN流程名称:tsgzrdService taskname环节名称:特殊工种认定审批 service -->
+	<bean id="tsgzrdCheck2Service" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.pensionbenefit.others.tsgzrd.service.impl.TsgzrdCheck2ServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+
+	<!-- 退休行政审批 :AdministrativeApproval service -->
+	<bean id="administrativeApprovalService" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.pensionbenefit.approve.administrativeapproval.service.impl.AdministrativeApprovalServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+
+	<!--退休行政审批复核:AdministrativeApprovalCheck1 service -->
+	<bean id="administrativeApprovalCheck1Service" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.pensionbenefit.approve.administrativeapproval.service.impl.AdministrativeApprovalCheck1ServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+
+	<!--退休行政审批办结:AdministrativeApprovalCheck2 service -->
+	<bean id="administrativeApprovalCheck2Service" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.pensionbenefit.approve.administrativeapproval.service.impl.AdministrativeApprovalCheck2ServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- **************************基本信息 结束************************* -->
+
+	<!-- **************************信息维护 开始************************* -->
+	<!-- 基本信息维护 :BasicInfoMaintenance service -->
+	<bean id="basicInfoMaintenance110Service" parent="transactionProxy">
+		<property name="target">
+			<bean class="com.yinhai.pensionbenefit.maintenance.basicinfomaintenance.service.impl.BasicInfoMaintenanceServiceImpl" parent="yhsi3BaseService" />
+		</property>
+	</bean>
+	<!-- **************************信息维护 结束************************* -->
+	
+	<!-- 一次性待遇批量补差核定 -->
+  <bean id="oneTreDiffBatchAppService"  class="com.yinhai.pensionbenefit.approve.oneTreDiffBatchApp.service.impl.OneTreDiffBatchAppServiceImpl" parent="yhsi3BaseService" >
+     <property name="oneTreDiffBatchAppOneService">
+          <ref bean="oneTreDiffBatchAppOneService" />
+     </property>
+  </bean>
+  <bean id="oneTreDiffBatchAppOneService" parent="transactionProxy"> 
+   	<property name="target"> 
+    	 <bean class="com.yinhai.pensionbenefit.approve.oneTreDiffBatchApp.service.impl.OneTreDiffBatchAppOneServiceImpl" parent="yhsi3BaseService"/> 
+  	 </property> 
+  </bean> 
+  <!-- 一次性待遇批量补差核定复核 -->  
+  <bean id="oneTreDiffBatchAppCheck1Service"  class="com.yinhai.pensionbenefit.approve.oneTreDiffBatchApp.service.impl.OneTreDiffBatchAppCheck1ServiceImpl" parent="yhsi3BaseService" >
+     <property name="oneTreDiffBatchAppCheck1OneService">
+          <ref bean="oneTreDiffBatchAppCheck1OneService" />
+     </property>
+  </bean>
+  <bean id="oneTreDiffBatchAppCheck1OneService" parent="transactionProxy"> 
+   	<property name="target"> 
+    	 <bean class="com.yinhai.pensionbenefit.approve.oneTreDiffBatchApp.service.impl.OneTreDiffBatchAppCheck1OneServiceImpl" parent="yhsi3BaseService"/> 
+  	 </property> 
+  </bean> 
+</beans>

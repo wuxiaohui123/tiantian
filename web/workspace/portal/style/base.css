@@ -1,0 +1,398 @@
+* {
+    font-family: Microsoft YaHei, tahoma, arial, helvetica, sans-serif;
+    color: #333;
+}
+
+html {
+    overflow: visible;
+}
+
+body {
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+    overflow-y: auto;
+    width: 100%;
+    height: 100%;
+}
+
+ul, li, body {
+    margin: 0;
+    padding: 0;
+}
+
+ul, li {
+    list-style: none;
+}
+
+iframe {
+    border: none;
+}
+
+.portal-main {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.portal-column {
+    height: auto;
+    float: left;
+    min-height: 500px;
+}
+
+.portal-column-border {
+    border-left: 1px solid #E3E3E3;
+    margin-left: -1px;
+}
+
+.portal-main, .portal-item {
+    width: 100%;
+    height: auto;
+}
+
+.portal-item {
+    width: 98% !important;
+    margin: 5px auto;
+    background-color: #fff;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-top: none;
+}
+
+.portal-item-top {
+    width: 100%;
+    height: 29px;
+    font-size: 14px;
+    background: url("images/home_ico.png") 0 -247px;
+}
+
+.portal-item-top a {
+    display: block;
+    height: 20px;
+    background-position: left center !important;
+    float: left;
+}
+
+.portal-item-title {
+    /*background: url("images/icon-arrow.png") no-repeat;*/
+    padding-left: 10px;
+    float: left;
+    text-decoration: none;
+    line-height: 29px;
+    font-weight: bold;
+}
+
+.portal-item-title-close {
+    background: url("images/icon-arrow-close.png") no-repeat !important;
+}
+
+.portal-item-top:hover .portal-item-tools {
+    display: block;
+}
+
+.portal-item-tools {
+    float: right;
+    height: 29px;
+    width: 75px;
+    display: none;
+}
+
+.portal-item-tools a {
+    margin-left: 5px;
+    width: 20px;
+    height: 29px;
+}
+
+.portal-item-setting {
+    background: url("images/icon-setting.png") center no-repeat;
+    visibility: hidden !important;
+}
+
+.portal-item-fresh {
+    background: url("images/icon-fresh.png") center no-repeat;
+}
+
+.portal-item-close {
+    background: url("images/icon-close.png") center no-repeat;
+}
+
+.portal-item-body {
+    width: 100%;
+    margin: 0 auto;
+    min-height: 200px;
+    overflow: hidden;
+}
+
+.portal-item-body iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.resize-start {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity = 50);
+    -moz-opacity: 0.5;
+    -khtml-opacity: 0.5;
+    opacity: 0.5;
+    border: 1px dashed #ddd;
+}
+
+.resize-start iframe {
+    display: none;
+}
+.column-resize-start {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity = 50);
+    -moz-opacity: 0.5;
+    -khtml-opacity: 0.5;
+    opacity: 0.5;
+}
+
+.column-resize-start iframe {
+    display: none;
+}
+.column-resize-start-next iframe{
+	display:none;
+}
+.tmp-box {
+    width: 98%;
+    margin: 5px auto;
+    border: 1px dashed #e3e3e3;
+}
+
+.portal-layer {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99998;
+    display: none;
+    background: #ccc;
+    filter: alpha(opacity = 50);
+    -moz-opacity: 0.5;
+    -khtml-opacity: 0.5;
+    opacity: 0.5;
+}
+
+.portal-setting-btn {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    background: url("images/icon-setting.png");
+    width: 13px;
+    height: 13px;
+    cursor: pointer;
+}
+
+/************************璁剧疆绐楀彛***********************/
+.setting-win {
+    width: 400px;
+    height: 300px;
+    position: fixed;
+    *position:absolute;
+    top: 0px;
+    z-index: 99999;
+    border: 1px solid #CCCCCC;
+    border-radius: 3px;
+    -webkit-box-shadow: #CCC 1px 2px 5px 0px;
+    display: none;
+    bottom: 0;
+	border-top:none;
+}
+
+.setting-win-header {
+    width: 100%;
+    height: 29px;
+    background: #CCCCCC;
+	background: url("images/home_ico.png") 0 -247px;
+}
+
+.setting-win-header > ul {
+    width: 300px;
+    height: 25px;
+    float: left;
+    padding-left: 10px;
+}
+
+.setting-win-tab {
+    font-size: 12px;
+    color: #555;
+    height: 21px;
+    cursor: pointer;
+    float: left;
+    line-height: 25px;
+    padding: 0 10px;
+    margin-top: 5px;
+}
+
+.setting-win-tab-act {
+    border: 1px solid #ccc;
+    border-top: 2px solid #009900;
+    border-bottom: none;
+    font-weight: bold;
+    color: #009900;
+    background: #FFFFFF;
+    height: 21px;
+}
+
+.setting-tab-bd {
+    width: 100%;
+    height: 270px;
+    background: #FFFFFF;
+    display: none;
+}
+
+.setting-close {
+    float: right;
+    margin: 7px 10px;
+    background: url("images/action-close.png") no-repeat;
+    display: block;
+    height: 17px;
+    width: 16px;
+    cursor: pointer;
+}
+
+.select-box, .config-box {
+    width: 390px;
+    padding: 0 5px;
+    margin: 0 auto;
+    height: 265px;
+    overflow-y: scroll;
+}
+
+.select-item {
+    width: auto;
+    height: 25px;
+    border-radius: 3px;
+    border: 1px solid #CCCCCC;
+    background: #E3E3E3;
+    color: #fff;
+    display: block;
+    float: left;
+    margin: 5px;
+    text-decoration: none;
+    line-height: 25px;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 0px 12px 0 12px;
+}
+
+.select-item:hover {
+    -webkit-box-shadow: #CCC 1px 2px 5px 0px;
+}
+
+.select-item-selected {
+    background: url("images/ok.png") #E3E3E3 left center no-repeat !important;
+    padding: 0 5px 0 19px;
+    color: #009900;
+}
+
+.config-box {
+    width: 98%;
+    overflow-y: auto;
+}
+
+.config-box-item {
+    width: 90%;
+    margin: 5px auto 0 auto;
+    border: 1px solid #009900;
+    height: 50px;
+    position: relative;
+    color: #009900;
+    font-size: 12px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.config-box-item:hover a {
+    display: block;
+}
+
+.config-box-item a {
+    width: 13px;
+    height: 13px;
+    position: absolute;
+    background-repeat: no-repeat !important;
+    cursor: pointer;
+    display: none;
+}
+
+.config-box-item .move-up {
+    background: url("images/move_up.png") center;
+    top: 0;
+	width:100%;
+}
+
+.config-box-item .move-down {
+    background: url("images/move_down.png") center;
+    bottom: 0;
+    width:100%;
+}
+
+.config-box-item .move-left {
+    background: url("images/move_left.png");
+    left: 0;
+    top: 18px;
+}
+
+.config-box-item .move-right {
+    background: url("images/move_right.png");
+    right: 0;
+    top: 18px;
+}
+
+.config-box-column {
+    height: 240px;
+    float: left;
+}
+
+.add-icon {
+    width: 96%;
+    height: 50px;
+    background: url("images/add-icon.png") center no-repeat;
+    cursor: pointer;
+    border: 1px dashed #666;
+    display: none;
+    margin: 10px auto 0 auto;
+}
+
+/**************婊氬姩鏉℃牱寮�******************/
+::-webkit-scrollbar {
+    height: 11px;
+    width: 8px
+}::-webkit-scrollbar-button {
+    height: 0;
+    width: 0
+}::-webkit-scrollbar-button:start:decrement,::-webkit-scrollbar-button:end:increment {
+    display: block
+}::-webkit-scrollbar-button:vertical:start:increment,::-webkit-scrollbar-button:vertical:end:decrement {
+    display: none
+}::-webkit-scrollbar-track:vertical,::-webkit-scrollbar-track:horizontal,::-webkit-scrollbar-thumb:vertical,::-webkit-scrollbar-thumb:horizontal,::-webkit-scrollbar-track:vertical,::-webkit-scrollbar-track:horizontal,::-webkit-scrollbar-thumb:vertical,::-webkit-scrollbar-thumb:horizontal {
+    border-style: solid;
+    border-color: transparent
+}::-webkit-scrollbar-track:vertical::-webkit-scrollbar-track:horizontal {
+    background-clip: padding-box;
+    background-color: #fff;
+}::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, .1), inset 0 -1px 0 rgba(0, 0, 0, .07);
+    background-clip: padding-box;
+    background-color: rgba(0, 0, 0, .2);
+    min-height: 28px;
+    padding-top: 100
+}::-webkit-scrollbar-thumb:hover {
+    -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .25);
+    background-color: rgba(0, 0, 0, .4)
+}::-webkit-scrollbar-thumb:active {
+    -webkit-box-shadow: inset 1px 1px 3px rgba(0, 0, 0, .35);
+    background-color: rgba(0, 0, 0, .5)
+}::-webkit-scrollbar-track:vertical,::-webkit-scrollbar-track:horizontal,::-webkit-scrollbar-thumb:vertical,::-webkit-scrollbar-thumb:horizontal {
+    border-width: 0;
+}::-webkit-scrollbar-track:hover {
+    -webkit-box-shadow: inset 1px 0 0 rgba(0, 0, 0, .1);
+    background-color: rgba(0, 0, 0, .05)
+}::-webkit-scrollbar-track:active {
+    -webkit-box-shadow: inset 1px 0 0 rgba(0, 0, 0, .14), inset -1px -1px 0 rgba(0, 0, 0, .07);
+    background-color: rgba(0, 0, 0, .05)
+}

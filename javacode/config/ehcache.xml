@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd"
+	updateCheck="false">
+
+	<diskStore path="java.io.tmpdir" />
+
+	<!-- <cacheManagerPeerProviderFactory class="net.sf.ehcache.distribution.RMICacheManagerPeerProviderFactory" 
+		properties="peerDiscovery=automatic, multicastGroupAddress=230.0.0.1, multicastGroupPort=4446,timeToLive=32" 
+		/> <cacheManagerPeerListenerFactory class="net.sf.ehcache.distribution.RMICacheManagerPeerListenerFactory" 
+		/> <cacheManagerPeerProviderFactory class="net.sf.ehcache.distribution.RMICacheManagerPeerProviderFactory" 
+		properties="peerDiscovery=manual, rmiUrls=//192.168.2.5:40001/userCache|//192.168.2.5:40001/resourceCache" 
+		/> <cacheManagerPeerListenerFactory class="net.sf.ehcache.distribution.RMICacheManagerPeerListenerFactory" 
+		properties="hostName=192.168.2.154, port=40001,socketTimeoutMillis=2000" 
+		/> -->
+
+	<defaultCache eternal="false" maxElementsInMemory="1000"
+		overflowToDisk="false" diskPersistent="false" timeToIdleSeconds="3000"
+		timeToLiveSeconds="6000" memoryStoreEvictionPolicy="LRU" />
+
+	<cache name="org.hibernate.cache.spi.UpdateTimestampsCache"
+		maxEntriesLocalHeap="5000" timeToIdleSeconds="1800"
+		timeToLiveSeconds="3600" eternal="false">
+		<persistence strategy="localTempSwap" />
+	</cache>
+	<cache name="org.hibernate.cache.internal.StandardQueryCache"
+		maxEntriesLocalHeap="25" eternal="false" timeToIdleSeconds="1800"
+		timeToLiveSeconds="3600">
+		<persistence strategy="localTempSwap" />
+	</cache>
+
+	<cache name="appCodeCache" eternal="true"
+		maxElementsInMemory="1000000" overflowToDisk="false"
+		diskPersistent="false" memoryStoreEvictionPolicy="LRU">
+		<cacheEventListenerFactory
+			class="com.yinhai.sysframework.cache.ehcache.listener.TaCacheEventListenerFactory" />   <!-- 调用webservice的时候用的http或https -->
+	</cache>
+	<cache name="codeListCache" eternal="true"
+		maxElementsInMemory="10000" overflowToDisk="false"
+		diskPersistent="false" memoryStoreEvictionPolicy="LRU">
+		<cacheEventListenerFactory
+			class="com.yinhai.sysframework.cache.ehcache.listener.TaCacheEventListenerFactory" />   <!-- 调用webservice的时候用的http或https -->
+	</cache>
+
+	<cache name="codeListLocalCache" eternal="true"
+		maxElementsInMemory="10000" overflowToDisk="false"
+		diskPersistent="false" memoryStoreEvictionPolicy="LRU">
+		<cacheEventListenerFactory
+			class="com.yinhai.sysframework.cache.ehcache.listener.TaCacheEventListenerFactory" />   <!-- 调用webservice的时候用的http或https -->
+	</cache>
+
+	<cache name="appLevelCodeCache" eternal="true"
+		maxElementsInMemory="1000000" overflowToDisk="false"
+		diskPersistent="false" memoryStoreEvictionPolicy="LRU">
+		<cacheEventListenerFactory
+			class="com.yinhai.sysframework.cache.ehcache.listener.TaCacheEventListenerFactory" />   <!-- 调用webservice的时候用的http或https -->
+	</cache>
+	<cache name="codeLevelListCache" eternal="true"
+		maxElementsInMemory="10000" overflowToDisk="false"
+		diskPersistent="false" memoryStoreEvictionPolicy="LRU">
+		<cacheEventListenerFactory
+			class="com.yinhai.sysframework.cache.ehcache.listener.TaCacheEventListenerFactory" />   <!-- 调用webservice的时候用的http或https -->
+	</cache>
+	<cache name="configCache" eternal="true"
+		maxElementsInMemory="10000" overflowToDisk="false"
+		diskPersistent="false" memoryStoreEvictionPolicy="LRU">
+		<cacheEventListenerFactory
+			class="com.yinhai.sysframework.cache.ehcache.listener.TaCacheEventListenerFactory" />
+	</cache>
+
+	<cache name="urlsCache" eternal="true" maxElementsInMemory="1000"
+		overflowToDisk="false" diskPersistent="false"
+		memoryStoreEvictionPolicy="LRU">
+		<cacheEventListenerFactory
+			class="com.yinhai.sysframework.cache.ehcache.listener.TaCacheEventListenerFactory" />   <!-- 调用webservice的时候用的http或https -->
+	</cache>
+
+	<cache name="serverAddressCache" eternal="true"
+		maxElementsInMemory="1000" overflowToDisk="false"
+		diskPersistent="false" memoryStoreEvictionPolicy="LRU">
+		<cacheEventListenerFactory
+			class="com.yinhai.sysframework.cache.ehcache.listener.TaCacheEventListenerFactory" />   <!-- 调用webservice的时候用的http或https -->
+	</cache>
+	<cache name="SimplePageCachingFilter" maxElementsInMemory="10000"
+		eternal="false" overflowToDisk="false" timeToIdleSeconds="900"
+		timeToLiveSeconds="1800" memoryStoreEvictionPolicy="LFU" />
+	<!-- 润乾 -->
+	<cache name="menuReportCache" eternal="false"
+		maxElementsInMemory="1000" overflowToDisk="false"
+		diskPersistent="false" timeToIdleSeconds="900"
+		timeToLiveSeconds="1800" memoryStoreEvictionPolicy="LRU">
+		<cacheEventListenerFactory
+			class="com.yinhai.sysframework.cache.ehcache.listener.TaCacheEventListenerFactory" />   <!-- 调用webservice的时候用的http或https -->
+	</cache>
+	<cache name="reportCache" eternal="false"
+		maxElementsInMemory="1000" overflowToDisk="false"
+		diskPersistent="false" timeToIdleSeconds="900"
+		timeToLiveSeconds="1800" memoryStoreEvictionPolicy="LRU">
+		<cacheEventListenerFactory
+			class="com.yinhai.sysframework.cache.ehcache.listener.TaCacheEventListenerFactory" />   <!-- 调用webservice的时候用的http或https -->
+	</cache>
+
+	<cache name="childReportCache" eternal="false"
+		maxElementsInMemory="1000" overflowToDisk="false"
+		diskPersistent="false" timeToIdleSeconds="900"
+		timeToLiveSeconds="1800" memoryStoreEvictionPolicy="LRU">
+		<cacheEventListenerFactory
+			class="com.yinhai.sysframework.cache.ehcache.listener.TaCacheEventListenerFactory" />   <!-- 调用webservice的时候用的http或https -->
+	</cache>
+	<cache name="menuCache" eternal="false"
+		maxElementsInMemory="1000" overflowToDisk="false"
+		diskPersistent="false" timeToLiveSeconds="60"
+		memoryStoreEvictionPolicy="LRU">
+		<cacheEventListenerFactory
+			class="com.yinhai.sysframework.cache.ehcache.listener.TaCacheEventListenerFactory" />
+	</cache>
+
+</ehcache>

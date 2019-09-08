@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMapConfig PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+<!--cacheModelsEnabled 是否启用SqlMapClient上的缓存机制。建议设为"true" -->
+<!--enhancementEnabled 是否针对POJO启用字节码增强机制以提升getter/setter的调用效能，避免使用JavaReflect所带来的性能开销。同时，这也为Lazy Loading带来了极大的性能提升。建议设为"true" -->
+<!--errorTracingEnabled 是否启用错误日志，在开发期间建议设为"true"以方便调试 -->
+  <settings 
+  	useStatementNamespaces="true"
+  	cacheModelsEnabled="true" 
+  	enhancementEnabled="true" 
+  	errorTracingEnabled="true" 
+  />
+  <sqlMap resource="resource/system/sqlmap/BaseSystem_sqlmap.xml"/>
+  <sqlMap resource="resource/system/sqlmap/AppCode_sqlmap.xml"/>
+  <sqlMap resource="resource/system/sqlmap/AppLevelCode_sqlmap.xml"/>
+  <sqlMap resource="resource/system/sqlmap/Serveraddress.xml"/>
+</sqlMapConfig>

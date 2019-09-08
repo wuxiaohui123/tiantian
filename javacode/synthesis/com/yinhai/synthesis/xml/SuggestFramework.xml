@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="suggestFramework">
+
+	<!-- 查询个人基本信息-->
+	<select id="getAc01String" parameterClass="map" resultClass="java.util.HashMap">
+	   SELECT  outstring
+	     FROM (SELECT DISTINCT
+	                  '''' || a.aac002 || '''' || ',''' || a.aac003 || '''' ||
+	                  ',''' || a.aac001 || '''' || ',''' ||
+	                  DECODE(a.aac004, '2', '女', '1', '男', '其他') || '''' || ',''' ||
+	                  TO_CHAR(a.aac006, 'yyyy-MM-dd') || '''' || ',''' || a.aae044 || '''' ||
+	                  ',''' || a.yac995 || '''' || ',''' || a.yac996 || '''' ||
+	                  ',''' || a.yac997 || '''' || ',''' || a.yab139 ||''''|| ',''' || a.aab001 || '''' AS outstring ,
+	                  A.AAC006,
+	                  DECODE(#aac002#,a.aac002,'1',a.aac003,'2',a.aac001,'3',a.yac995,'4',a.yac996,'5',a.yac997,'6','9')  AS sx 
+	             FROM (SELECT a.aac002,
+	                          a.aac003,
+	                          a.aac001,
+	                          a.aac004,
+	                          (SELECT aae044 FROM ae10 WHERE aaz001 = b.aab001) aae044,
+	                          a.aac006,
+	                          b.aab001,
+	                          PKG_COMM.FUN_GETAAA103('AAB301', b.yab139) yab139,
+	                          a.yac995,
+	                          a.yac996,
+	                          a.yac997
+	                     FROM (SELECT a.yac557,
+	                                  a.aac060,
+	                                  a.aac002,
+	                                  a.aac003,
+	                                  a.aac001,
+	                                  a.aac004,
+	                                  a.aac006,
+	                                  a.yac995,
+	                                  a.yac996,
+	                                  a.yac997
+	                             FROM ac01 a
+	                            WHERE 1 = 1
+	                              AND DECODE(a.aac060,'1',NVL(a.yac557, '0'),'1') = '1' <!-- 由于老系统转入的死亡人员YAC557都是0 -->
+	                          ) a,
+	                  (SELECT b.aac001,
+	                          b.aab001,
+	                          b.yab139 
+	                     FROM ac20 b,
+	                          ac01 c
+	                    WHERE b.aac001 = c.aac001
+	                      AND b.aaz157 = (SELECT MAX(ac20.aaz157) FROM ac20 WHERE ac20.AAZ159 = b.aaz159)
+			                AND (c.aac002 = #inputString# OR
+	                           c.aac003 = #inputString# OR
+	                           c.aac001 = #inputString#)
+			                <isNotEmpty prepend="AND" property="yab139" >   
+						           b.yab139 = #yab139#
+						       </isNotEmpty>) b
+	            WHERE a.aac001 = b.aac001(+)
+	              AND DECODE(a.aac060,'1',NVL(a.yac557, '0'),'1') = '1' <!-- 由于老系统转入的死亡人员YAC557都是0 -->
+	              AND (a.aac002 = #inputString# OR
+	                   a.aac003 = #inputString# OR
+	                   a.aac001 = #inputString#)
+	            ORDER BY a.aac006) a
+	    ORDER BY aac006,sx ) 
+	    <![CDATA[ WHERE ROWNUM <= 20    ]]>
+	</select>
+
+	<!-- 查询个人基本信息 -->
+	<select id="getAc01List" parameterClass="map" resultClass="java.util.HashMap">
+		SELECT a.aac002,
+		       a.aac003,
+		       a.aac001,
+		       a.aac004,
+		       a.aac006,
+		       a.aae044,
+		       a.yac995,
+		       a.yac996,
+		       a.yac997,
+		       a.yab139,
+		       a.aab001
+		  FROM (SELECT DISTINCT
+		               a.aac002,
+		               a.aac003,
+		               a.aac001,
+		               a.aac004,
+		               TO_CHAR(a.aac006, 'yyyy-MM-dd') aac006,
+		               a.aae044,
+		               a.yac995,
+                     a.yac996,
+		               a.yac997,
+		               a.yab139,
+		               a.aab001
+		          FROM (SELECT a.aac002,
+	                          a.aac003,
+	                          a.aac001,
+	                          a.aac004,
+	                          (SELECT aae044 FROM ae10 WHERE aaz001 = b.aab001) aae044,
+	                          a.aac006,
+	                          b.aab001,
+	                          PKG_COMM.FUN_GETAAA103('AAB301', b.yab139) yab139,
+	                          a.yac995,
+	                          a.yac996,
+	                          a.yac997
+	                     FROM (SELECT a.yac557,
+	                                  a.aac060,
+	                                  a.aac002,
+	                                  a.aac003,
+	                                  a.aac001,
+	                                  a.aac004,
+	                                  a.aac006,
+	                                  a.yac995,
+	                                  a.yac996,
+	                                  a.yac997
+	                             FROM ac01 a
+	                            WHERE DECODE(a.aac060,'1',NVL(a.yac557, '0'),'1') = '1' <!-- 由于老系统转入的死亡人员YAC557都是0 -->
+	                          ) a,
+	                          (SELECT b.aac001,
+	                                  b.aab001,
+	                                  b.yab139 
+	                             FROM ac20 b,
+	                                  ac01 c
+	                            WHERE b.aac001 = c.aac001
+	                              AND b.aaz157 = (SELECT MAX(ac20.aaz157)
+	                                                FROM ac20
+	                                               WHERE ac20.aaz159 = b.aaz159)
+			                        AND (INSTR(c.aac002, #aac002#) > 0 OR
+			                             INSTR(c.aac003, #aac003#) > 0 OR
+			                             INSTR(c.aac001, #aac001#) > 0
+			                            )
+			                     <isNotEmpty prepend="AND" property="yab139" >   
+						    	              b.yab139 = #yab139#
+						            </isNotEmpty>
+						           ) b
+	                    WHERE a.aac001 = b.aac001(+)
+	                      AND DECODE(a.aac060,'1',NVL(a.yac557, '0'),'1') = '1' <!-- 由于老系统转入的死亡人员YAC557都是0 -->
+	                      AND (INSTR(a.aac002, #aac002#) > 0 OR
+			                     INSTR(a.aac003, #aac003#) > 0 OR
+			                     INSTR(a.aac001, #aac001#) > 0
+			                    )
+	                    ORDER BY a.aac006,
+                                a.aac004
+                     ) a
+             )
+       <![CDATA[ WHERE ROWNUM <= 20    ]]>
+	</select>
+	
+	<!-- 查询单位基本信息 -->
+	<select id="getAb01String" parameterClass="map" resultClass="java.util.HashMap">
+	    SELECT outstring 
+	    FROM(SELECT  DISTINCT
+	                 ''''||b.aab001||''''||','''||a.aae044||''''||','''||b.aab999||''''||','''||b.yab019||''''||','''||b.aab019||''''AS outstring
+	           FROM  ae10 a,ab01 b,ab02 c
+	          WHERE  a.aaz001 = b.aab001
+	            AND  b.aab001 = c.aab001
+	            AND (a.aaz001 = #inputString#
+		         OR  b.aab999 = #inputString#
+		         OR  a.aae044 = #inputString#
+		            )
+		     )
+	 <![CDATA[WHERE ROWNUM <= 20]]>
+	</select>
+	<!-- 查询单位基本信息 -->
+	<select id="getAb01List" parameterClass="map" resultClass="java.util.HashMap">
+	    SELECT  c.aab001,
+	            c.aae044,
+	            c.aab999,
+	            c.yab019,
+	            c.aab019
+	    FROM(SELECT  DISTINCT
+	                 b.aab001,
+	                 a.aae044,
+	                 b.aab999,
+	                 b.aab019,
+	                 b.yab019
+	           FROM  ae10 a,ab01 b,ab02 c
+	          WHERE  a.aaz001 = b.aab001
+	            AND  b.aab001 = c.aab001
+	            AND (INSTR(a.aaz001,#aab001#)>0
+		         OR  INSTR(b.aab999,#aab999#)>0
+		         OR  INSTR(a.aae044,#aae044#)>0
+		            )
+		     ) c
+	 <![CDATA[WHERE  ROWNUM <= 20]]>
+	</select>
+	<!-- 税务机构基本信息 -->
+	<select id="getSWInfoString" parameterClass="map" resultClass="java.util.HashMap">
+	    SELECT outstring 
+	      FROM (SELECT DISTINCT
+	                   ''''||a.aaz066||''''||','''||a.yae433||''''||','''||a.aab030||''''AS outstring
+	              FROM af06 a,
+	                   ae10 b
+	             WHERE a.aaz066 = #inputString#
+		             OR a.yae433 = #inputString#
+		             OR a.aab030 = #inputString#
+		        )
+	<![CDATA[WHERE ROWNUM <= 20]]>
+	</select>
+	<!-- 税务机构基本信息 -->
+	<select id="getSWInfoList" parameterClass="map" resultClass="java.util.HashMap">
+		SELECT a.aaz066,
+	          a.yae433,
+	          a.aab030
+	     FROM (SELECT DISTINCT
+	                  a.aaz066,
+                     a.yae433,
+	                  a.aab030
+	             FROM ab24 a
+	            WHERE INSTR(a.aaz066, #aaz066#) > 0 OR
+		               INSTR(a.yae433, #yae433#) > 0 OR
+		               INSTR(a.aab030, #aab030#) > 0
+		       ) a
+	<![CDATA[WHERE ROWNUM <= 20]]>
+	</select>
+
+	<!-- 查询单位银行信息 -->
+	<select id="getBankString" parameterClass="map" resultClass="java.util.HashMap">
+		SELECT DISTINCT outstring
+        FROM (SELECT '''' || b.aae044 || '''' || ',''' || a.aae008 || '''' || ',''' || a.aaf002 || '''' || ',''' || a.aaz065 || '''' as outstring
+                FROM af07 a,
+                     ae10 b
+               WHERE a.aaz065 = b.aaz001
+                 AND (INSTR(a.aae008, #inputstring# > 0 OR
+                      INSTR(b.aae044, #inputstring# > 0)
+      <![CDATA[  AND ROWNUM < 20       ]]>)
+	</select>
+
+	<!-- 查询单位银行信息 -->
+	<select id="getBankList" parameterClass="map" resultClass="java.util.HashMap">
+		SELECT a.aae044,
+             a.aaf002,
+             a.aaz065,
+             a.aae008
+        FROM (SELECT DISTINCT
+                     b.aae044,
+                     a.aaf002,
+                     a.aaz065,
+                     a.aae008
+                FROM af07 a,
+                     ae10 b
+               WHERE a.aaz065 = b.aaz001
+                 AND (INSTR(a.aaz065, #aaz065#) > 0 OR
+	                   INSTR(a.aae008, #aae008#) > 0 OR
+	                   INSTR(b.aae044, #aae044#) > 0)
+	          ) a
+	<![CDATA[WHERE  ROWNUM <= 20]]>
+	</select>
+<!--YHCIPEND--> 
+	<!-- 精确查询组织机构基本信息 -->
+	<select id="getAe31StringByAsn" parameterClass="map" resultClass="java.util.HashMap">
+	    SELECT DISTINCT outstring 
+	      FROM (SELECT ''''||a.aaz001||''''||','''||a.aae044||'''' as outstring
+	              FROM ae10 a
+	             WHERE (a.aaz001 = #inputString# OR
+	                    a.aae044 = #inputString#
+	                   )
+	           )
+	  <![CDATA[ where rownum <20     ]]>
+	</select>
+	<!-- 模糊查询组织机构基本信息 -->
+	<select id="getAe31ListByAsn" parameterClass="map" resultClass="java.util.HashMap">
+		SELECT a.aaz001,
+			   a.aae044
+		  FROM (SELECT DISTINCT 
+		  			   a.aaz001,
+		  			   a.aae044
+		  		  FROM ae10 a
+		  		 WHERE (INSTR(a.aaz001, #aaz001#) > 0 OR
+			            INSTR(a.aae044, #aae044#) > 0
+		  		 	   )
+		  	   ) a 
+	  <![CDATA[ where rownum <20     ]]>
+	</select>
+	<!-- 精确查询个人基本信息带经办机构险种 -->
+	<select id="getAc01ListByAsnDYAC60String" parameterClass="map" resultClass="java.util.HashMap">
+		SELECT DISTINCT OUTSTRING
+		  FROM (SELECT '''' || A.AAC002 || '''' || ',''' || A.AAC003 || '''' ||
+		               ',''' || A.AAC001 || '''' || ',''' ||
+		               DECODE(A.AAC004, '2', '女', '1', '男', '其他') || ''''||
+		               ','''|| Pkg_Comm.fun_GetAge(A.AAC006,SYSDATE) ||''''||
+		               ','''|| C.AAE044 || ''''||','''|| TO_CHAR(A.AAC006,'yyyy-MM-dd') || '''' AS OUTSTRING
+		          FROM AC01 A, AC60 B, AE10 C
+		         WHERE 1 = 1
+		           <!-- AND NVL(A.YAC557, '0') = '1' -->
+		           AND A.AAC001 = B.AAC001
+		           AND B.AAB001 = C.AAZ001
+		           AND (A.AAC002 = #inputString# OR
+		                A.AAC003 = #inputString# OR
+		                A.AAC001 = #inputString# OR
+		                A.yac995 = #inputString# OR
+		                A.yac996 = #inputString# OR
+		                A.yac997 = #inputString#
+		                )
+		           AND B.AAE140 = #aae140#
+		           AND B.YAB139 = #yab003#
+		           AND B.AAZ257 = (SELECT MAX(AAZ257) 
+		                             FROM AC60
+		                            WHERE AAC001 = B.AAC001
+		                              AND AAE140 = B.AAE140
+		                              AND YAB003 = #yab003#))
+		  <![CDATA[ WHERE rownum <= 20     ]]>
+	</select>
+	<!-- 模糊查询个人基本信息带经办机构险种 -->
+	<select id="getAc01ListByAsnDYAC60List" parameterClass="map" resultClass="java.util.HashMap">
+		SELECT DISTINCT a.aac002 , 
+		  			    a.aac003 , 
+		  			    a.aac001 ,
+		  			    a.aac004 , 
+		  			    a.aac006_1 , <!-- 年龄 -->
+		  			    a.aac006 , <!-- 出生年月 -->
+		  			    a.aae044 
+		  FROM  (SELECT a.aac002 , 
+		  			    a.aac003 , 
+		  			    a.aac001 , 
+		  			    DECODE(a.aac004, '2', '女', '1', '男', '其他') aac004 , 
+		  			    Pkg_Comm.fun_GetAge(a.aac006,SYSDATE) aac006_1 ,
+					    c.aae044 ,
+					    TO_CHAR(a.aac006,'yyyy-MM-dd') aac006
+		          FROM AC01 a, AC60 b, AE10 c
+		         WHERE 1 = 1
+		           AND a.aac001 = b.aac001
+		           AND b.aab001 = c.aaz001
+		           AND (INSTR(a.aac002, #aac002#)>0 OR
+		                INSTR(a.aac003, #aac003#)>0 OR
+		                INSTR(a.aac001, #aac001#)>0 OR
+		                INSTR(a.yac995, #yac995#)>0 OR
+		                INSTR(a.yac996, #yac996#)>0 OR
+		                INSTR(a.yac997, #yac997#)>0
+		                )
+		           AND B.AAE140 = #aae140#
+		           AND B.YAB139 = #yab003#
+		           AND B.AAZ257 = (SELECT MAX(AAZ257) 
+		                             FROM AC60
+		                            WHERE AAC001 = B.AAC001
+		                              AND AAE140 = B.AAE140
+		                              AND YAB003 = #yab003#)) a
+		  <![CDATA[ WHERE rownum <= 20     ]]>
+	</select>
+	<!-- 精确查询个人基本信息带经办机构险种 -->
+	<select id="getAc01ListByAsnDYString" parameterClass="map" resultClass="java.util.HashMap">
+		SELECT DISTINCT OUTSTRING
+		  FROM (SELECT '''' || A.AAC002 || '''' || ',''' || A.AAC003 || '''' ||
+		               ',''' || A.AAC001 || '''' || ',''' ||
+		               DECODE(A.AAC004, '2', '女', '1', '男', '其他') || ''''||
+		               ','''|| Pkg_Comm.fun_GetAge(A.AAC006,SYSDATE) || ''''||
+		               ','''|| b.aab001 || ''''||
+		               ','''|| D.AAE044 ||'''' AS OUTSTRING
+		          FROM AC01 A, AC20 B, AC02 C,AE10 D
+		         WHERE 1 = 1
+	               AND A.AAC001 = B.AAC001
+	               AND A.AAC001 = C.AAC001
+	               AND B.AAC001 = C.AAC001
+	               AND B.AAZ159 = C.AAZ159
+	               AND B.AAE140 = C.AAE140
+	               AND B.AAB001 = D.AAZ001
+		           AND C.AAE140 = #aae140#
+		           AND C.AAC008 in ('1','4')  <!-- 正常参保 -->	
+		           AND B.AAE140 = #aae140#
+		           AND B.YAB139 = #yab003#
+		           AND B.AAZ157 = (SELECT MAX(AAZ157)
+		                             FROM AC20
+		                            WHERE AAZ159 = B.AAZ159)
+		           AND (A.AAC002 = #inputString# OR
+		                A.AAC003 = #inputString# OR
+		                A.AAC001 = #inputString# OR
+		                A.yac995 = #inputString# OR
+		                A.yac996 = #inputString# OR
+		                A.yac997 = #inputString#
+		               )
+		       )      
+		  <![CDATA[ WHERE rownum <= 20     ]]>
+	</select>
+	<!-- 模糊查询个人基本信息带经办机构险种 -->
+	<select id="getAc01ListByAsnDYList" parameterClass="map" resultClass="java.util.HashMap">
+		SELECT DISTINCT AAC002,
+						AAC003,
+						AAC001,
+						AAC004,
+						AAC006,
+						AAB001,
+						AAE044
+		  FROM  (SELECT A.AAC002 , 
+		  			    A.AAC003 , 
+		  			    A.AAC001 , 
+		  			    DECODE(A.AAC004, '2', '女', '1', '男', '其他') AAC004 , 
+		  			    Pkg_Comm.fun_GetAge(A.AAC006,SYSDATE) AAC006 , 
+		  			    B.AAB001 , 
+		  			    D.AAE044 
+		           FROM AC01 A, AC20 B, AC02 C,AE10 D
+		          WHERE 1 = 1
+	                AND A.AAC001 = B.AAC001
+	                AND A.AAC001 = C.AAC001
+	                AND B.AAC001 = C.AAC001
+	                AND B.AAZ159 = C.AAZ159
+	                AND B.AAE140 = C.AAE140
+ 	                AND B.AAB001 = D.AAZ001
+		            AND C.AAE140 = #aae140#
+		            AND C.AAC008 in ('1','4')  <!-- 正常参保 -->	
+		            AND B.AAE140 = #aae140#
+		            AND B.YAB139 = #yab003#
+		            AND B.AAZ157 = (SELECT MAX(AAZ157)
+		                             FROM AC20
+		                            WHERE AAZ159 = B.AAZ159)
+		            AND (INSTR(A.AAC002 , #AAC002#)>0 OR
+		                 INSTR(A.AAC003 , #AAC003#)>0 OR
+		                 INSTR(A.AAC001 , #AAC001#)>0 OR
+		                 INSTR(A.yac995 , #yac995#)>0 OR
+		                 INSTR(A.yac996 , #yac996#)>0 OR
+		                 INSTR(A.yac997 , #yac997#)>0
+		                )
+		        )      
+		  <![CDATA[ WHERE rownum <= 20     ]]>
+	</select>
+	<!-- 查询个人基本信息(工伤建安工程) -->
+	<select id="getAc01ListByAsnGsJaString" parameterClass="map" resultClass="java.util.HashMap">
+		SELECT DISTINCT OUTSTRING
+		  FROM (SELECT '''' || A.AAC002 || '''' || ',''' || A.AAC003 || '''' ||
+		               ',''' || A.AAC001 || '''' || ',''' ||
+		               DECODE(A.AAC004, '2', '女', '1', '男', '其他') || ''''||
+		               ','''|| Pkg_Comm.fun_GetAge(TO_DATE(A.AAC006, 'YYYYMMDD'), SYSDATE) || ''''||
+		               ','''|| b.aab001 || ''''||
+		               ','''|| B.YLB003 ||'''' AS OUTSTRING               
+	          FROM ab67a1 a, ab67 B
+	         WHERE a.ylb002 = b.ylb002
+	           AND a.aac002 in (Pkg_Comm.fun_getAac002Conversion(#inputstring#, 15), Pkg_Comm.fun_getAac002Conversion(#inputstring#, 18)))
+	</select>
+	<!-- 查询个人基本信息(工伤建安工程) -->
+	<select id="getAc01ListByAsnGsJaList" parameterClass="map" resultClass="java.util.HashMap">
+		SELECT DISTINCT AAC002,
+						AAC003,
+						AAC001,
+						AAC004,
+						AAC006,
+						AAB001,
+						YLB003
+		  FROM (SELECT A.AAC002,
+		  			   A.AAC003,
+		  			   A.AAC001,
+		  			   DECODE(A.AAC004, '2', '女', '1', '男', '其他') AAC004,
+		  			   Pkg_Comm.fun_GetAge(TO_DATE(A.AAC006, 'YYYYMMDD'), SYSDATE) AAC006,
+		  			   B.AAB001,
+		  			   B.YLB003              
+	              FROM ab67a1 A, ab67 B
+	             WHERE a.ylb002 = b.ylb002
+	               AND a.aac002 in (Pkg_Comm.fun_getAac002Conversion(#aac003#, 15), Pkg_Comm.fun_getAac002Conversion(#aac003#, 18)))
+	</select>
+	<!-- 查询个人基本信息不带经办机构险种 -->
+	<select id="getAc01ListByAsnDyAllString" parameterClass="map" resultClass="java.util.HashMap">
+	  SELECT DISTINCT outstring 
+	    FROM (SELECT ''''||a.aac002||''''
+	                 ||','''||a.aac003||''''
+	                 ||','''||a.aac001||''''
+	                 ||','''||decode(a.aac004,'2','女','1','男','其他')||''''
+	                 ||','''|| Pkg_Comm.fun_GetAge(A.AAC006,SYSDATE) || ''''
+	                 as outstring
+	            FROM ac01 a
+	           WHERE  1=1 
+	             AND nvl(a.yac557,'0')='1' 
+	             AND(a.aac002 = #inputstring#
+		          OR a.aac003 = #inputstring#
+		          OR a.aac001 = #inputstring#
+		          OR a.yac995 = #inputstring#
+		          OR a.yac996 = #inputstring#
+		          OR a.yac997 = #inputstring#)	)          
+		<![CDATA[ WHERE rownum <= 20     ]]>
+	</select>
+	<!-- 查询个人基本信息不带经办机构险种 -->
+	<select id="getAc01ListByAsnDyAllList" parameterClass="map" resultClass="java.util.HashMap">
+	   SELECT DISTINCT  aac002,
+	   					aac003,
+	   					aac001,
+	   					aac004,
+	   					aac006
+	    FROM (SELECT a.aac002,
+	                 a.aac003,
+	                 a.aac001,
+	                 decode(a.aac004,'2','女','1','男','其他') aac004,
+	                 Pkg_Comm.fun_GetAge(A.AAC006,SYSDATE) aac006
+	            FROM ac01 a
+	           WHERE 1=1 
+	             AND nvl(a.yac557,'0')='1' 
+	             AND(INSTR(a.aac002 = #aac002#)>0
+		          OR INSTR(a.aac003 = #aac003#)>0
+		          OR INSTR(a.aac001 = #aac001#)>0
+		          OR INSTR(a.yac995 = #yac995#)>0
+		          OR INSTR(a.yac996 = #yac996#)>0
+		          OR INSTR(a.yac997 = #yac997#)>0)	) 	                    
+		<![CDATA[ WHERE rownum <= 20     ]]>
+	</select>
+</sqlMap>

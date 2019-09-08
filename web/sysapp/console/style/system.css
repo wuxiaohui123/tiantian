@@ -1,0 +1,74 @@
+@CHARSET "UTF-8";
+* {
+    font-family: 'Microsoft Yahei', verdana;
+    color: #333;
+    font-size: 14px;
+}
+
+ul li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.system-list {
+    width: 100%;
+    height: auto;
+    min-height: 120px;
+	padding:0;
+}
+
+.system-list li {
+    display: block;
+    width: 130px;
+    height: 60px;
+    float: left;
+}
+
+.system-list li span {
+    display: block;
+    height: 48px;
+    width: 48px;
+    margin-left: 10px;
+    margin-top: 6px;
+    background: url("images/home_ico.png") no-repeat;
+    float: left;
+}
+
+.system-list li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    height: 60px;
+    padding-left: 5px;
+    line-height: 60px;
+    float: left;
+}
+
+.system-list li a:hover {
+   color:#6997FD;
+}
+
+.icon-01 {
+    background-position: -172px 0 !important;
+}
+
+.icon-02 {
+    background-position: -276px -48px !important;
+}
+
+.icon-03 {
+    background-position: -220px 0 !important;
+}
+
+.icon-04 {
+    background-position: -124px -48px !important;
+}
+
+.icon-05 {
+    background-position: -172px -48px !important;
+}
+
+.icon-06 {
+    background-position: -220px -48px !important;
+}

@@ -1,0 +1,52 @@
+@CHARSET "UTF-8";
+
+.ta_pw_radio,.ta_pw_chkbox {
+	padding-left: 18px;
+	line-height: 26px;
+	height: 25px;
+}
+
+.ta-ui-chk {
+	width: 14px;
+	height: 15px;
+	float: left;
+	display: block;
+	margin-right: 7px;
+}
+
+.ta-chk-uncheck {
+	background: url('checkbox/images/uncheck.png') left no-repeat !important;
+}
+
+.ta-chk-checked {
+	background: url('checkbox/images/checked.png') left no-repeat !important;
+}
+
+.ta-chk-uncheck-disabled {
+	background: url('checkbox/images/uncheck-disabled.png') left no-repeat !important;
+}
+
+.ta-chk-checked-disabled {
+	background: url('checkbox/images/checked-disabled.png') left no-repeat !important;
+}
+
+.ta-radio-uncheck {
+	background: url('checkbox/images/uncheck-radio.png') left no-repeat !important;
+}
+
+.ta-radio-checked {
+	background: url('checkbox/images/checked-radio.png') left no-repeat !important;
+}
+
+.ta-radio-uncheck-disabled {
+	background: url('checkbox/images/uncheck-dis-radio.png') left no-repeat !important;
+}
+
+.ta-radio-checked-disabled {
+	background: url('checkbox/images/checked-dis-radio.png') left no-repeat !important;
+}
+
+.ta-chk-mc {
+	cursor: default;
+	height: 17px;
+}

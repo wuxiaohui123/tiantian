@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	 <package name="sysapp" namespace="/sysapp" extends="ta-default" strict-method-invocation="false">
+	 	<action name="menuMgAction" class="com.yinhai.ta3.sysapp.menumg.action.MenuMgAction">
+	 		<result name="success">/sysapp/menu/menuMg.jsp</result>
+	 		<allowed-methods>*</allowed-methods>
+	 	</action>
+	 	<action name="commonMenuAction" class="com.yinhai.ta3.sysapp.menumg.action.CommonMenuAction">
+	 		<result name="success">/sysapp/menu/commonMenu.jsp</result>
+	 		<result name="toAddCommonMenus">/sysapp/menu/addCommonMenus.jsp</result>
+	 		<allowed-methods>*</allowed-methods>
+	 	</action>
+	 	<action name="appCodeMainAction" class="com.yinhai.ta3.sysapp.cachemg.AppCodeMainAction">
+	 		<result name="success">/sysapp/cachemg/appCodeMain.jsp</result>
+	 		<result name="cacheEdit">/sysapp/cachemg/cacheMgEdit.jsp</result>
+	 		<allowed-methods>*</allowed-methods>
+	 	</action>
+	 	<action name="serverAddressAction" class="com.yinhai.ta3.sysapp.serveraddressmg.ServerAddressAction">
+	 		<result name="success">/sysapp/serveraddressmg/ServerAddress.jsp</result>
+	 		<result name="mainAdd">/sysapp/serveraddressmg/serveraddressAdd.jsp</result>
+	 		<result name="mainEdit">/sysapp/serveraddressmg/serveraddressEdit.jsp</result>
+	 		<allowed-methods>*</allowed-methods>
+	 	</action>
+	 	<action name="serverExeceptionLogAction" class="com.yinhai.ta3.sysapp.syslogmg.action.ServerExceptionLogAction">
+	 		<result name="success">/sysapp/syslogmg/serverExceptionLog.jsp</result>
+	 		<result name="detail">/sysapp/syslogmg/detailLog.jsp</result>
+	 		<allowed-methods>*</allowed-methods>
+	 	</action>
+	 	<action name="cacheMgAction" class="com.yinhai.ta3.sysapp.cachemg.CacheMgAction">
+	 		<result name="success">/sysapp/cachemg/cacheMg.jsp</result>
+	 		<allowed-methods>*</allowed-methods>
+	 	</action>	 	
+		<action name="moduleMainAction" class="com.yinhai.ta3.sysapp.consolemg.action.ModuleMainAction">
+	 		<result name="init">/workspace/portal/moduleMain.jsp</result>
+	 		<result name="edit">/workspace/portal/moduleEdit.jsp</result>
+	 		<result name="grantWin">/workspace/portal/moduleGrantWin.jsp</result>
+	 		<result name="grant">/workspace/portal/moduleGrant.jsp</result>
+	 		<allowed-methods>*</allowed-methods>
+	 	</action>
+	 	
+	 	<action name="portalAction" class="com.yinhai.ta3.sysapp.consolemg.action.PortalAction">	 
+	 		<allowed-methods>getPortalInfo,savePortalInfo</allowed-methods>
+	 	</action>	
+	 	
+	 	<action name="configMgAction" class="com.yinhai.ta3.sysapp.configmg.action.ConfigMgAction">
+	 		<result name="success">/sysapp/configmg/configMg.jsp</result>
+	 	</action>
+	 	<action name="configSysPathAction" class="com.yinhai.ta3.sysapp.configmg.action.ConfigSysPathAction">
+	 		<result name="success">/sysapp/configmg/sysPathMg.jsp</result>
+	 		<result name="saveUpdate">/sysapp/configmg/addEditSyspath.jsp</result>
+	 		<allowed-methods>querySyspath,saveUpdateSyspath,removeSyspath</allowed-methods>
+	 	</action>
+	 </package>
+	 <package name="system" namespace="/system" extends="ta-default">
+	 	<action name="userPassAction" class="com.yinhai.ta3.organization.action.UserPassAction" method="changePasswordWidthCurrent">
+	 	</action>
+	 </package>
+	  <package name="log" namespace="/log" extends="ta-default">
+	 	<action name="RequestSessionLogAction" class="com.yinhai.ta3.sysapp.syslogmg.action.RequestSessionLogAction" method="request">
+	 	</action>	 	
+	 	<action name="illegalOperationLogAction" class="com.yinhai.ta3.sysapp.syslogmg.action.IllegalOperationLogAction">
+	 		<result name="success">/sysapp/log/illegalLog.jsp</result>
+	 		<allowed-methods>queryIllegalOperationLog</allowed-methods>
+	 	</action>
+	 	<action name="accessLogAction" class="com.yinhai.ta3.sysapp.syslogmg.action.AccessLogAction">
+	 		<result name="success">/sysapp/log/accessLog.jsp</result>
+	 		<allowed-methods>queryAccess</allowed-methods>
+	 	</action>
+	 </package>
+</struts>

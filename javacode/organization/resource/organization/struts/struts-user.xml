@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	 <package name="user" namespace="/org" extends="ta-default" strict-method-invocation="false">
+	 	<action name="orgMgAction" class="com.yinhai.ta3.organization.action.OrgMgAction">
+	 		<result name="success">/org/org/orgMg.jsp</result>
+	 		<result name="selectOrgManager">/org/org/orgManager.jsp</result>
+	 		<allowed-methods>*</allowed-methods>
+	 	</action>
+	 
+	 	<action name="orgUserMgAction" class="com.yinhai.ta3.organization.action.OrgUserMgAction">
+	 		<result name="success">/org/org/orgUserMg.jsp</result>
+	 		<result name="addOrg">/org/org/addOrg.jsp</result>
+	 		<result name="editOrg">/org/org/editOrg.jsp</result>
+	 		<result name="toAddUser">/org/org/addUser.jsp</result>
+	 		<result name="toBatchAddUser">/org/org/userAddBatch.jsp</result>
+	 		<result name="editUser">/org/org/editUser.jsp</result>
+	 		<result name="userPermission">/org/org/userPermission.jsp</result>
+	 		<result name="toBatchPosition">/org/org/userBatchPosition.jsp</result>
+	 		<result name="toResetPass">/org/org/userResetPassword.jsp</result>
+	 		<result name="topermiss">/org/org/userPermission.jsp</result>
+	 		<result name="toDatafield">/org/org/datafield.jsp</result>
+	 		<allowed-methods>*</allowed-methods>
+	 	</action>
+	 	
+	 	<action name="userMgAction" class="com.yinhai.ta3.organization.action.UserMgAction">
+	 		<result name="success">/org/user/userMg.jsp</result>
+	 		<result name="toPosition">/org/user/userPosition.jsp</result>
+	 		<result name="toPositions">/org/user/userPositions.jsp</result>
+	 		<result name="topermiss">/org/user/userPermission.jsp</result>
+	 		<result name="tooplog">/org/user/userOpLog.jsp</result>
+	 		<result name="toBatchPosition">/org/user/userBatchPosition.jsp</result>
+	 		<result name="toEdit">/org/user/userEdit.jsp</result>
+	 		<result name="toResetPass">/org/user/userResetPassword.jsp</result>
+	 		<result name="toAddUser">/org/user/userAdd.jsp</result>
+	 		<result name="toBatchAddUser">/org/user/userAddBatch.jsp</result>
+	 		<result name="toDatafield">/org/user/datafield.jsp</result>
+	 		<result name="toUserInfo">/org/user/userInfo.jsp</result>
+	 		<allowed-methods>*</allowed-methods>
+	 	</action>
+	 </package>
+</struts>
