@@ -6,13 +6,13 @@ import com.yinhai.sysframework.exception.AppException;
 
 public interface IUserLogin {
 
-	public static final String SERVICEKEY = "userLogin";
+	String SERVICEKEY = "userLogin";
 
-	public abstract void loginCheck(IUserAccountInfo paramIUserAccountInfo, String paramString) throws AppException;
+	void loginCheck(IUserAccountInfo paramIUserAccountInfo, String paramString) throws AppException;
 
-	public abstract void regesitUserAccount(IUserAccountInfo paramIUserAccountInfo, HttpServletRequest paramHttpServletRequest);
+	void regesitUserAccount(IUserAccountInfo paramIUserAccountInfo, HttpServletRequest paramHttpServletRequest);
 
-	public abstract void doUserLoginWithoutCheck(String paramString, HttpServletRequest paramHttpServletRequest);
+	void doUserLoginWithoutCheck(String paramString, HttpServletRequest paramHttpServletRequest);
 
-	public abstract IUserAccountInfo loadUserAccountInfo(String paramString, HttpServletRequest paramHttpServletRequest);
+	IUserAccountInfo loadUserAccountInfo(String paramString, HttpServletRequest paramHttpServletRequest);
 }

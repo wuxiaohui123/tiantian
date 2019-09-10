@@ -36,6 +36,9 @@ import com.yinhai.sysframework.security.OnlineSessionInfo;
 import com.yinhai.sysframework.service.ServiceLocator;
 import com.yinhai.sysframework.time.ITimeService;
 
+/**
+ * @author amt
+ */
 @SuppressWarnings({"deprecation", "resource"})
 public class UserLoginHelper implements IUserLogin {
 
@@ -60,6 +63,7 @@ public class UserLoginHelper implements IUserLogin {
         this.failLoginCheckUser = failLoginCheckUser;
     }
 
+    @Override
     public void loginCheck(IUserAccountInfo userAccount, String password) throws AppException {
         if (userAccount != null) {
             String loginid = userAccount.getLoginId();
@@ -106,6 +110,7 @@ public class UserLoginHelper implements IUserLogin {
         }
     }
 
+    @Override
     public void regesitUserAccount(IUserAccountInfo userAccount, HttpServletRequest request) {
         List<IPosition> positions = loadUserEffectivePositions(userAccount.getUser().getUserid());
         if (ValidateUtil.isEmpty(positions)) {
@@ -140,10 +145,12 @@ public class UserLoginHelper implements IUserLogin {
         TaEventPublisher.publishEvent(new EventSource(request, eventDto), "log_online");
     }
 
+    @Override
     public void doUserLoginWithoutCheck(String loginId, HttpServletRequest request) {
         regesitUserAccount(loadUserAccountInfo(loginId, request), request);
     }
 
+    @Override
     public IUserAccountInfo loadUserAccountInfo(String loginId, HttpServletRequest request) {
         return loadUserAccountInfo.loadUser(loginId, request);
     }

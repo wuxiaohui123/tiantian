@@ -7,6 +7,7 @@ import org.apache.struts2.convention.annotation.Result;
 
 /****
  * 摄影师管理
+ * @author wuxiaohui
  */
 @Namespace("/resource")
 @Action(value = "cameramanAction", results = {@Result(location = "/tiantian/personresource/cameraman.jsp")})

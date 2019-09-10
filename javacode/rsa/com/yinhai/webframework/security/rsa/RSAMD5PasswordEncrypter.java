@@ -11,7 +11,8 @@ public class RSAMD5PasswordEncrypter implements Md5PasswordEncoder {
 
 	private static final String SALT = "-a1b2";
 
-	public String encodePassword(String password, Object salt) throws DataAccessException {
+	@Override
+    public String encodePassword(String password, Object salt) throws DataAccessException {
 		if (password == null)
 			password = "";
 		if ("true".equals(SysConfig.getSysConfig("passwordRSA", "false"))) {
@@ -28,6 +29,7 @@ public class RSAMD5PasswordEncrypter implements Md5PasswordEncoder {
 		return new String(encryptedPassword);
 	}
 
+	@Override
 	public boolean isPasswordValid(String encPass, String rawPass, Object salt) throws DataAccessException {
 		return encPass.equals(encodePassword(rawPass, salt));
 	}

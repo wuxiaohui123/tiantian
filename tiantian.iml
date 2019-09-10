@@ -19,7 +19,6 @@
           <root url="file://$MODULE_DIR$/javacode/organization" />
           <root url="file://$MODULE_DIR$/javacode/orgapi" />
           <root url="file://$MODULE_DIR$/javacode/rsa" />
-          <root url="file://$MODULE_DIR$/javacode/runqian" />
           <root url="file://$MODULE_DIR$/javacode/scheduler" />
           <root url="file://$MODULE_DIR$/javacode/security" />
           <root url="file://$MODULE_DIR$/javacode/sso" />
@@ -29,6 +28,7 @@
           <root url="file://$MODULE_DIR$/javacode/system" />
           <root url="file://$MODULE_DIR$/javacode/test" />
           <root url="file://$MODULE_DIR$/javacode/userlogin" />
+          <root url="file://$MODULE_DIR$/javacode/tiantian" />
         </sourceRoots>
       </configuration>
     </facet>
@@ -55,6 +55,7 @@
       <sourceFolder url="file://$MODULE_DIR$/javacode/system" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/javacode/test" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/javacode/userlogin" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/javacode/tiantian" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -68,6 +69,6 @@
         <jarDirectory url="file://$MODULE_DIR$/web/WEB-INF/lib" recursive="false" />
       </library>
     </orderEntry>
-    <orderEntry type="library" scope="PROVIDED" name="Tomcat 8.0.20" level="application_server_libraries" />
+    <orderEntry type="library" scope="PROVIDED" name="Tomcat 8.0.47" level="application_server_libraries" />
   </component>
 </module>
